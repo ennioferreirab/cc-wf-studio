@@ -230,12 +230,29 @@ function generateWorkflowExecutionLogic(workflow: Workflow): string {
   const { nodes, connections } = workflow;
   const instructions: string[] = [];
 
-  // Find start node (node with no incoming connections)
+  // Filter out Start/End nodes only (Prompt is executable)
+  // Note: Use type assertion to handle new node types (start, end, prompt)
+  const executableNodes = nodes.filter(
+    (node) => (node.type as string) !== 'start' && (node.type as string) !== 'end'
+  );
+
+  // Find start node (executable node with no incoming connections or connected from Start node)
   const targetNodeIds = new Set(connections.map((conn) => conn.to));
-  const startNodes = nodes.filter((node) => !targetNodeIds.has(node.id));
+  const startNodeConnections = connections.filter(
+    (conn) => nodes.find((n) => n.id === conn.from && (n.type as string) === 'start')
+  );
+
+  let startNodes = executableNodes.filter((node) => !targetNodeIds.has(node.id));
+
+  // If no start nodes found, try to find nodes connected from Start node
+  if (startNodes.length === 0 && startNodeConnections.length > 0) {
+    startNodes = startNodeConnections
+      .map((conn) => executableNodes.find((n) => n.id === conn.to))
+      .filter((n) => n !== undefined) as WorkflowNode[];
+  }
 
   if (startNodes.length === 0) {
-    return 'エラー: 開始ノードが見つかりません。';
+    return 'エラー: 実行可能な開始ノードが見つかりません。';
   }
 
   // Build execution flow from start node
@@ -250,28 +267,46 @@ function generateWorkflowExecutionLogic(workflow: Workflow): string {
     visited.add(currentNode.id);
 
     // Generate instruction for current node
-    if (currentNode.type === 'subAgent') {
+    const nodeType = currentNode.type as string;
+
+    if (nodeType === 'subAgent') {
       const agentName = nodeNameToFileName(currentNode.name);
       instructions.push(`Taskツールを使用して「${agentName}」Sub-Agentを実行してください。`);
       instructions.push('');
 
-      // Find next nodes
+      // Find next nodes (skip End nodes)
       const outgoingConnections = connections.filter((conn) => conn.from === currentNode.id);
       const nextNodes = outgoingConnections
-        .map((conn) => nodes.find((n) => n.id === conn.to))
+        .map((conn) => executableNodes.find((n) => n.id === conn.to))
         .filter((n) => n !== undefined);
 
       queue.push(...nextNodes);
-    } else if (currentNode.type === 'askUserQuestion') {
+    } else if (nodeType === 'askUserQuestion') {
       const askNode = currentNode as AskUserQuestionNode;
-      const branchingLogic = generateBranchingLogic(askNode, nodes, connections);
+      const branchingLogic = generateBranchingLogic(askNode, executableNodes, connections);
       instructions.push(branchingLogic);
       instructions.push('');
 
-      // Add branching nodes to queue
+      // Add branching nodes to queue (skip End nodes)
       const outgoingConnections = connections.filter((conn) => conn.from === currentNode.id);
       const nextNodes = outgoingConnections
-        .map((conn) => nodes.find((n) => n.id === conn.to))
+        .map((conn) => executableNodes.find((n) => n.id === conn.to))
+        .filter((n) => n !== undefined);
+
+      queue.push(...nextNodes);
+    } else if (nodeType === 'prompt') {
+      // Prompt node: just output the prompt text
+      const promptData = (currentNode as any).data;
+      const promptText = promptData?.prompt || '';
+      if (promptText) {
+        instructions.push(promptText);
+        instructions.push('');
+      }
+
+      // Find next nodes (skip End nodes)
+      const outgoingConnections = connections.filter((conn) => conn.from === currentNode.id);
+      const nextNodes = outgoingConnections
+        .map((conn) => executableNodes.find((n) => n.id === conn.to))
         .filter((n) => n !== undefined);
 
       queue.push(...nextNodes);

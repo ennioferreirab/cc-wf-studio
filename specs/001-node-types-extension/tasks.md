@@ -36,9 +36,9 @@
 
 **目的**: 型定義と共通インフラの準備
 
-- [ ] T001 ノードタイプ定義ファイルを作成 src/webview/src/types/node-types.ts
-- [ ] T002 [P] WorkflowFileインターフェースにschemaVersionフィールドを追加 src/shared/types.ts
-- [ ] T003 [P] 新規ノードタイプ用のCSSスタイルシートを作成 src/webview/src/styles/nodes.css
+- [x] T001 ノードタイプ定義ファイルを作成 src/webview/src/types/node-types.ts
+- [x] T002 [P] WorkflowFileインターフェースにschemaVersionフィールドを追加 src/shared/types.ts
+- [x] T003 [P] 新規ノードタイプ用のCSSスタイルシートを作成 src/webview/src/styles/nodes.css
 
 ---
 
@@ -48,10 +48,10 @@
 
 **⚠️ 重要**: このフェーズ完了まで、ユーザーストーリー実装を開始できません
 
-- [ ] T004 プレースホルダー変数抽出ユーティリティを実装 src/webview/src/utils/template-utils.ts
-- [ ] T005 プレースホルダー変数置換ユーティリティを実装 src/webview/src/utils/template-utils.ts
-- [ ] T006 [P] ReactFlowコンポーネントにnodeTypes登録ロジックを追加 src/webview/src/App.tsx
-- [ ] T007 [P] 接続制約用のisValidConnectionコールバックを実装 src/webview/src/App.tsx
+- [x] T004 プレースホルダー変数抽出ユーティリティを実装 src/webview/src/utils/template-utils.ts
+- [x] T005 プレースホルダー変数置換ユーティリティを実装 src/webview/src/utils/template-utils.ts
+- [x] T006 [P] ReactFlowコンポーネントにnodeTypes登録ロジックを追加 src/webview/src/App.tsx
+- [x] T007 [P] 接続制約用のisValidConnectionコールバックを実装 src/webview/src/App.tsx
 
 **チェックポイント**: 基盤準備完了 - ユーザーストーリー実装を並行開始可能
 
@@ -75,11 +75,11 @@
 
 ### ユーザーストーリー1の実装
 
-- [ ] T013 [P] [US1] StartNodeコンポーネントを実装 src/webview/src/components/nodes/StartNode.tsx
-- [ ] T014 [P] [US1] StartNodeのスタイルをnodes.cssに追加 (タスクT003が完了している必要あり)
-- [ ] T015 [US1] StartNodeをnodeTypesマッピングに登録 src/webview/src/App.tsx (T013に依存)
-- [ ] T016 [US1] StartNodeテンプレートをNodePaletteに追加 src/webview/src/components/NodePalette.tsx
-- [ ] T017 [US1] StartNodeの接続制約をisValidConnectionコールバックに追加 (入力接続を防止)
+- [x] T013 [P] [US1] StartNodeコンポーネントを実装 src/webview/src/components/nodes/StartNode.tsx
+- [x] T014 [P] [US1] StartNodeのスタイルをnodes.cssに追加 (タスクT003が完了している必要あり)
+- [x] T015 [US1] StartNodeをnodeTypesマッピングに登録 src/webview/src/App.tsx (T013に依存)
+- [x] T016 [US1] StartNodeテンプレートをNodePaletteに追加 src/webview/src/components/NodePalette.tsx
+- [x] T017 [US1] StartNodeの接続制約をisValidConnectionコールバックに追加 (入力接続を防止)
 - [ ] T018 [US1] StartNodeのE2Eテスト: パレットから追加、接続、保存、再読込 tests/e2e/node-types.test.ts
 
 **チェックポイント**: ユーザーストーリー1完了 - Startノードが完全に機能し、独立してテスト可能

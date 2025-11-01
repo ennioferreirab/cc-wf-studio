@@ -40,9 +40,31 @@ interface WorkflowStore {
 // Store Implementation
 // ============================================================================
 
+/**
+ * デフォルトのStartノード
+ * ワークフローは常にStartノードから始まる
+ */
+const DEFAULT_START_NODE: Node = {
+  id: 'start-node-default',
+  type: 'start',
+  position: { x: 100, y: 200 },
+  data: { label: 'Start' },
+};
+
+/**
+ * デフォルトのEndノード
+ * ワークフローは常にEndノードで終わる
+ */
+const DEFAULT_END_NODE: Node = {
+  id: 'end-node-default',
+  type: 'end',
+  position: { x: 600, y: 200 },
+  data: { label: 'End' },
+};
+
 export const useWorkflowStore = create<WorkflowStore>((set, get) => ({
-  // Initial State
-  nodes: [],
+  // Initial State - デフォルトでStartノードとEndノードを含む
+  nodes: [DEFAULT_START_NODE, DEFAULT_END_NODE],
   edges: [],
   selectedNodeId: null,
 
@@ -88,6 +110,17 @@ export const useWorkflowStore = create<WorkflowStore>((set, get) => ({
   },
 
   removeNode: (nodeId: string) => {
+    // StartノードとEndノードの削除を防止
+    const nodeToRemove = get().nodes.find((node) => node.id === nodeId);
+    if (nodeToRemove?.type === 'start') {
+      console.warn('Cannot remove Start node: Start node is required for workflow');
+      return;
+    }
+    if (nodeToRemove?.type === 'end') {
+      console.warn('Cannot remove End node: End node is required for workflow');
+      return;
+    }
+
     set({
       nodes: get().nodes.filter((node) => node.id !== nodeId),
       edges: get().edges.filter((edge) => edge.source !== nodeId && edge.target !== nodeId),
@@ -95,8 +128,9 @@ export const useWorkflowStore = create<WorkflowStore>((set, get) => ({
   },
 
   clearWorkflow: () => {
+    // StartノードとEndノードは保持し、他のノードとすべてのエッジをクリア
     set({
-      nodes: [],
+      nodes: [DEFAULT_START_NODE, DEFAULT_END_NODE],
       edges: [],
       selectedNodeId: null,
     });

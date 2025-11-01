@@ -15,18 +15,29 @@ import ReactFlow, {
   type NodeTypes,
   type EdgeTypes,
   type DefaultEdgeOptions,
+  type Connection,
 } from 'reactflow';
 import { useWorkflowStore } from '../stores/workflow-store';
 import { AskUserQuestionNodeComponent } from './nodes/AskUserQuestionNode';
 import { SubAgentNodeComponent } from './nodes/SubAgentNode';
+// 新規ノードタイプのインポート
+import { StartNode } from './nodes/StartNode';
+import { EndNode } from './nodes/EndNode';
+import { PromptNode } from './nodes/PromptNode';
 
 /**
  * Node types registration (memoized outside component for performance)
  * Based on: /specs/001-cc-wf-studio/research.md section 3.1
+ *
+ * 新規ノードタイプ (Start, End, Prompt) は実装後にコメント解除
  */
 const nodeTypes: NodeTypes = {
   subAgent: SubAgentNodeComponent,
   askUserQuestion: AskUserQuestionNodeComponent,
+  // 新規ノードタイプ
+  start: StartNode,
+  end: EndNode,
+  prompt: PromptNode,
 };
 
 /**
@@ -49,6 +60,37 @@ export const WorkflowEditor: React.FC = () => {
   // Get state and handlers from Zustand store
   const { nodes, edges, onNodesChange, onEdgesChange, onConnect, setSelectedNodeId } =
     useWorkflowStore();
+
+  /**
+   * 接続制約の検証
+   *
+   * Based on: /specs/001-node-types-extension/research.md section 3
+   *
+   * @param connection - 検証対象の接続
+   * @returns 接続が有効な場合true
+   */
+  const isValidConnection = useCallback(
+    (connection: Connection): boolean => {
+      const sourceNode = nodes.find((n) => n.id === connection.source);
+      const targetNode = nodes.find((n) => n.id === connection.target);
+
+      // Startノードは入力接続を持てない
+      if (targetNode?.type === 'start') {
+        console.warn('Cannot connect to Start node: Start nodes cannot have input connections');
+        return false;
+      }
+
+      // Endノードは出力接続を持てない
+      if (sourceNode?.type === 'end') {
+        console.warn('Cannot connect from End node: End nodes cannot have output connections');
+        return false;
+      }
+
+      // すべての検証を通過
+      return true;
+    },
+    [nodes]
+  );
 
   // Memoize callbacks for performance (research.md section 3.1)
   const handleNodesChange = useCallback(onNodesChange, []);
@@ -84,6 +126,7 @@ export const WorkflowEditor: React.FC = () => {
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
         defaultEdgeOptions={defaultEdgeOptions}
+        isValidConnection={isValidConnection}
         snapToGrid={true}
         snapGrid={snapGrid}
         fitView
@@ -103,6 +146,12 @@ export const WorkflowEditor: React.FC = () => {
                 return 'var(--vscode-charts-blue)';
               case 'askUserQuestion':
                 return 'var(--vscode-charts-orange)';
+              case 'start':
+                return 'var(--vscode-charts-green)';
+              case 'end':
+                return 'var(--vscode-charts-red)';
+              case 'prompt':
+                return 'var(--vscode-charts-purple)';
               default:
                 return 'var(--vscode-foreground)';
             }

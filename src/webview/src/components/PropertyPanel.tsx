@@ -8,7 +8,9 @@
 import type { AskUserQuestionData, SubAgentData } from '@shared/types/workflow-definition';
 import type React from 'react';
 import type { Node } from 'reactflow';
+import type { PromptNodeData } from '../types/node-types';
 import { useWorkflowStore } from '../stores/workflow-store';
+import { extractVariables } from '../utils/template-utils';
 
 /**
  * PropertyPanel Component
@@ -84,57 +86,69 @@ export const PropertyPanel: React.FC = () => {
           marginBottom: '16px',
         }}
       >
-        {selectedNode.type === 'subAgent' ? 'Sub-Agent' : 'Ask User Question'}
+        {selectedNode.type === 'subAgent'
+          ? 'Sub-Agent'
+          : selectedNode.type === 'askUserQuestion'
+            ? 'Ask User Question'
+            : selectedNode.type === 'prompt'
+              ? 'Prompt Node'
+              : selectedNode.type === 'start'
+                ? 'Start Node'
+                : selectedNode.type === 'end'
+                  ? 'End Node'
+                  : 'Unknown'}
       </div>
 
-      {/* Node Name (common for all types) */}
-      <div style={{ marginBottom: '16px' }}>
-        <label
-          htmlFor="node-name-input"
-          style={{
-            display: 'block',
-            fontSize: '12px',
-            fontWeight: 600,
-            color: 'var(--vscode-foreground)',
-            marginBottom: '6px',
-          }}
-        >
-          Node Name
-        </label>
-        <input
-          id="node-name-input"
-          type="text"
-          value={selectedNode.data.name || selectedNode.id}
-          onChange={(e) => {
-            const newName = e.target.value;
-            setNodes(
-              nodes.map((n) =>
-                n.id === selectedNode.id ? { ...n, data: { ...n.data, name: newName } } : n
-              )
-            );
-          }}
-          className="nodrag"
-          placeholder="Enter node name"
-          style={{
-            width: '100%',
-            padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
-            borderRadius: '2px',
-            fontSize: '13px',
-          }}
-        />
-        <div
-          style={{
-            fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
-            marginTop: '4px',
-          }}
-        >
-          Used for exported file name (e.g., "data-analysis")
+      {/* Node Name (only for subAgent, askUserQuestion, and prompt types) */}
+      {(selectedNode.type === 'subAgent' || selectedNode.type === 'askUserQuestion' || selectedNode.type === 'prompt') && (
+        <div style={{ marginBottom: '16px' }}>
+          <label
+            htmlFor="node-name-input"
+            style={{
+              display: 'block',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--vscode-foreground)',
+              marginBottom: '6px',
+            }}
+          >
+            Node Name
+          </label>
+          <input
+            id="node-name-input"
+            type="text"
+            value={selectedNode.data.name || selectedNode.id}
+            onChange={(e) => {
+              const newName = e.target.value;
+              setNodes(
+                nodes.map((n) =>
+                  n.id === selectedNode.id ? { ...n, data: { ...n.data, name: newName } } : n
+                )
+              );
+            }}
+            className="nodrag"
+            placeholder="Enter node name"
+            style={{
+              width: '100%',
+              padding: '6px 8px',
+              backgroundColor: 'var(--vscode-input-background)',
+              color: 'var(--vscode-input-foreground)',
+              border: '1px solid var(--vscode-input-border)',
+              borderRadius: '2px',
+              fontSize: '13px',
+            }}
+          />
+          <div
+            style={{
+              fontSize: '11px',
+              color: 'var(--vscode-descriptionForeground)',
+              marginTop: '4px',
+            }}
+          >
+            Used for exported file name (e.g., "data-analysis")
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Render properties based on node type */}
       {selectedNode.type === 'subAgent' ? (
@@ -142,11 +156,44 @@ export const PropertyPanel: React.FC = () => {
           node={selectedNode as Node<SubAgentData>}
           updateNodeData={updateNodeData}
         />
-      ) : (
+      ) : selectedNode.type === 'askUserQuestion' ? (
         <AskUserQuestionProperties
           node={selectedNode as Node<AskUserQuestionData>}
           updateNodeData={updateNodeData}
         />
+      ) : selectedNode.type === 'prompt' ? (
+        <PromptProperties
+          node={selectedNode as Node<PromptNodeData>}
+          updateNodeData={updateNodeData}
+        />
+      ) : selectedNode.type === 'start' || selectedNode.type === 'end' ? (
+        <div
+          style={{
+            padding: '12px',
+            backgroundColor: 'var(--vscode-textBlockQuote-background)',
+            border: '1px solid var(--vscode-textBlockQuote-border)',
+            borderRadius: '4px',
+            fontSize: '12px',
+            color: 'var(--vscode-descriptionForeground)',
+          }}
+        >
+          {selectedNode.type === 'start'
+            ? 'Start node marks the beginning of the workflow. It cannot be deleted and has no editable properties.'
+            : 'End node marks the completion of the workflow. It cannot be deleted and has no editable properties.'}
+        </div>
+      ) : (
+        <div
+          style={{
+            padding: '12px',
+            backgroundColor: 'var(--vscode-errorBackground)',
+            border: '1px solid var(--vscode-errorBorder)',
+            borderRadius: '4px',
+            fontSize: '12px',
+            color: 'var(--vscode-errorForeground)',
+          }}
+        >
+          Unknown node type: {selectedNode.type}
+        </div>
       )}
     </div>
   );
@@ -484,6 +531,147 @@ const AskUserQuestionProperties: React.FC<{
           </button>
         )}
       </div>
+    </div>
+  );
+};
+
+/**
+ * Prompt Properties Editor
+ */
+const PromptProperties: React.FC<{
+  node: Node<PromptNodeData>;
+  updateNodeData: (nodeId: string, data: Partial<unknown>) => void;
+}> = ({ node, updateNodeData }) => {
+  const data = node.data;
+
+  // プロンプトから変数を抽出
+  const variables = extractVariables(data.prompt);
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      {/* Label */}
+      <div>
+        <label
+          htmlFor="label-input"
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: 600,
+            color: 'var(--vscode-foreground)',
+            marginBottom: '6px',
+          }}
+        >
+          Label
+        </label>
+        <input
+          id="label-input"
+          type="text"
+          value={data.label || ''}
+          onChange={(e) => updateNodeData(node.id, { label: e.target.value })}
+          className="nodrag"
+          placeholder="Enter label"
+          style={{
+            width: '100%',
+            padding: '6px 8px',
+            backgroundColor: 'var(--vscode-input-background)',
+            color: 'var(--vscode-input-foreground)',
+            border: '1px solid var(--vscode-input-border)',
+            borderRadius: '2px',
+            fontSize: '13px',
+          }}
+        />
+      </div>
+
+      {/* Prompt Template */}
+      <div>
+        <label
+          htmlFor="prompt-textarea"
+          style={{
+            display: 'block',
+            fontSize: '12px',
+            fontWeight: 600,
+            color: 'var(--vscode-foreground)',
+            marginBottom: '6px',
+          }}
+        >
+          Prompt Template
+        </label>
+        <textarea
+          id="prompt-textarea"
+          value={data.prompt}
+          onChange={(e) => updateNodeData(node.id, { prompt: e.target.value })}
+          className="nodrag"
+          rows={8}
+          placeholder="Enter prompt template with {{variables}}"
+          style={{
+            width: '100%',
+            padding: '6px 8px',
+            backgroundColor: 'var(--vscode-input-background)',
+            color: 'var(--vscode-input-foreground)',
+            border: '1px solid var(--vscode-input-border)',
+            borderRadius: '2px',
+            fontSize: '13px',
+            fontFamily: 'var(--vscode-editor-font-family)',
+            resize: 'vertical',
+          }}
+        />
+        <div
+          style={{
+            fontSize: '11px',
+            color: 'var(--vscode-descriptionForeground)',
+            marginTop: '4px',
+          }}
+        >
+          Use {`{{variableName}}`} syntax for dynamic values
+        </div>
+      </div>
+
+      {/* Detected Variables */}
+      {variables.length > 0 && (
+        <div>
+          <div
+            style={{
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--vscode-foreground)',
+              marginBottom: '6px',
+            }}
+          >
+            Detected Variables ({variables.length})
+          </div>
+          <div
+            style={{
+              padding: '8px',
+              backgroundColor: 'var(--vscode-textBlockQuote-background)',
+              border: '1px solid var(--vscode-textBlockQuote-border)',
+              borderRadius: '4px',
+            }}
+          >
+            {variables.map((varName) => (
+              <div
+                key={varName}
+                style={{
+                  fontSize: '11px',
+                  fontFamily: 'monospace',
+                  color: 'var(--vscode-foreground)',
+                  marginBottom: '4px',
+                }}
+              >
+                • {`{{${varName}}}`}
+              </div>
+            ))}
+          </div>
+          <div
+            style={{
+              fontSize: '11px',
+              color: 'var(--vscode-descriptionForeground)',
+              marginTop: '4px',
+            }}
+          >
+            Variables will be substituted at runtime
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -96,6 +96,16 @@ export interface Workflow {
   name: string;
   description?: string;
   version: string;
+  /**
+   * スキーマバージョン (省略可能)
+   *
+   * ワークフローファイル形式のバージョンを示します。
+   * - 省略時: "1.0.0" (既存形式、新規ノードタイプ非対応)
+   * - "1.1.0": Start/End/Promptノードをサポート
+   *
+   * @default "1.0.0"
+   */
+  schemaVersion?: string;
   nodes: WorkflowNode[];
   connections: Connection[];
   createdAt: Date;

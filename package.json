@@ -34,7 +34,9 @@
   "scripts": {
     "vscode:prepublish": "npm run build",
     "build": "npm run build:webview && npm run build:extension",
+    "build:dev": "npm run build:webview:dev && npm run build:extension",
     "build:webview": "cd src/webview && npm run build",
+    "build:webview:dev": "cd src/webview && npm run build:dev",
     "build:extension": "tsc -p ./",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
