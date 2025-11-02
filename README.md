@@ -26,6 +26,9 @@ Designed workflows automatically export to `.claude/agents/` and `.claude/comman
 ### 🔄 Easy Iteration
 Save and load workflows as JSON. Experiment and refine your flows through trial and error.
 
+### 🔒 Fully Offline & Secure
+All operations run locally within VSCode. No network communication means zero risk of data leaks or privacy concerns.
+
 ## Key Features
 
 ✨ **Visual Workflow Editor** - Intuitive drag-and-drop canvas inspired by Dify
@@ -64,7 +67,7 @@ Currently not available (private repository).
    - Press Enter
 
 **2. Create Your Workflow**
-   - **Add Nodes**: Drag Sub-Agent or AskUserQuestion nodes from the left palette onto the canvas
+   - **Add Nodes**: Click Sub-Agent, AskUserQuestion, Prompt, or Branch nodes in the left palette to add them to the canvas
    - **Configure**: Click a node to edit its properties in the right panel
    - **Connect**: Drag from output ports (right) to input ports (left) to create flow
 
@@ -75,17 +78,29 @@ Currently not available (private repository).
 
 ## How It Works
 
+### Prompt Nodes
+Define reusable prompt templates with:
+- Template variables using `{{variableName}}` syntax
+- Dynamic value substitution at runtime
+- Variable detection and validation
+
 ### Sub-Agent Nodes
 Configure autonomous AI agents with:
 - Custom system prompts
 - Tool permissions (Read, Write, Bash, etc.)
 - Model selection (Sonnet for balance, Opus for complex tasks, Haiku for speed)
 
+### Branch Nodes
+Implement conditional logic with:
+- **Conditional Mode**: 2-way branching (True/False)
+- **Switch Mode**: Multi-way branching (2-N branches)
+- Natural language condition descriptions
+
 ### AskUserQuestion Nodes
 Create decision points where:
-- Users choose from 2-4 options
-- Each option branches to different Sub-Agents
-- Build dynamic, interactive workflows
+- Users choose from 2-4 options (or multiple selections)
+- Each option branches to different nodes
+- AI can dynamically generate options based on context
 
 ### Export Format
 Generates ready-to-use files:

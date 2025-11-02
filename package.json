@@ -2,7 +2,7 @@
   "name": "cc-wf-studio",
   "displayName": "Claude Code Workflow Studio",
   "description": "Visual workflow editor for Claude Code SlashCommands and Sub-Agents",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "publisher": "breaking-break",
   "icon": "resources/icon.png",
   "repository": {
@@ -15,8 +15,7 @@
     "workflow",
     "visual-editor",
     "automation",
-    "ai",
-    "sub-agent"
+    "ai"
   ],
   "engines": {
     "vscode": "^1.80.0"

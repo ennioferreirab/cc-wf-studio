@@ -126,7 +126,7 @@ export const PropertyPanel: React.FC = () => {
           <input
             id="node-name-input"
             type="text"
-            value={selectedNode.data.name || selectedNode.id}
+            value={selectedNode.data.name ?? selectedNode.id}
             onChange={(e) => {
               const newName = e.target.value;
               setNodes(
@@ -134,6 +134,17 @@ export const PropertyPanel: React.FC = () => {
                   n.id === selectedNode.id ? { ...n, data: { ...n.data, name: newName } } : n
                 )
               );
+            }}
+            onBlur={(e) => {
+              // 入力欄が空の場合は、node IDに戻す（空の名前を防ぐ）
+              const currentName = e.target.value.trim();
+              if (!currentName) {
+                setNodes(
+                  nodes.map((n) =>
+                    n.id === selectedNode.id ? { ...n, data: { ...n.data, name: undefined } } : n
+                  )
+                );
+              }
             }}
             className="nodrag"
             placeholder="Enter node name"
