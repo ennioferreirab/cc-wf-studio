@@ -564,9 +564,9 @@ export const zhTWWebviewTranslations: WebviewTranslationKeys = {
   'slack.manualToken.error.invalidUserTokenFormat': 'User Token 必須以 "xoxp-" 開頭',
   'slack.manualToken.connecting': '連接中...',
   'slack.manualToken.connect': '連接',
-  'slack.manualToken.deleteButton': '刪除已儲存的令牌',
+  'slack.manualToken.deleteButton': '刪除已儲存的認證令牌',
   'slack.manualToken.deleteConfirm.title': '刪除令牌',
-  'slack.manualToken.deleteConfirm.message': '確定要刪除已儲存的 Slack Bot Token 嗎？',
+  'slack.manualToken.deleteConfirm.message': '確定要刪除已儲存的認證令牌嗎？',
   'slack.manualToken.deleteConfirm.confirm': '刪除',
   'slack.manualToken.deleteConfirm.cancel': '取消',
 
@@ -597,6 +597,7 @@ export const zhTWWebviewTranslations: WebviewTranslationKeys = {
   // Slack OAuth
   'slack.oauth.description':
     '點擊連接到工作區按鈕將顯示允許「Claude Code Workflow Studio」訪問 Slack 的確認畫面。\n授權後，連接用的 Slack App 將安裝到您的工作區。',
+  'slack.oauth.termsOfService': '服務條款',
   'slack.oauth.privacyPolicy': '隱私政策',
   'slack.oauth.supportPage': '支援頁面',
   'slack.oauth.connectButton': '連接到工作區',

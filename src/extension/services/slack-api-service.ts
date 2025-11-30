@@ -444,8 +444,12 @@ export class SlackApiService {
   /**
    * Checks if the Bot is a member of the specified channel
    *
-   * Uses conversations.info API which is available with existing Bot Token scopes.
-   * This helps users know if they need to invite the Bot before sharing.
+   * Uses User Token to call conversations.members API to get the member list,
+   * then checks if Bot User ID is in the list. This approach works because
+   * User Token has channels:read/groups:read scopes while Bot Token doesn't.
+   *
+   * For users who authenticated before bot_user_id was saved, this method
+   * falls back to auth.test API to get the Bot User ID dynamically.
    *
    * @param workspaceId - Target workspace ID
    * @param channelId - Target channel ID
@@ -453,63 +457,104 @@ export class SlackApiService {
    */
   async checkBotMembership(workspaceId: string, channelId: string): Promise<boolean> {
     try {
-      const client = await this.ensureClient(workspaceId);
-      const response = await client.conversations.info({ channel: channelId });
+      // Step 1: Get Bot User ID (from stored data or auth.test)
+      let botUserId = await this.tokenManager.getBotUserId(workspaceId);
 
-      if (!response.ok || !response.channel) {
+      if (!botUserId) {
+        // Fallback for users who authenticated before bot_user_id was saved
+        const client = await this.ensureClient(workspaceId);
+        const authResponse = await client.auth.test();
+        botUserId = (authResponse.user_id as string) || null;
+      }
+
+      if (!botUserId) {
+        // Cannot determine Bot User ID
         return false;
       }
 
-      return response.channel.is_member ?? false;
-    } catch (error) {
+      // Step 2: Use User Token to get channel members
+      const userClient = await this.ensureUserClient(workspaceId);
+      if (!userClient) {
+        // User Token not available (e.g., manual token input)
+        return false;
+      }
+
+      // Step 3: Get channel members list (with pagination for large channels)
+      let cursor: string | undefined;
+      do {
+        const response = await userClient.conversations.members({
+          channel: channelId,
+          cursor,
+          limit: 200,
+        });
+
+        if (!response.ok || !response.members) {
+          return false;
+        }
+
+        // Check if Bot User ID is in this batch of members
+        if (response.members.includes(botUserId)) {
+          return true;
+        }
+
+        cursor = response.response_metadata?.next_cursor;
+      } while (cursor);
+
+      // Bot not found in member list
+      return false;
+    } catch (_error) {
       // If we can't check, assume not a member to show warning
-      console.error('[SlackApiService] checkBotMembership error:', error);
+      // The warning will prompt user to invite the bot
       return false;
     }
   }
 
   /**
-   * Gets current user information (Git username, not Slack user)
+   * Gets current Slack user information
    *
-   * @param _workspaceId - Target workspace ID (not used, kept for compatibility)
-   * @returns User information (user_id as empty string, Git username)
+   * Uses auth.test to get user ID, then users.info to get user details.
+   * Requires 'users:read' scope for users.info API.
+   *
+   * @param workspaceId - Target workspace ID
+   * @returns User information (Slack user ID and username)
    */
-  async getUserInfo(_workspaceId: string): Promise<{
+  async getUserInfo(workspaceId: string): Promise<{
     userId: string;
     userName: string;
   }> {
+    // User Tokenでauth.testを呼び出し（User IDを取得）
+    const userClient = await this.ensureUserClient(workspaceId);
+
+    if (!userClient) {
+      // User Tokenがない場合（手動トークン入力など）
+      return { userId: '', userName: '' };
+    }
+
     try {
-      // Get Git user name from git config
-      const { exec } = await import('node:child_process');
-      const { promisify } = await import('node:util');
-      const execAsync = promisify(exec);
+      const authResponse = await userClient.auth.test();
+      const userId = (authResponse.user_id as string) || '';
 
-      try {
-        const { stdout } = await execAsync('git config user.name');
-        const userName = stdout.trim();
-
-        if (userName) {
-          return {
-            userId: '', // No longer needed
-            userName,
-          };
-        }
-      } catch (_error) {
-        // Git command failed, use fallback
+      if (!userId) {
+        return { userId: '', userName: '' };
       }
 
-      // Fallback: Use environment username
-      const userName = process.env.USER || process.env.USERNAME || 'Unknown User';
+      // users.infoでユーザー情報を取得（users:readスコープ必要）
+      // User Tokenを使用する（Bot Tokenにはusers:readスコープがない）
+      const userResponse = await userClient.users.info({ user: userId });
 
-      return {
-        userId: '', // No longer needed
-        userName,
-      };
-    } catch (_error) {
-      return {
-        userId: '',
-        userName: 'Unknown User',
-      };
+      if (userResponse.ok && userResponse.user) {
+        return {
+          userId,
+          userName: userResponse.user.name || '',
+        };
+      }
+
+      // ユーザー名は取得できなくてもUser IDは返す
+      return { userId, userName: '' };
+    } catch (error) {
+      // スコープ不足またはAPIエラーの場合
+      console.error('[SlackApiService] getUserInfo failed:', error);
+      return { userId: '', userName: '' };
     }
   }
 

@@ -591,10 +591,10 @@ export const enWebviewTranslations: WebviewTranslationKeys = {
   'slack.manualToken.error.invalidUserTokenFormat': 'User Token must start with "xoxp-"',
   'slack.manualToken.connecting': 'Connecting...',
   'slack.manualToken.connect': 'Connect',
-  'slack.manualToken.deleteButton': 'Delete Saved Token',
+  'slack.manualToken.deleteButton': 'Delete Saved Auth Token',
   'slack.manualToken.deleteConfirm.title': 'Delete Token',
   'slack.manualToken.deleteConfirm.message':
-    'Are you sure you want to delete the saved Slack Bot Token?',
+    'Are you sure you want to delete the saved auth token?',
   'slack.manualToken.deleteConfirm.confirm': 'Delete',
   'slack.manualToken.deleteConfirm.cancel': 'Cancel',
 
@@ -626,6 +626,7 @@ export const enWebviewTranslations: WebviewTranslationKeys = {
   // Slack OAuth
   'slack.oauth.description':
     'Click the Connect to Workspace button to display a confirmation screen for granting "Claude Code Workflow Studio" access to Slack.\nOnce you grant permission, the Slack App for integration will be installed to your workspace.',
+  'slack.oauth.termsOfService': 'Terms of Service',
   'slack.oauth.privacyPolicy': 'Privacy Policy',
   'slack.oauth.supportPage': 'Support Page',
   'slack.oauth.connectButton': 'Connect to Workspace',

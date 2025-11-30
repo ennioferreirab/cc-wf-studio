@@ -28,7 +28,7 @@ const OAUTH_CONFIG = {
   /** Required Slack Bot Token scopes */
   scopes: 'chat:write,files:read,files:write',
   /** Required Slack User Token scopes (for channel listing) */
-  userScopes: 'channels:read,groups:read',
+  userScopes: 'channels:read,groups:read,users:read',
   /** Initial polling interval in milliseconds */
   pollingIntervalInitialMs: 1000,
   /** Maximum polling interval in milliseconds */
@@ -53,6 +53,7 @@ export interface OAuthInitiation {
 export interface SlackOAuthTokenResponse {
   ok: boolean;
   access_token?: string;
+  bot_user_id?: string; // Bot User ID (for membership check)
   team?: {
     id: string;
     name: string;
