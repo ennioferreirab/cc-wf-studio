@@ -1,3 +1,9 @@
+## [2.16.1](https://github.com/breaking-brake/cc-wf-studio/compare/v2.16.0...v2.16.1) (2025-11-30)
+
+### Bug Fixes
+
+* require User Token for manual Slack connection ([#175](https://github.com/breaking-brake/cc-wf-studio/issues/175)) ([8904134](https://github.com/breaking-brake/cc-wf-studio/commit/8904134ded9e18e5346357eae5d2b01c9c896917))
+
 ## [2.16.0](https://github.com/breaking-brake/cc-wf-studio/compare/v2.15.1...v2.16.0) (2025-11-29)
 
 ### Features
