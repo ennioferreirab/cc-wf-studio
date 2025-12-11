@@ -1,3 +1,9 @@
+## [3.5.4](https://github.com/breaking-brake/cc-wf-studio/compare/v3.5.3...v3.5.4) (2025-12-11)
+
+### Bug Fixes
+
+* auto-generate SubAgentFlow definitions for AI-created nodes ([#251](https://github.com/breaking-brake/cc-wf-studio/issues/251)) ([4ae3c43](https://github.com/breaking-brake/cc-wf-studio/commit/4ae3c433282761500fe9b94e071cbb0a2ca4001a))
+
 ## [3.5.3](https://github.com/breaking-brake/cc-wf-studio/compare/v3.5.2...v3.5.3) (2025-12-10)
 
 ### Bug Fixes
