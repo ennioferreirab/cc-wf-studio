@@ -85,6 +85,7 @@ export function RefinementChatPanel({
     isIndexReady,
     useCodebaseSearch,
     selectedModel,
+    updateMessageToolInfo,
   } = useRefinementStore();
 
   const { activeWorkflow, updateWorkflow, subAgentFlows, updateSubAgentFlow, setNodes, setEdges } =
@@ -314,8 +315,19 @@ export function RefinementChatPanel({
 
         const onProgress: RefinementProgressCallback = (payload) => {
           hasReceivedProgress = true;
-          // Update message content with display text (may include tool info)
-          updateMessageContent(aiMessageId, payload.accumulatedText);
+
+          // Tool Loading Animation: Use contentType from Extension to detect tool execution
+          if (payload.contentType === 'tool_use') {
+            // Tool execution in progress
+            updateMessageToolInfo(aiMessageId, payload.chunk);
+          } else if (payload.contentType === 'text') {
+            // Text content arrived = tool execution completed
+            updateMessageToolInfo(aiMessageId, null);
+          }
+
+          // Update message content with explanatory text only (tool info shown separately by ToolExecutionIndicator)
+          // Use accumulatedText as fallback if explanatoryText is undefined
+          updateMessageContent(aiMessageId, payload.explanatoryText ?? payload.accumulatedText);
           // Track explanatory text separately (for preserving in chat history)
           // Note: explanatoryText can be empty string if AI only uses tools
           if (payload.explanatoryText !== undefined) {
@@ -507,8 +519,19 @@ export function RefinementChatPanel({
 
         const onProgress: RefinementProgressCallback = (payload) => {
           hasReceivedProgress = true;
-          // Update message content with display text (may include tool info)
-          updateMessageContent(aiMessageId, payload.accumulatedText);
+
+          // Tool Loading Animation: Use contentType from Extension to detect tool execution
+          if (payload.contentType === 'tool_use') {
+            // Tool execution in progress
+            updateMessageToolInfo(aiMessageId, payload.chunk);
+          } else if (payload.contentType === 'text') {
+            // Text content arrived = tool execution completed
+            updateMessageToolInfo(aiMessageId, null);
+          }
+
+          // Update message content with explanatory text only (tool info shown separately by ToolExecutionIndicator)
+          // Use accumulatedText as fallback if explanatoryText is undefined
+          updateMessageContent(aiMessageId, payload.explanatoryText ?? payload.accumulatedText);
           // Track explanatory text separately (for preserving in chat history)
           // Note: explanatoryText can be empty string if AI only uses tools
           if (payload.explanatoryText !== undefined) {

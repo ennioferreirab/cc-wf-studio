@@ -140,6 +140,9 @@ interface RefinementStore {
   setUseCodebaseSearch: (enabled: boolean) => void;
   loadCodebaseSearchSetting: () => Promise<void>;
 
+  // Tool Execution Actions (Tool Loading Animation)
+  updateMessageToolInfo: (messageId: string, toolInfo: string | null) => void;
+
   // Computed
   canSend: () => boolean;
   shouldShowWarning: () => boolean;
@@ -442,6 +445,26 @@ export const useRefinementStore = create<RefinementStore>((set, get) => ({
     if (value !== undefined) {
       set({ useCodebaseSearch: value });
     }
+  },
+
+  // Tool Execution Actions (Tool Loading Animation)
+  updateMessageToolInfo: (messageId: string, toolInfo: string | null) => {
+    const history = get().conversationHistory;
+    if (!history) {
+      return;
+    }
+
+    const updatedMessages = history.messages.map((msg) =>
+      msg.id === messageId ? { ...msg, toolInfo } : msg
+    );
+
+    set({
+      conversationHistory: {
+        ...history,
+        messages: updatedMessages,
+        updatedAt: new Date().toISOString(),
+      },
+    });
   },
 
   // Computed Methods
