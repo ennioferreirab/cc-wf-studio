@@ -1,3 +1,9 @@
+## [3.12.2](https://github.com/breaking-brake/cc-wf-studio/compare/v3.12.1...v3.12.2) (2026-01-04)
+
+### Bug Fixes
+
+* plugin-installed skills not appearing in Skill Browser ([#365](https://github.com/breaking-brake/cc-wf-studio/issues/365)) ([c169362](https://github.com/breaking-brake/cc-wf-studio/commit/c169362ca77062b9a98ef48a4837808ef0c825ad))
+
 ## [3.12.1](https://github.com/breaking-brake/cc-wf-studio/compare/v3.12.0...v3.12.1) (2026-01-04)
 
 ### Improvements
