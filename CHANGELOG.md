@@ -1,3 +1,9 @@
+## [3.12.3](https://github.com/breaking-brake/cc-wf-studio/compare/v3.12.2...v3.12.3) (2026-01-05)
+
+### Bug Fixes
+
+* skills not detected on Windows due to CRLF line endings ([#369](https://github.com/breaking-brake/cc-wf-studio/issues/369)) ([f453576](https://github.com/breaking-brake/cc-wf-studio/commit/f4535765ec29a7f0a807c86a0206810252ef8b9c)), closes [#361](https://github.com/breaking-brake/cc-wf-studio/issues/361)
+
 ## [3.12.2](https://github.com/breaking-brake/cc-wf-studio/compare/v3.12.1...v3.12.2) (2026-01-04)
 
 ### Bug Fixes
