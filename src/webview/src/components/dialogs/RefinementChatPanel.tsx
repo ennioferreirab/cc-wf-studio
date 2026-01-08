@@ -56,6 +56,9 @@ interface RefinementChatPanelProps {
   onClose: () => void;
 }
 
+// POC: Detect standalone mode (running outside VSCode)
+const USE_HTTP_API = typeof window.acquireVsCodeApi === 'undefined';
+
 export function RefinementChatPanel({
   chatState,
   mode = 'workflow',
@@ -298,6 +301,45 @@ export function RefinementChatPanel({
       }
     } catch (error) {
       handleRefinementError(error, aiMessageId);
+    }
+  };
+
+  // POC: Handle send via HTTP API (for standalone mode)
+  const handleSendPOC = async (message: string) => {
+    if (!conversationHistory) return;
+
+    addUserMessage(message);
+    const requestId = `poc-${Date.now()}-${Math.random()}`;
+    const aiMessageId = `ai-poc-${Date.now()}-${Math.random()}`;
+
+    addLoadingAiMessage(aiMessageId);
+    startProcessing(requestId);
+
+    try {
+      const { sendChatMessage } = await import('../../services/http-api-service');
+
+      const result = await sendChatMessage(message, requestId, (payload) => {
+        updateMessageContent(aiMessageId, payload.accumulatedText);
+        if (payload.contentType === 'tool_use') {
+          updateMessageToolInfo(aiMessageId, payload.chunk);
+        } else {
+          updateMessageToolInfo(aiMessageId, null);
+        }
+      });
+
+      if (result.type === 'success') {
+        updateMessageContent(aiMessageId, result.fullResponse || '');
+        updateMessageLoadingState(aiMessageId, false);
+        finishProcessing();
+      } else {
+        console.error('[POC] Error:', result.error);
+        updateMessageErrorState(aiMessageId, true, 'UNKNOWN_ERROR');
+        finishProcessing();
+      }
+    } catch (error) {
+      console.error('[POC] Error:', error);
+      updateMessageErrorState(aiMessageId, true, 'UNKNOWN_ERROR');
+      finishProcessing();
     }
   };
 
@@ -663,8 +705,9 @@ export function RefinementChatPanel({
         <MessageList onRetry={handleRetry} conversationHistory={conversationHistory} />
 
         {/* Input (controlled mode - pass input state from chatState) */}
+        {/* POC: Use handleSendPOC when in standalone mode */}
         <MessageInput
-          onSend={handleSend}
+          onSend={USE_HTTP_API ? handleSendPOC : handleSend}
           inputState={{
             currentInput: chatState.currentInput,
             setInput: chatState.setInput,

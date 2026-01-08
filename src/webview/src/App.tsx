@@ -225,6 +225,63 @@ const App: React.FC = () => {
     });
   };
 
+  // POC: Auto-initialize when running standalone (outside VSCode)
+  // Use ref to track if already initialized to prevent loops
+  const standaloneInitializedRef = useRef(false);
+  useEffect(() => {
+    const isStandalone = typeof window.acquireVsCodeApi === 'undefined';
+
+    if (isStandalone && !standaloneInitializedRef.current) {
+      standaloneInitializedRef.current = true;
+      console.log('[POC] Standalone mode detected, initializing...');
+
+      // Create mock workflow
+      const mockWorkflow: Workflow = {
+        id: `poc-workflow-${Date.now()}`,
+        name: 'POC Workflow',
+        description: 'Workflow for POC testing',
+        version: '1.0.0',
+        schemaVersion: '1.0.0',
+        nodes: [
+          {
+            id: 'start-1',
+            type: 'start',
+            name: 'Start',
+            position: { x: 100, y: 200 },
+            data: { label: 'Start' },
+          },
+          {
+            id: 'end-1',
+            type: 'end',
+            name: 'End',
+            position: { x: 400, y: 200 },
+            data: { label: 'End' },
+          },
+        ],
+        connections: [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+
+      // Deserialize for React Flow
+      const { nodes: flowNodes, edges: flowEdges } = deserializeWorkflow(mockWorkflow);
+      setNodes(flowNodes);
+      setEdges(flowEdges);
+      setWorkflowName(mockWorkflow.name);
+      setActiveWorkflow(mockWorkflow);
+
+      // Initialize conversation history
+      refinementStore.initConversation();
+
+      // Open chat panel automatically
+      refinementStore.openChat();
+
+      // Set mode to 'edit'
+      setMode('edit');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Listen for messages from Extension
   useEffect(() => {
     const messageHandler = (event: MessageEvent) => {

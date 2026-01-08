@@ -44,5 +44,12 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: true,
+    // POC: Proxy API requests to Python backend
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true,
+      },
+    },
   },
 });
