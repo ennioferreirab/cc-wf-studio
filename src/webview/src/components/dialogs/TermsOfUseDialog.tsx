@@ -69,8 +69,8 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
         ref={dialogRef}
         tabIndex={-1}
         style={{
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '4px',
           padding: '32px',
           minWidth: '500px',
@@ -87,7 +87,7 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
           style={{
             fontSize: '18px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '20px',
           }}
         >
@@ -98,7 +98,7 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '24px',
             lineHeight: '1.6',
           }}
@@ -149,7 +149,7 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
           <span
             style={{
               fontSize: '13px',
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('terms.agree')}
@@ -169,8 +169,8 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
             onClick={onCancel}
             style={{
               padding: '8px 20px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: 'pointer',
@@ -178,10 +178,10 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor =
-                'var(--vscode-button-secondaryHoverBackground)';
+                'var(--button-secondary-hover-background)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-secondaryBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--button-secondary-background)';
             }}
           >
             {t('terms.cancelButton')}
@@ -193,11 +193,11 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
             style={{
               padding: '8px 20px',
               backgroundColor: agreed
-                ? 'var(--vscode-button-background)'
-                : 'var(--vscode-button-secondaryBackground)',
+                ? 'var(--button-background)'
+                : 'var(--button-secondary-background)',
               color: agreed
-                ? 'var(--vscode-button-foreground)'
-                : 'var(--vscode-button-secondaryForeground)',
+                ? 'var(--button-foreground)'
+                : 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: agreed ? 'pointer' : 'not-allowed',
@@ -207,12 +207,12 @@ export const TermsOfUseDialog: React.FC<TermsOfUseDialogProps> = ({
             }}
             onMouseEnter={(e) => {
               if (agreed) {
-                e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+                e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
               }
             }}
             onMouseLeave={(e) => {
               if (agreed) {
-                e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+                e.currentTarget.style.backgroundColor = 'var(--button-background)';
               }
             }}
           >

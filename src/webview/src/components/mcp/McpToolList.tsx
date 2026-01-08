@@ -67,9 +67,9 @@ export function McpToolList({
       <div
         style={{
           padding: '16px',
-          color: 'var(--vscode-errorForeground)',
-          backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-          border: '1px solid var(--vscode-inputValidation-errorBorder)',
+          color: 'var(--error-foreground)',
+          backgroundColor: 'var(--input-validation-error-background)',
+          border: '1px solid var(--input-validation-error-border)',
           borderRadius: '4px',
         }}
       >
@@ -94,7 +94,7 @@ export function McpToolList({
           style={{
             padding: '16px',
             textAlign: 'center',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
           }}
         >
           {t('mcp.search.noResults', { query: searchQuery })}
@@ -107,7 +107,7 @@ export function McpToolList({
         style={{
           padding: '16px',
           textAlign: 'center',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
         }}
       >
         {t('mcp.empty.tools')}
@@ -126,13 +126,13 @@ export function McpToolList({
             padding: '12px',
             backgroundColor:
               selectedToolName === tool.name
-                ? 'var(--vscode-list-activeSelectionBackground)'
-                : 'var(--vscode-list-inactiveSelectionBackground)',
+                ? 'var(--list-active-selection-background)'
+                : 'var(--list-inactive-selection-background)',
             color:
               selectedToolName === tool.name
-                ? 'var(--vscode-list-activeSelectionForeground)'
-                : 'var(--vscode-foreground)',
-            border: '1px solid var(--vscode-panel-border)',
+                ? 'var(--list-active-selection-foreground)'
+                : 'var(--foreground)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '4px',
             textAlign: 'left',
             cursor: 'pointer',
@@ -140,13 +140,13 @@ export function McpToolList({
           }}
           onMouseEnter={(e) => {
             if (selectedToolName !== tool.name) {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-list-hoverBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--list-hover-background)';
             }
           }}
           onMouseLeave={(e) => {
             if (selectedToolName !== tool.name) {
               e.currentTarget.style.backgroundColor =
-                'var(--vscode-list-inactiveSelectionBackground)';
+                'var(--list-inactive-selection-background)';
             }
           }}
         >
@@ -155,7 +155,7 @@ export function McpToolList({
             <div
               style={{
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
               }}
             >
               {tool.description}
@@ -167,8 +167,8 @@ export function McpToolList({
                 fontSize: '11px',
                 marginTop: '6px',
                 padding: '4px 6px',
-                backgroundColor: 'var(--vscode-badge-background)',
-                color: 'var(--vscode-badge-foreground)',
+                backgroundColor: 'var(--badge-background)',
+                color: 'var(--badge-foreground)',
                 borderRadius: '3px',
                 display: 'inline-block',
               }}

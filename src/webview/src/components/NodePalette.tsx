@@ -246,8 +246,8 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
       style={{
         width: isCompact ? '100px' : '200px',
         height: '100%',
-        backgroundColor: 'var(--vscode-sideBar-background)',
-        borderRight: '1px solid var(--vscode-panel-border)',
+        backgroundColor: 'var(--sidebar-background)',
+        borderRight: '1px solid var(--panel-border)',
         padding: isCompact ? '8px' : '16px',
         overflowY: 'auto',
       }}
@@ -265,7 +265,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           style={{
             fontSize: isCompact ? '11px' : '13px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
           }}
@@ -287,11 +287,11 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               opacity: 0.7,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-toolbar-hoverBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--toolbar-hover-background)';
               e.currentTarget.style.opacity = '1';
             }}
             onMouseLeave={(e) => {
@@ -309,7 +309,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
         style={{
           fontSize: isCompact ? '10px' : '11px',
           fontWeight: 600,
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           marginBottom: isCompact ? '4px' : '8px',
           marginTop: isCompact ? '4px' : '8px',
           textTransform: 'uppercase',
@@ -328,9 +328,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -341,10 +341,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.prompt.title')}</div>
@@ -352,7 +352,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -371,9 +371,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             width: '100%',
             padding: isCompact ? '8px' : '12px',
             marginBottom: isCompact ? '8px' : '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            color: 'var(--vscode-button-foreground)',
-            border: '1px solid var(--vscode-button-border)',
+            backgroundColor: 'var(--button-background)',
+            color: 'var(--button-foreground)',
+            border: '1px solid var(--button-border)',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: isCompact ? '11px' : '13px',
@@ -384,10 +384,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             gap: '4px',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+            e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+            e.currentTarget.style.backgroundColor = 'var(--button-background)';
           }}
         >
           <div style={{ fontWeight: 600 }}>{t('node.subAgent.title')}</div>
@@ -395,7 +395,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             <div
               style={{
                 fontSize: '11px',
-                color: 'var(--vscode-button-foreground)',
+                color: 'var(--button-foreground)',
                 opacity: 0.8,
               }}
             >
@@ -415,9 +415,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             width: '100%',
             padding: isCompact ? '8px' : '12px',
             marginBottom: isCompact ? '8px' : '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            color: 'var(--vscode-button-foreground)',
-            border: '1px solid var(--vscode-button-border)',
+            backgroundColor: 'var(--button-background)',
+            color: 'var(--button-foreground)',
+            border: '1px solid var(--button-border)',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: isCompact ? '11px' : '13px',
@@ -428,10 +428,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             gap: '4px',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+            e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+            e.currentTarget.style.backgroundColor = 'var(--button-background)';
           }}
         >
           <div style={{ fontWeight: 600 }}>{t('node.subAgentFlow.title')}</div>
@@ -439,7 +439,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             <div
               style={{
                 fontSize: '11px',
-                color: 'var(--vscode-button-foreground)',
+                color: 'var(--button-foreground)',
                 opacity: 0.8,
               }}
             >
@@ -458,9 +458,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -471,10 +471,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.skill.title')}</div>
@@ -482,7 +482,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -500,9 +500,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -513,10 +513,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.mcp.title')}</div>
@@ -524,7 +524,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -538,7 +538,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
         style={{
           fontSize: isCompact ? '10px' : '11px',
           fontWeight: 600,
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           marginBottom: isCompact ? '4px' : '8px',
           marginTop: isCompact ? '8px' : '16px',
           textTransform: 'uppercase',
@@ -557,9 +557,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -570,10 +570,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.ifElse.title')}</div>
@@ -581,7 +581,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -599,9 +599,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -612,10 +612,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.switch.title')}</div>
@@ -623,7 +623,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -642,9 +642,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             width: '100%',
             padding: isCompact ? '8px' : '12px',
             marginBottom: isCompact ? '8px' : '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            color: 'var(--vscode-button-foreground)',
-            border: '1px solid var(--vscode-button-border)',
+            backgroundColor: 'var(--button-background)',
+            color: 'var(--button-foreground)',
+            border: '1px solid var(--button-border)',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: isCompact ? '11px' : '13px',
@@ -655,10 +655,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             gap: '4px',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+            e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+            e.currentTarget.style.backgroundColor = 'var(--button-background)';
           }}
         >
           <div style={{ fontWeight: 600 }}>{t('node.askUserQuestion.title')}</div>
@@ -666,7 +666,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             <div
               style={{
                 fontSize: '11px',
-                color: 'var(--vscode-button-foreground)',
+                color: 'var(--button-foreground)',
                 opacity: 0.8,
               }}
             >
@@ -685,9 +685,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           width: '100%',
           padding: isCompact ? '8px' : '12px',
           marginBottom: isCompact ? '8px' : '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          color: 'var(--vscode-button-foreground)',
-          border: '1px solid var(--vscode-button-border)',
+          backgroundColor: 'var(--button-background)',
+          color: 'var(--button-foreground)',
+          border: '1px solid var(--button-border)',
           borderRadius: '4px',
           cursor: 'pointer',
           fontSize: isCompact ? '11px' : '13px',
@@ -698,10 +698,10 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           gap: '4px',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+          e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+          e.currentTarget.style.backgroundColor = 'var(--button-background)';
         }}
       >
         <div style={{ fontWeight: 600 }}>{t('node.end.title')}</div>
@@ -709,7 +709,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-button-foreground)',
+              color: 'var(--button-foreground)',
               opacity: 0.8,
             }}
           >
@@ -727,9 +727,9 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
             width: '100%',
             padding: isCompact ? '8px' : '12px',
             marginBottom: isCompact ? '8px' : '12px',
-            backgroundColor: 'var(--vscode-button-secondaryBackground)',
-            color: 'var(--vscode-button-secondaryForeground)',
-            border: '1px solid var(--vscode-button-border)',
+            backgroundColor: 'var(--button-secondary-background)',
+            color: 'var(--button-secondary-foreground)',
+            border: '1px solid var(--button-border)',
             borderRadius: '4px',
             cursor: 'pointer',
             fontSize: isCompact ? '11px' : '13px',
@@ -756,7 +756,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
               <div
                 style={{
                   fontSize: '11px',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  color: 'var(--button-secondary-foreground)',
                   opacity: 0.8,
                 }}
               >
@@ -765,7 +765,7 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
               <div
                 style={{
                   fontSize: '10px',
-                  color: 'var(--vscode-editorWarning-foreground)',
+                  color: 'var(--warning-foreground)',
                   marginTop: '4px',
                   fontStyle: 'italic',
                 }}
@@ -783,11 +783,11 @@ export const NodePalette: React.FC<NodePaletteProps> = ({ onCollapse }) => {
           style={{
             marginTop: '24px',
             padding: '12px',
-            backgroundColor: 'var(--vscode-textBlockQuote-background)',
-            border: '1px solid var(--vscode-textBlockQuote-border)',
+            backgroundColor: 'var(--blockquote-background)',
+            border: '1px solid var(--blockquote-border)',
             borderRadius: '4px',
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             lineHeight: '1.5',
           }}
         >

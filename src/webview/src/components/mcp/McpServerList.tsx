@@ -90,9 +90,9 @@ export function McpServerList({
       <div
         style={{
           padding: '16px',
-          color: 'var(--vscode-errorForeground)',
-          backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-          border: '1px solid var(--vscode-inputValidation-errorBorder)',
+          color: 'var(--error-foreground)',
+          backgroundColor: 'var(--input-validation-error-background)',
+          border: '1px solid var(--input-validation-error-border)',
           borderRadius: '4px',
         }}
       >
@@ -114,9 +114,9 @@ export function McpServerList({
               width: '100%',
               padding: '8px 12px',
               fontSize: '13px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
               cursor: refreshing ? 'wait' : 'pointer',
               display: 'flex',
@@ -137,7 +137,7 @@ export function McpServerList({
         >
           <div
             style={{
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginBottom: '8px',
             }}
           >
@@ -146,7 +146,7 @@ export function McpServerList({
           <div
             style={{
               fontSize: '12px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
             }}
           >
             {t('mcp.empty.servers.hint')}
@@ -174,9 +174,9 @@ export function McpServerList({
           width: '100%',
           padding: '8px 12px',
           fontSize: '13px',
-          backgroundColor: 'var(--vscode-input-background)',
-          color: 'var(--vscode-input-foreground)',
-          border: '1px solid var(--vscode-input-border)',
+          backgroundColor: 'var(--input-background)',
+          color: 'var(--input-foreground)',
+          border: '1px solid var(--input-border)',
           borderRadius: '4px',
           outline: 'none',
         }}
@@ -190,9 +190,9 @@ export function McpServerList({
         style={{
           padding: '8px 12px',
           fontSize: '13px',
-          backgroundColor: 'var(--vscode-button-secondaryBackground)',
-          color: 'var(--vscode-button-secondaryForeground)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--button-secondary-background)',
+          color: 'var(--button-secondary-foreground)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '4px',
           cursor: refreshing ? 'wait' : 'pointer',
           display: 'flex',
@@ -210,7 +210,7 @@ export function McpServerList({
           style={{
             padding: '16px',
             textAlign: 'center',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
           }}
         >
           {t('mcp.search.noServers', { query: filterText })}
@@ -227,13 +227,13 @@ export function McpServerList({
             padding: '12px',
             backgroundColor:
               selectedServerId === server.id
-                ? 'var(--vscode-list-activeSelectionBackground)'
-                : 'var(--vscode-list-inactiveSelectionBackground)',
+                ? 'var(--list-active-selection-background)'
+                : 'var(--list-inactive-selection-background)',
             color:
               selectedServerId === server.id
-                ? 'var(--vscode-list-activeSelectionForeground)'
-                : 'var(--vscode-foreground)',
-            border: '1px solid var(--vscode-panel-border)',
+                ? 'var(--list-active-selection-foreground)'
+                : 'var(--foreground)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '4px',
             textAlign: 'left',
             cursor: 'pointer',
@@ -241,13 +241,13 @@ export function McpServerList({
           }}
           onMouseEnter={(e) => {
             if (selectedServerId !== server.id) {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-list-hoverBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--list-hover-background)';
             }
           }}
           onMouseLeave={(e) => {
             if (selectedServerId !== server.id) {
               e.currentTarget.style.backgroundColor =
-                'var(--vscode-list-inactiveSelectionBackground)';
+                'var(--list-inactive-selection-background)';
             }
           }}
         >
@@ -313,13 +313,13 @@ export function McpServerList({
 function getScopeColor(scope: 'user' | 'project' | 'enterprise'): string {
   switch (scope) {
     case 'user':
-      return 'var(--vscode-button-background)';
+      return 'var(--button-background)';
     case 'project':
-      return 'var(--vscode-button-secondaryBackground)';
+      return 'var(--button-secondary-background)';
     case 'enterprise':
-      return 'var(--vscode-badge-background)';
+      return 'var(--badge-background)';
     default:
-      return 'var(--vscode-badge-background)';
+      return 'var(--badge-background)';
   }
 }
 
@@ -329,13 +329,13 @@ function getScopeColor(scope: 'user' | 'project' | 'enterprise'): string {
 function getScopeForegroundColor(scope: 'user' | 'project' | 'enterprise'): string {
   switch (scope) {
     case 'user':
-      return 'var(--vscode-button-foreground)';
+      return 'var(--button-foreground)';
     case 'project':
-      return 'var(--vscode-button-secondaryForeground)';
+      return 'var(--button-secondary-foreground)';
     case 'enterprise':
-      return 'var(--vscode-badge-foreground)';
+      return 'var(--badge-foreground)';
     default:
-      return 'var(--vscode-badge-foreground)';
+      return 'var(--badge-foreground)';
   }
 }
 
@@ -349,9 +349,9 @@ function getStatusColor(status: 'connected' | 'disconnected' | 'error'): string 
     case 'disconnected':
       return '#666666'; // Neutral gray
     case 'error':
-      return 'var(--vscode-errorForeground)';
+      return 'var(--error-foreground)';
     default:
-      return 'var(--vscode-badge-background)';
+      return 'var(--badge-background)';
   }
 }
 
@@ -365,6 +365,6 @@ function getStatusForegroundColor(status: 'connected' | 'disconnected' | 'error'
     case 'error':
       return '#ffffff'; // White text for colored backgrounds
     default:
-      return 'var(--vscode-badge-foreground)';
+      return 'var(--badge-foreground)';
   }
 }

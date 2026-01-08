@@ -61,11 +61,11 @@ export const Toggle: React.FC<ToggleProps> = ({
         height: `${dimensions.height}px`,
         // ON: green (testing passed icon color), OFF: muted gray
         backgroundColor: checked
-          ? 'var(--vscode-testing-iconPassed)'
-          : 'var(--vscode-titleBar-inactiveBackground)',
+          ? 'var(--success-foreground)'
+          : 'var(--titlebar-inactive-background)',
         borderRadius: `${dimensions.height / 2}px`,
         position: 'relative',
-        border: checked ? 'none' : '1px solid var(--vscode-input-border)',
+        border: checked ? 'none' : '1px solid var(--input-border)',
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.5 : 1,
         display: 'flex',
@@ -84,7 +84,7 @@ export const Toggle: React.FC<ToggleProps> = ({
           fontSize: `${dimensions.fontSize}px`,
           fontWeight: 600,
           // ON: white text on green / OFF: dark text on gray for light theme compatibility
-          color: checked ? 'var(--vscode-button-foreground)' : 'var(--vscode-foreground)',
+          color: checked ? 'var(--button-foreground)' : 'var(--foreground)',
           pointerEvents: 'none',
           transition: 'left 100ms, right 100ms, color 100ms',
           userSelect: 'none',
@@ -104,10 +104,10 @@ export const Toggle: React.FC<ToggleProps> = ({
           height: `${dimensions.thumbSize}px`,
           // ON: editor background on green / OFF: input background on gray for contrast
           backgroundColor: checked
-            ? 'var(--vscode-editor-background)'
-            : 'var(--vscode-input-background)',
+            ? 'var(--editor-background)'
+            : 'var(--input-background)',
           borderRadius: '50%',
-          border: '1px solid var(--vscode-input-border)',
+          border: '1px solid var(--input-border)',
           transition: 'transform 100ms, background-color 100ms',
           transform: checked ? `translateX(${thumbTravel}px)` : `translateX(${thumbOffset}px)`,
           willChange: 'transform',

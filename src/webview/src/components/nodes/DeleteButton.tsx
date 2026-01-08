@@ -43,7 +43,7 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({ nodeId, selected }) 
         width: '18px',
         height: '18px',
         borderRadius: '3px',
-        backgroundColor: 'var(--vscode-errorForeground)',
+        backgroundColor: 'var(--error-foreground)',
         color: 'white',
         border: 'none',
         cursor: 'pointer',
@@ -56,7 +56,7 @@ export const DeleteButton: React.FC<DeleteButtonProps> = ({ nodeId, selected }) 
         zIndex: 10,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = 'var(--vscode-errorForeground)';
+        e.currentTarget.style.backgroundColor = 'var(--error-foreground)';
         e.currentTarget.style.opacity = '0.8';
       }}
       onMouseLeave={(e) => {

@@ -77,9 +77,9 @@ export function EditInEditorButton({
       className="nodrag"
       style={{
         padding: '4px 8px',
-        backgroundColor: 'var(--vscode-button-secondaryBackground)',
-        color: 'var(--vscode-button-secondaryForeground)',
-        border: '1px solid var(--vscode-button-border)',
+        backgroundColor: 'var(--button-secondary-background)',
+        color: 'var(--button-secondary-foreground)',
+        border: '1px solid var(--button-border)',
         borderRadius: '3px',
         fontSize: '11px',
         cursor: disabled || isOpening ? 'not-allowed' : 'pointer',

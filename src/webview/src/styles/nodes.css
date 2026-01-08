@@ -1,7 +1,7 @@
 /**
- * ノードタイプ拡張: Start, End, Promptノードのスタイル
+ * Node Type Styles: Start, End, Prompt nodes
  *
- * VSCodeテーマ変数を使用してライト/ダークモード両対応
+ * Uses standard theme variables for light/dark mode support
  */
 
 /* ============================================================================
@@ -118,28 +118,28 @@
   border-radius: 4px;
   font-family: monospace;
   font-size: 12px;
-  background: var(--vscode-input-background);
-  color: var(--vscode-input-foreground);
+  background: var(--input-background);
+  color: var(--input-foreground);
   resize: vertical;
   min-height: 80px;
 }
 
 .prompt-node .node-body textarea:focus {
-  outline: 1px solid var(--vscode-focusBorder);
+  outline: 1px solid var(--focus-border);
   outline-offset: -1px;
-  border-color: var(--vscode-focusBorder);
+  border-color: var(--focus-border);
 }
 
 .prompt-node .prompt-preview {
   padding: 8px;
-  background: var(--vscode-editor-background);
-  border: 1px solid var(--vscode-panel-border);
+  background: var(--editor-background);
+  border: 1px solid var(--panel-border);
   border-radius: 4px;
   font-size: 12px;
   font-family: monospace;
   max-height: 100px;
   overflow-y: auto;
-  color: var(--vscode-editor-foreground);
+  color: var(--editor-foreground);
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -184,8 +184,8 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid var(--vscode-panel-border);
-  background: var(--vscode-editor-background);
+  border: 2px solid var(--panel-border);
+  background: var(--editor-background);
   transition: all 0.2s ease;
 }
 
@@ -194,13 +194,13 @@
 .prompt-node .react-flow__handle:hover {
   width: 14px;
   height: 14px;
-  border-color: var(--vscode-focusBorder);
+  border-color: var(--focus-border);
 }
 
 /* Accessibility: Focus visible states */
 .start-node:focus-visible,
 .end-node:focus-visible,
 .prompt-node:focus-visible {
-  outline: 2px solid var(--vscode-focusBorder);
+  outline: 2px solid var(--focus-border);
   outline-offset: 2px;
 }

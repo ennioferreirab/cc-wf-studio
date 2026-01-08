@@ -379,7 +379,7 @@ const App: React.FC = () => {
         style={{
           width: '100vw',
           height: '100vh',
-          backgroundColor: 'var(--vscode-editor-background)',
+          backgroundColor: 'var(--editor-background)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -564,8 +564,8 @@ const App: React.FC = () => {
           <div
             style={{
               padding: '24px 32px',
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
               display: 'flex',
               alignItems: 'center',
@@ -576,13 +576,13 @@ const App: React.FC = () => {
               style={{
                 width: '16px',
                 height: '16px',
-                border: '2px solid var(--vscode-progressBar-background)',
+                border: '2px solid var(--progressbar-background)',
                 borderTopColor: 'transparent',
                 borderRadius: '50%',
                 animation: 'spin 1s linear infinite',
               }}
             />
-            <span style={{ color: 'var(--vscode-foreground)', fontSize: '14px' }}>
+            <span style={{ color: 'var(--foreground)', fontSize: '14px' }}>
               {t('loading.importWorkflow')}
             </span>
           </div>
@@ -608,8 +608,8 @@ const App: React.FC = () => {
           <div
             style={{
               padding: '24px 32px',
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
               display: 'flex',
               alignItems: 'center',
@@ -620,13 +620,13 @@ const App: React.FC = () => {
               style={{
                 width: '16px',
                 height: '16px',
-                border: '2px solid var(--vscode-progressBar-background)',
+                border: '2px solid var(--progressbar-background)',
                 borderTopColor: 'transparent',
                 borderRadius: '50%',
                 animation: 'spin 1s linear infinite',
               }}
             />
-            <span style={{ color: 'var(--vscode-foreground)', fontSize: '14px' }}>
+            <span style={{ color: 'var(--foreground)', fontSize: '14px' }}>
               {t('loading.openWorkflow')}
             </span>
           </div>

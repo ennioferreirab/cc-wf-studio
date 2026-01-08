@@ -70,8 +70,8 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
         ref={dialogRef}
         tabIndex={-1}
         style={{
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '4px',
           padding: '24px',
           minWidth: '450px',
@@ -88,14 +88,14 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '16px',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
           }}
         >
-          <span style={{ color: 'var(--vscode-notificationsWarningIcon-foreground)' }}>⚠️</span>
+          <span style={{ color: 'var(--warning-icon-foreground)' }}>⚠️</span>
           {t('slack.import.connectionRequired.title')}
         </div>
 
@@ -103,7 +103,7 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '16px',
             lineHeight: '1.6',
           }}
@@ -116,8 +116,8 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
           <div
             style={{
               padding: '12px',
-              backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
               marginBottom: '16px',
             }}
@@ -125,7 +125,7 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
             <div
               style={{
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '4px',
               }}
             >
@@ -134,7 +134,7 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
             <div
               style={{
                 fontSize: '13px',
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 fontWeight: 500,
               }}
             >
@@ -156,8 +156,8 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
             onClick={onClose}
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: 'pointer',
@@ -165,10 +165,10 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor =
-                'var(--vscode-button-secondaryHoverBackground)';
+                'var(--button-secondary-hover-background)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-secondaryBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--button-secondary-background)';
             }}
           >
             {t('common.close')}
@@ -178,8 +178,8 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
             onClick={handleConnectClick}
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-background)',
-              color: 'var(--vscode-button-foreground)',
+              backgroundColor: 'var(--button-background)',
+              color: 'var(--button-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: 'pointer',
@@ -187,10 +187,10 @@ export const SlackConnectionRequiredDialog: React.FC<SlackConnectionRequiredDial
               fontWeight: 500,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+              e.currentTarget.style.backgroundColor = 'var(--button-background)';
             }}
           >
             {t('slack.import.connectionRequired.connectButton')}

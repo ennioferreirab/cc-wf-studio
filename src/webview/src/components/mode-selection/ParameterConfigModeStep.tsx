@@ -62,7 +62,7 @@ export function ParameterConfigModeStep({
             fontWeight: 'bold',
             margin: 0,
             marginBottom: '8px',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
           }}
         >
           {t('mcp.parameterConfigMode.title')}
@@ -71,7 +71,7 @@ export function ParameterConfigModeStep({
           style={{
             fontSize: '13px',
             margin: 0,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
           }}
         >
           {t('mcp.parameterConfigMode.subtitle')}
@@ -97,10 +97,10 @@ export function ParameterConfigModeStep({
                 padding: '16px',
                 marginBottom: '12px',
                 backgroundColor: isSelected
-                  ? 'var(--vscode-list-activeSelectionBackground)'
-                  : 'var(--vscode-editor-background)',
+                  ? 'var(--list-active-selection-background)'
+                  : 'var(--editor-background)',
                 border: `2px solid ${
-                  isSelected ? 'var(--vscode-focusBorder)' : 'var(--vscode-panel-border)'
+                  isSelected ? 'var(--focus-border)' : 'var(--panel-border)'
                 }`,
                 borderRadius: '6px',
                 cursor: 'pointer',
@@ -109,14 +109,14 @@ export function ParameterConfigModeStep({
               }}
               onMouseEnter={(e) => {
                 if (!isSelected) {
-                  e.currentTarget.style.backgroundColor = 'var(--vscode-list-hoverBackground)';
-                  e.currentTarget.style.borderColor = 'var(--vscode-focusBorder)';
+                  e.currentTarget.style.backgroundColor = 'var(--list-hover-background)';
+                  e.currentTarget.style.borderColor = 'var(--focus-border)';
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isSelected) {
-                  e.currentTarget.style.backgroundColor = 'var(--vscode-editor-background)';
-                  e.currentTarget.style.borderColor = 'var(--vscode-panel-border)';
+                  e.currentTarget.style.backgroundColor = 'var(--editor-background)';
+                  e.currentTarget.style.borderColor = 'var(--panel-border)';
                 }
               }}
             >
@@ -127,7 +127,7 @@ export function ParameterConfigModeStep({
                     fontSize: '14px',
                     fontWeight: 'bold',
                     marginBottom: '8px',
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                   }}
                 >
                   {t(option.titleKey)}
@@ -136,7 +136,7 @@ export function ParameterConfigModeStep({
                   style={{
                     fontSize: '12px',
                     lineHeight: 1.5,
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                   }}
                 >
                   {t(option.descriptionKey)}
@@ -150,9 +150,9 @@ export function ParameterConfigModeStep({
                   height: '20px',
                   borderRadius: '50%',
                   border: `2px solid ${
-                    isSelected ? 'var(--vscode-focusBorder)' : 'var(--vscode-descriptionForeground)'
+                    isSelected ? 'var(--focus-border)' : 'var(--description-foreground)'
                   }`,
-                  backgroundColor: isSelected ? 'var(--vscode-focusBorder)' : 'transparent',
+                  backgroundColor: isSelected ? 'var(--focus-border)' : 'transparent',
                   position: 'relative',
                   flexShrink: 0,
                 }}
@@ -167,7 +167,7 @@ export function ParameterConfigModeStep({
                       width: '8px',
                       height: '8px',
                       borderRadius: '50%',
-                      backgroundColor: 'var(--vscode-editor-background)',
+                      backgroundColor: 'var(--editor-background)',
                     }}
                   />
                 )}

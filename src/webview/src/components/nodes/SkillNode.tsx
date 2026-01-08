@@ -33,11 +33,11 @@ function getValidationIcon(status: 'valid' | 'missing' | 'invalid'): string {
 function getValidationColor(status: 'valid' | 'missing' | 'invalid'): string {
   switch (status) {
     case 'valid':
-      return 'var(--vscode-testing-iconPassed)';
+      return 'var(--success-foreground)';
     case 'missing':
-      return 'var(--vscode-editorWarning-foreground)';
+      return 'var(--warning-foreground)';
     case 'invalid':
-      return 'var(--vscode-errorForeground)';
+      return 'var(--error-foreground)';
   }
 }
 
@@ -67,8 +67,8 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           position: 'relative',
           padding: '12px',
           borderRadius: '8px',
-          border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : 'var(--vscode-panel-border)'}`,
-          backgroundColor: 'var(--vscode-editor-background)',
+          border: `2px solid ${selected ? 'var(--focus-border)' : 'var(--panel-border)'}`,
+          backgroundColor: 'var(--editor-background)',
           minWidth: '200px',
           maxWidth: '300px',
         }}
@@ -81,7 +81,7 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           style={{
             fontSize: '11px',
             fontWeight: 600,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '8px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -108,7 +108,7 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '8px',
             fontWeight: 500,
           }}
@@ -121,7 +121,7 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginBottom: '8px',
               lineHeight: '1.4',
               overflow: 'hidden',
@@ -139,13 +139,13 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
         <div
           style={{
             fontSize: '10px',
-            color: 'var(--vscode-badge-foreground)',
+            color: 'var(--badge-foreground)',
             backgroundColor:
               data.scope === 'user'
-                ? 'var(--vscode-badge-background)'
+                ? 'var(--badge-background)'
                 : data.scope === 'local'
-                  ? 'var(--vscode-terminal-ansiBlue)'
-                  : 'var(--vscode-button-secondaryBackground)',
+                  ? 'var(--terminal-ansi-blue)'
+                  : 'var(--button-secondary-background)',
             padding: '2px 6px',
             borderRadius: '3px',
             display: 'inline-block',
@@ -162,7 +162,7 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           <div
             style={{
               fontSize: '9px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginTop: '4px',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
@@ -182,8 +182,8 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           style={{
             width: '12px',
             height: '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            border: '2px solid var(--button-foreground)',
           }}
         />
 
@@ -195,8 +195,8 @@ export const SkillNodeComponent: React.FC<NodeProps<SkillNodeData>> = React.memo
           style={{
             width: '12px',
             height: '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            border: '2px solid var(--button-foreground)',
           }}
         />
       </div>

@@ -29,7 +29,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
           display: 'block',
           fontSize: '12px',
           fontWeight: 600,
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
           marginBottom: '6px',
         }}
       >
@@ -45,9 +45,9 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
             display: 'flex',
@@ -78,8 +78,8 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
             position="popper"
             sideOffset={4}
             style={{
-              backgroundColor: 'var(--vscode-dropdown-background)',
-              border: '1px solid var(--vscode-dropdown-border)',
+              backgroundColor: 'var(--dropdown-background)',
+              border: '1px solid var(--dropdown-border)',
               borderRadius: '2px',
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
               zIndex: 9999,
@@ -92,7 +92,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
                 style={{
                   padding: '6px 8px',
                   fontSize: '13px',
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   cursor: 'pointer',
                   outline: 'none',
                   borderRadius: '2px',
@@ -107,7 +107,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
                   style={{
                     padding: '6px 8px',
                     fontSize: '13px',
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     cursor: 'pointer',
                     outline: 'none',
                     borderRadius: '2px',
@@ -136,7 +136,7 @@ export const ColorPicker: React.FC<ColorPickerProps> = ({ value, onChange, disab
       <div
         style={{
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           marginTop: '4px',
         }}
       >

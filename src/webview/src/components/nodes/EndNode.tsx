@@ -32,8 +32,8 @@ export const EndNode: React.FC<NodeProps<EndNodeData>> = React.memo(({ id, data,
         position: 'relative',
         padding: '12px',
         borderRadius: '8px',
-        border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : '#ef4444'}`,
-        backgroundColor: 'var(--vscode-editor-background)',
+        border: `2px solid ${selected ? 'var(--focus-border)' : '#ef4444'}`,
+        backgroundColor: 'var(--editor-background)',
         minWidth: '120px',
       }}
     >
@@ -63,8 +63,8 @@ export const EndNode: React.FC<NodeProps<EndNodeData>> = React.memo(({ id, data,
         style={{
           width: '12px',
           height: '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          border: '2px solid var(--vscode-button-foreground)',
+          backgroundColor: 'var(--button-background)',
+          border: '2px solid var(--button-foreground)',
         }}
       />
     </div>

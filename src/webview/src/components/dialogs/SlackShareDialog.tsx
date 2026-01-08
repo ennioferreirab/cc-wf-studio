@@ -318,8 +318,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
           ref={dialogRef}
           tabIndex={-1}
           style={{
-            backgroundColor: 'var(--vscode-editor-background)',
-            border: '1px solid var(--vscode-panel-border)',
+            backgroundColor: 'var(--editor-background)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '4px',
             padding: '24px',
             minWidth: '500px',
@@ -334,7 +334,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             style={{
               fontSize: '16px',
               fontWeight: 600,
-              color: 'var(--vscode-errorForeground)',
+              color: 'var(--error-foreground)',
               marginBottom: '16px',
             }}
           >
@@ -345,7 +345,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
           <div
             style={{
               fontSize: '13px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginBottom: '16px',
             }}
           >
@@ -355,8 +355,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
           {/* Findings List */}
           <div
             style={{
-              backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '2px',
               padding: '12px',
               marginBottom: '24px',
@@ -374,7 +374,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
               >
                 <div
                   style={{
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     fontWeight: 500,
                     marginBottom: '4px',
                   }}
@@ -383,7 +383,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
                 </div>
                 <div
                   style={{
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                     fontFamily: 'monospace',
                   }}
                 >
@@ -407,8 +407,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
               disabled={loading}
               style={{
                 padding: '6px 16px',
-                backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                color: 'var(--vscode-button-secondaryForeground)',
+                backgroundColor: 'var(--button-secondary-background)',
+                color: 'var(--button-secondary-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: loading ? 'not-allowed' : 'pointer',
@@ -424,8 +424,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
               disabled={loading}
               style={{
                 padding: '6px 16px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: loading ? 'not-allowed' : 'pointer',
@@ -465,8 +465,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
         ref={dialogRef}
         tabIndex={-1}
         style={{
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '4px',
           padding: '24px',
           minWidth: '500px',
@@ -482,7 +482,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '8px',
           }}
         >
@@ -493,7 +493,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '24px',
           }}
         >
@@ -506,15 +506,15 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             style={{
               marginBottom: '24px',
               padding: '16px',
-              backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
             }}
           >
             <div
               style={{
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '12px',
               }}
             >
@@ -526,8 +526,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
               style={{
                 width: '100%',
                 padding: '8px 16px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: 'pointer',
@@ -545,25 +545,25 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             style={{
               marginBottom: '24px',
               padding: '12px',
-              backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
             }}
           >
             <div
               style={{
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '8px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
               }}
             >
-              <span style={{ color: 'var(--vscode-testing-iconPassed)' }}>✓</span>
+              <span style={{ color: 'var(--success-foreground)' }}>✓</span>
               <span>
                 Connected to{' '}
-                <strong style={{ color: 'var(--vscode-foreground)' }}>
+                <strong style={{ color: 'var(--foreground)' }}>
                   {workspace.workspaceName}
                 </strong>
               </span>
@@ -573,8 +573,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
               onClick={handleOpenManualTokenDialog}
               style={{
                 padding: '6px 12px',
-                backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                color: 'var(--vscode-button-secondaryForeground)',
+                backgroundColor: 'var(--button-secondary-background)',
+                color: 'var(--button-secondary-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: 'pointer',
@@ -593,7 +593,7 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             style={{
               display: 'block',
               fontSize: '13px',
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '8px',
               fontWeight: 500,
             }}
@@ -608,9 +608,9 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             style={{
               width: '100%',
               padding: '6px 8px',
-              backgroundColor: 'var(--vscode-input-background)',
-              color: 'var(--vscode-input-foreground)',
-              border: '1px solid var(--vscode-input-border)',
+              backgroundColor: 'var(--input-background)',
+              color: 'var(--input-foreground)',
+              border: '1px solid var(--input-border)',
               borderRadius: '2px',
               fontSize: '13px',
               cursor: loadingChannels || loading ? 'not-allowed' : 'pointer',
@@ -635,12 +635,12 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
           <div
             style={{
               padding: '8px 12px',
-              backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-              border: '1px solid var(--vscode-inputValidation-errorBorder)',
+              backgroundColor: 'var(--input-validation-error-background)',
+              border: '1px solid var(--input-validation-error-border)',
               borderRadius: '2px',
               marginBottom: '16px',
               fontSize: '12px',
-              color: 'var(--vscode-errorForeground)',
+              color: 'var(--error-foreground)',
             }}
           >
             {error}
@@ -668,8 +668,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             disabled={loading}
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: loading ? 'not-allowed' : 'pointer',
@@ -687,8 +687,8 @@ export function SlackShareDialog({ isOpen, onClose, workflowId }: SlackShareDial
             }
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-background)',
-              color: 'var(--vscode-button-foreground)',
+              backgroundColor: 'var(--button-background)',
+              color: 'var(--button-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor:

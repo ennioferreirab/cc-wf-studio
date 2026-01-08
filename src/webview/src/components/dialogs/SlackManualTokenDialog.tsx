@@ -226,8 +226,8 @@ export function SlackManualTokenDialog({
         aria-modal="true"
         tabIndex={-1}
         style={{
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '4px',
           padding: '24px',
           minWidth: '500px',
@@ -243,7 +243,7 @@ export function SlackManualTokenDialog({
           style={{
             fontSize: '16px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '16px',
           }}
         >
@@ -256,7 +256,7 @@ export function SlackManualTokenDialog({
             display: 'flex',
             gap: '4px',
             marginBottom: '16px',
-            borderBottom: '1px solid var(--vscode-panel-border)',
+            borderBottom: '1px solid var(--panel-border)',
           }}
         >
           <button
@@ -268,12 +268,12 @@ export function SlackManualTokenDialog({
               backgroundColor: 'transparent',
               color:
                 activeTab === 'oauth'
-                  ? 'var(--vscode-foreground)'
-                  : 'var(--vscode-descriptionForeground)',
+                  ? 'var(--foreground)'
+                  : 'var(--description-foreground)',
               border: 'none',
               borderBottom:
                 activeTab === 'oauth'
-                  ? '2px solid var(--vscode-focusBorder)'
+                  ? '2px solid var(--focus-border)'
                   : '2px solid transparent',
               cursor: loading || isOAuthLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
@@ -292,12 +292,12 @@ export function SlackManualTokenDialog({
               backgroundColor: 'transparent',
               color:
                 activeTab === 'manual'
-                  ? 'var(--vscode-foreground)'
-                  : 'var(--vscode-descriptionForeground)',
+                  ? 'var(--foreground)'
+                  : 'var(--description-foreground)',
               border: 'none',
               borderBottom:
                 activeTab === 'manual'
-                  ? '2px solid var(--vscode-focusBorder)'
+                  ? '2px solid var(--focus-border)'
                   : '2px solid transparent',
               cursor: loading || isOAuthLoading ? 'not-allowed' : 'pointer',
               fontSize: '13px',
@@ -317,11 +317,11 @@ export function SlackManualTokenDialog({
               style={{
                 marginBottom: '12px',
                 padding: '12px',
-                backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '4px',
                 fontSize: '11px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 lineHeight: '1.6',
                 whiteSpace: 'pre-line',
               }}
@@ -333,7 +333,7 @@ export function SlackManualTokenDialog({
             <div
               style={{
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '12px',
                 whiteSpace: 'pre-line',
               }}
@@ -356,7 +356,7 @@ export function SlackManualTokenDialog({
                   onClick={() => openExternalUrl('https://cc-wf-studio.com/terms')}
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -378,7 +378,7 @@ export function SlackManualTokenDialog({
                   onClick={() => openExternalUrl('https://cc-wf-studio.com/privacy')}
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -404,7 +404,7 @@ export function SlackManualTokenDialog({
                   }
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -427,8 +427,8 @@ export function SlackManualTokenDialog({
               <div
                 style={{
                   padding: '16px',
-                  backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-                  border: '1px solid var(--vscode-panel-border)',
+                  backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+                  border: '1px solid var(--panel-border)',
                   borderRadius: '4px',
                   marginBottom: '16px',
                 }}
@@ -440,7 +440,7 @@ export function SlackManualTokenDialog({
                     justifyContent: 'center',
                     gap: '8px',
                     fontSize: '14px',
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     marginBottom: '8px',
                   }}
                 >
@@ -449,7 +449,7 @@ export function SlackManualTokenDialog({
                     style={{
                       width: '16px',
                       height: '16px',
-                      border: '2px solid var(--vscode-progressBar-background)',
+                      border: '2px solid var(--progressbar-background)',
                       borderTopColor: 'transparent',
                       borderRadius: '50%',
                       animation: 'oauth-spinner 1s linear infinite',
@@ -465,7 +465,7 @@ export function SlackManualTokenDialog({
                 <div
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                     textAlign: 'center',
                   }}
                 >
@@ -487,12 +487,12 @@ export function SlackManualTokenDialog({
               <div
                 style={{
                   padding: '8px 12px',
-                  backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-                  border: '1px solid var(--vscode-inputValidation-errorBorder)',
+                  backgroundColor: 'var(--input-validation-error-background)',
+                  border: '1px solid var(--input-validation-error-border)',
                   borderRadius: '2px',
                   marginBottom: '16px',
                   fontSize: '12px',
-                  color: 'var(--vscode-errorForeground)',
+                  color: 'var(--error-foreground)',
                 }}
               >
                 {oauthError}
@@ -517,8 +517,8 @@ export function SlackManualTokenDialog({
                   style={{
                     padding: '6px 12px',
                     backgroundColor: 'transparent',
-                    color: 'var(--vscode-errorForeground)',
-                    border: '1px solid var(--vscode-errorForeground)',
+                    color: 'var(--error-foreground)',
+                    border: '1px solid var(--error-foreground)',
                     borderRadius: '2px',
                     cursor: loading ? 'not-allowed' : 'pointer',
                     fontSize: '12px',
@@ -537,8 +537,8 @@ export function SlackManualTokenDialog({
                     onClick={handleCancelOAuth}
                     style={{
                       padding: '6px 16px',
-                      backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                      color: 'var(--vscode-button-secondaryForeground)',
+                      backgroundColor: 'var(--button-secondary-background)',
+                      color: 'var(--button-secondary-foreground)',
                       border: 'none',
                       borderRadius: '2px',
                       cursor: 'pointer',
@@ -554,8 +554,8 @@ export function SlackManualTokenDialog({
                       onClick={onClose}
                       style={{
                         padding: '6px 16px',
-                        backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                        color: 'var(--vscode-button-secondaryForeground)',
+                        backgroundColor: 'var(--button-secondary-background)',
+                        color: 'var(--button-secondary-foreground)',
                         border: 'none',
                         borderRadius: '2px',
                         cursor: 'pointer',
@@ -569,8 +569,8 @@ export function SlackManualTokenDialog({
                       onClick={handleOAuthConnect}
                       style={{
                         padding: '6px 16px',
-                        backgroundColor: 'var(--vscode-button-background)',
-                        color: 'var(--vscode-button-foreground)',
+                        backgroundColor: 'var(--button-background)',
+                        color: 'var(--button-foreground)',
                         border: 'none',
                         borderRadius: '2px',
                         cursor: 'pointer',
@@ -594,7 +594,7 @@ export function SlackManualTokenDialog({
             <div
               style={{
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '16px',
               }}
             >
@@ -606,8 +606,8 @@ export function SlackManualTokenDialog({
               style={{
                 marginBottom: '12px',
                 padding: '12px',
-                backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--editor-inactiveSelectionBackground)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '4px',
               }}
             >
@@ -615,7 +615,7 @@ export function SlackManualTokenDialog({
                 style={{
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '8px',
                 }}
               >
@@ -624,7 +624,7 @@ export function SlackManualTokenDialog({
               <div
                 style={{
                   fontSize: '11px',
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                   lineHeight: '1.6',
                 }}
               >
@@ -659,7 +659,7 @@ export function SlackManualTokenDialog({
                   onClick={() => openExternalUrl('https://cc-wf-studio.com/terms')}
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -681,7 +681,7 @@ export function SlackManualTokenDialog({
                   onClick={() => openExternalUrl('https://cc-wf-studio.com/privacy')}
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -707,7 +707,7 @@ export function SlackManualTokenDialog({
                   }
                   style={{
                     fontSize: '12px',
-                    color: 'var(--vscode-textLink-foreground)',
+                    color: 'var(--text-link-foreground)',
                     background: 'none',
                     border: 'none',
                     padding: 0,
@@ -732,7 +732,7 @@ export function SlackManualTokenDialog({
                 style={{
                   display: 'block',
                   fontSize: '13px',
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '8px',
                   fontWeight: 500,
                 }}
@@ -749,9 +749,9 @@ export function SlackManualTokenDialog({
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                   fontFamily: 'monospace',
@@ -764,12 +764,12 @@ export function SlackManualTokenDialog({
               <div
                 style={{
                   padding: '8px 12px',
-                  backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-                  border: '1px solid var(--vscode-inputValidation-errorBorder)',
+                  backgroundColor: 'var(--input-validation-error-background)',
+                  border: '1px solid var(--input-validation-error-border)',
                   borderRadius: '2px',
                   marginBottom: '16px',
                   fontSize: '12px',
-                  color: 'var(--vscode-errorForeground)',
+                  color: 'var(--error-foreground)',
                 }}
               >
                 {error}
@@ -794,8 +794,8 @@ export function SlackManualTokenDialog({
                   style={{
                     padding: '6px 12px',
                     backgroundColor: 'transparent',
-                    color: 'var(--vscode-errorForeground)',
-                    border: '1px solid var(--vscode-errorForeground)',
+                    color: 'var(--error-foreground)',
+                    border: '1px solid var(--error-foreground)',
                     borderRadius: '2px',
                     cursor: loading ? 'not-allowed' : 'pointer',
                     fontSize: '12px',
@@ -814,8 +814,8 @@ export function SlackManualTokenDialog({
                   disabled={loading}
                   style={{
                     padding: '6px 16px',
-                    backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                    color: 'var(--vscode-button-secondaryForeground)',
+                    backgroundColor: 'var(--button-secondary-background)',
+                    color: 'var(--button-secondary-foreground)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: loading ? 'not-allowed' : 'pointer',
@@ -831,8 +831,8 @@ export function SlackManualTokenDialog({
                   disabled={loading || !userToken.trim()}
                   style={{
                     padding: '6px 16px',
-                    backgroundColor: 'var(--vscode-button-background)',
-                    color: 'var(--vscode-button-foreground)',
+                    backgroundColor: 'var(--button-background)',
+                    color: 'var(--button-foreground)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: loading || !userToken.trim() ? 'not-allowed' : 'pointer',
@@ -869,8 +869,8 @@ export function SlackManualTokenDialog({
             {/* biome-ignore lint/a11y/useKeyWithClickEvents: onClick is only used to stop event propagation */}
             <div
               style={{
-                backgroundColor: 'var(--vscode-editor-background)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--editor-background)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '4px',
                 padding: '20px',
                 minWidth: '400px',
@@ -882,7 +882,7 @@ export function SlackManualTokenDialog({
                 style={{
                   fontSize: '14px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '12px',
                 }}
               >
@@ -891,7 +891,7 @@ export function SlackManualTokenDialog({
               <div
                 style={{
                   fontSize: '13px',
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                   marginBottom: '16px',
                 }}
               >
@@ -903,8 +903,8 @@ export function SlackManualTokenDialog({
                   onClick={() => setShowDeleteConfirm(false)}
                   style={{
                     padding: '6px 16px',
-                    backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                    color: 'var(--vscode-button-secondaryForeground)',
+                    backgroundColor: 'var(--button-secondary-background)',
+                    color: 'var(--button-secondary-foreground)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: 'pointer',
@@ -918,8 +918,8 @@ export function SlackManualTokenDialog({
                   onClick={handleDeleteToken}
                   style={{
                     padding: '6px 16px',
-                    backgroundColor: 'var(--vscode-errorForeground)',
-                    color: 'var(--vscode-editor-background)',
+                    backgroundColor: 'var(--error-foreground)',
+                    color: 'var(--editor-background)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: 'pointer',

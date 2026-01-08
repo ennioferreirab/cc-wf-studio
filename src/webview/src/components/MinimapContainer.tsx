@@ -30,11 +30,11 @@ export const MinimapContainer: React.FC<MinimapContainerProps> = ({ children }) 
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'color-mix(in srgb, var(--vscode-editor-background) 30%, transparent)',
-    border: '1px solid color-mix(in srgb, var(--vscode-panel-border) 30%, transparent)',
+    backgroundColor: 'color-mix(in srgb, var(--editor-background) 30%, transparent)',
+    border: '1px solid color-mix(in srgb, var(--panel-border) 30%, transparent)',
     borderRadius: '4px',
     cursor: 'pointer',
-    color: 'var(--vscode-foreground)',
+    color: 'var(--foreground)',
   };
 
   // When minimized: show expand button only
@@ -68,9 +68,9 @@ export const MinimapContainer: React.FC<MinimapContainerProps> = ({ children }) 
     <div
       style={{
         position: 'relative',
-        border: '1px solid color-mix(in srgb, var(--vscode-panel-border) 30%, transparent)',
+        border: '1px solid color-mix(in srgb, var(--panel-border) 30%, transparent)',
         borderRadius: '6px',
-        backgroundColor: 'color-mix(in srgb, var(--vscode-editor-background) 20%, transparent)',
+        backgroundColor: 'color-mix(in srgb, var(--editor-background) 20%, transparent)',
         padding: '2px 8px 2px 0px',
       }}
     >
@@ -90,13 +90,13 @@ export const MinimapContainer: React.FC<MinimapContainerProps> = ({ children }) 
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'color-mix(in srgb, var(--vscode-editor-background) 70%, transparent)',
-            border: '1px solid color-mix(in srgb, var(--vscode-panel-border) 30%, transparent)',
+            backgroundColor: 'color-mix(in srgb, var(--editor-background) 70%, transparent)',
+            border: '1px solid color-mix(in srgb, var(--panel-border) 30%, transparent)',
             borderTop: 'none',
             borderRight: 'none',
             borderRadius: '0px 0px 0px 4px',
             cursor: 'pointer',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             backdropFilter: 'blur(4px)',
             position: 'absolute',
             top: '0px',

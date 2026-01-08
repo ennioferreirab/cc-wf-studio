@@ -35,10 +35,10 @@ export function ProcessingOverlay({ isVisible, message }: ProcessingOverlayProps
         <div
           style={{
             padding: '16px 24px',
-            backgroundColor: 'var(--vscode-editor-background)',
-            color: 'var(--vscode-editor-foreground)',
+            backgroundColor: 'var(--editor-background)',
+            color: 'var(--editor-foreground)',
             borderRadius: '4px',
-            border: '1px solid var(--vscode-panel-border)',
+            border: '1px solid var(--panel-border)',
             fontSize: '13px',
             fontWeight: 500,
           }}

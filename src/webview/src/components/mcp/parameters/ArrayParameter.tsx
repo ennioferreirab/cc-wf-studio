@@ -60,12 +60,12 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
           display: 'block',
           marginBottom: '4px',
           fontSize: '13px',
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
         }}
       >
         {parameter.name}
         {parameter.required && (
-          <span style={{ color: 'var(--vscode-errorForeground)', marginLeft: '4px' }}>*</span>
+          <span style={{ color: 'var(--error-foreground)', marginLeft: '4px' }}>*</span>
         )}
       </div>
 
@@ -73,7 +73,7 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
         <div
           style={{
             fontSize: '12px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '4px',
           }}
         >
@@ -92,11 +92,11 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
             flex: 1,
             padding: '6px 8px',
             fontSize: '13px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
             border: showError
-              ? '1px solid var(--vscode-inputValidation-errorBorder)'
-              : '1px solid var(--vscode-input-border)',
+              ? '1px solid var(--input-validation-error-border)'
+              : '1px solid var(--input-border)',
             borderRadius: '2px',
             outline: 'none',
           }}
@@ -107,8 +107,8 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
           style={{
             padding: '6px 12px',
             fontSize: '13px',
-            backgroundColor: 'var(--vscode-button-background)',
-            color: 'var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            color: 'var(--button-foreground)',
             border: 'none',
             borderRadius: '2px',
             cursor: 'pointer',
@@ -123,7 +123,7 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
           style={{
             marginTop: '4px',
             fontSize: '12px',
-            color: 'var(--vscode-errorForeground)',
+            color: 'var(--error-foreground)',
           }}
         >
           {error}
@@ -135,8 +135,8 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
           style={{
             marginTop: '8px',
             padding: '8px',
-            backgroundColor: 'var(--vscode-editor-background)',
-            border: '1px solid var(--vscode-panel-border)',
+            backgroundColor: 'var(--editor-background)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '2px',
           }}
         >
@@ -149,11 +149,11 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
                 justifyContent: 'space-between',
                 padding: '4px 8px',
                 marginBottom: '4px',
-                backgroundColor: 'var(--vscode-input-background)',
+                backgroundColor: 'var(--input-background)',
                 borderRadius: '2px',
               }}
             >
-              <span style={{ fontSize: '13px', color: 'var(--vscode-foreground)' }}>
+              <span style={{ fontSize: '13px', color: 'var(--foreground)' }}>
                 {String(item)}
               </span>
               <button
@@ -162,8 +162,8 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
                 style={{
                   padding: '2px 6px',
                   fontSize: '11px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   border: 'none',
                   borderRadius: '2px',
                   cursor: 'pointer',
@@ -180,7 +180,7 @@ export function ArrayParameter({ parameter, value, onChange, error }: ArrayParam
         style={{
           marginTop: '4px',
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
         }}
       >
         {t('mcp.parameter.arrayCount')}: {value.length}

@@ -31,7 +31,7 @@ export function BooleanParameter({ parameter, value, onChange, error }: BooleanP
           display: 'flex',
           alignItems: 'center',
           fontSize: '13px',
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
           cursor: 'pointer',
         }}
       >
@@ -47,7 +47,7 @@ export function BooleanParameter({ parameter, value, onChange, error }: BooleanP
         />
         {parameter.name}
         {parameter.required && (
-          <span style={{ color: 'var(--vscode-errorForeground)', marginLeft: '4px' }}>*</span>
+          <span style={{ color: 'var(--error-foreground)', marginLeft: '4px' }}>*</span>
         )}
       </label>
 
@@ -55,7 +55,7 @@ export function BooleanParameter({ parameter, value, onChange, error }: BooleanP
         <div
           style={{
             fontSize: '12px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
             marginLeft: '24px',
           }}
@@ -70,7 +70,7 @@ export function BooleanParameter({ parameter, value, onChange, error }: BooleanP
             marginTop: '4px',
             marginLeft: '24px',
             fontSize: '12px',
-            color: 'var(--vscode-errorForeground)',
+            color: 'var(--error-foreground)',
           }}
         >
           {error}
@@ -83,7 +83,7 @@ export function BooleanParameter({ parameter, value, onChange, error }: BooleanP
             marginTop: '4px',
             marginLeft: '24px',
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
           }}
         >
           {t('mcp.parameter.default')}: {String(parameter.default)}

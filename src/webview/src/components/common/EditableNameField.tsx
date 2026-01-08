@@ -75,8 +75,8 @@ export const EditableNameField: React.FC<EditableNameFieldProps> = ({
   }, [isEditing]);
 
   const borderColor = error
-    ? '1px solid var(--vscode-inputValidation-errorBorder)'
-    : '1px solid var(--vscode-input-border)';
+    ? '1px solid var(--input-validation-error-border)'
+    : '1px solid var(--input-border)';
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', flex: 1, minWidth }}>
@@ -97,8 +97,8 @@ export const EditableNameField: React.FC<EditableNameFieldProps> = ({
             style={{
               width: '100%',
               padding: '4px 44px 4px 8px',
-              backgroundColor: 'var(--vscode-input-background)',
-              color: 'var(--vscode-input-foreground)',
+              backgroundColor: 'var(--input-background)',
+              color: 'var(--input-foreground)',
               border: borderColor,
               borderRadius: '2px',
               fontSize: '13px',
@@ -121,10 +121,10 @@ export const EditableNameField: React.FC<EditableNameFieldProps> = ({
             style={{
               width: '100%',
               padding: '4px 44px 4px 8px',
-              backgroundColor: 'var(--vscode-input-background)',
+              backgroundColor: 'var(--input-background)',
               color: value
-                ? 'var(--vscode-input-foreground)'
-                : 'var(--vscode-input-placeholderForeground)',
+                ? 'var(--input-foreground)'
+                : 'var(--input-placeholderForeground)',
               border: borderColor,
               borderRadius: '2px',
               fontSize: '13px',
@@ -163,7 +163,7 @@ export const EditableNameField: React.FC<EditableNameFieldProps> = ({
         <span
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-inputValidation-errorForeground)',
+            color: 'var(--input-validation-error-foreground)',
             marginTop: '4px',
           }}
         >

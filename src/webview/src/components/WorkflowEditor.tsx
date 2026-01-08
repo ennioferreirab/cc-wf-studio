@@ -66,7 +66,7 @@ const nodeTypes: NodeTypes = {
  */
 const defaultEdgeOptions: DefaultEdgeOptions = {
   animated: false,
-  style: { stroke: 'var(--vscode-foreground)', strokeWidth: 2 },
+  style: { stroke: 'var(--foreground)', strokeWidth: 2 },
 };
 
 /**
@@ -220,7 +220,7 @@ export const WorkflowEditor: React.FC<WorkflowEditorProps> = ({
         attributionPosition="bottom-left"
       >
         {/* Background grid */}
-        <Background color="var(--vscode-panel-border)" gap={15} size={1} />
+        <Background color="var(--panel-border)" gap={15} size={1} />
 
         {/* Controls (zoom, fit view, etc.) */}
         <Controls />
@@ -232,33 +232,33 @@ export const WorkflowEditor: React.FC<WorkflowEditorProps> = ({
               nodeColor={(node) => {
                 switch (node.type) {
                   case 'subAgent':
-                    return 'var(--vscode-charts-blue)';
+                    return 'var(--charts-blue)';
                   case 'askUserQuestion':
-                    return 'var(--vscode-charts-orange)';
+                    return 'var(--charts-orange)';
                   case 'branch': // Legacy
-                    return 'var(--vscode-charts-yellow)';
+                    return 'var(--charts-yellow)';
                   case 'ifElse':
-                    return 'var(--vscode-charts-yellow)';
+                    return 'var(--charts-yellow)';
                   case 'switch':
-                    return 'var(--vscode-charts-yellow)';
+                    return 'var(--charts-yellow)';
                   case 'start':
-                    return 'var(--vscode-charts-green)';
+                    return 'var(--charts-green)';
                   case 'end':
-                    return 'var(--vscode-charts-red)';
+                    return 'var(--charts-red)';
                   case 'prompt':
-                    return 'var(--vscode-charts-purple)';
+                    return 'var(--charts-purple)';
                   case 'skill':
-                    return 'var(--vscode-charts-cyan)';
+                    return 'var(--charts-cyan)';
                   case 'subAgentFlow':
-                    return 'var(--vscode-charts-purple)';
+                    return 'var(--charts-purple)';
                   default:
-                    return 'var(--vscode-foreground)';
+                    return 'var(--foreground)';
                 }
               }}
               maskColor="rgba(0, 0, 0, 0.5)"
               style={{
                 position: 'relative',
-                backgroundColor: 'var(--vscode-editor-background)',
+                backgroundColor: 'var(--editor-background)',
                 width: isCompact ? 120 : 200,
                 height: isCompact ? 80 : 150,
                 margin: '4px 16px',
@@ -289,11 +289,11 @@ export const WorkflowEditor: React.FC<WorkflowEditorProps> = ({
                 justifyContent: 'center',
                 width: '32px',
                 height: '32px',
-                backgroundColor: 'var(--vscode-editor-background)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--editor-background)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '6px',
                 cursor: 'pointer',
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 opacity: 0.85,
               }}
             >

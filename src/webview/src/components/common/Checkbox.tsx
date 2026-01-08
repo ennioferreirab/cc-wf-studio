@@ -51,7 +51,7 @@ export function Checkbox({ checked, onChange, disabled = false, label, ariaLabel
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.5 : 1,
         fontSize: '11px',
-        color: 'var(--vscode-foreground)',
+        color: 'var(--foreground)',
         userSelect: 'none',
       }}
     >
@@ -69,14 +69,14 @@ export function Checkbox({ checked, onChange, disabled = false, label, ariaLabel
           borderRadius: '3px',
           border: `1px solid ${
             disabled
-              ? 'var(--vscode-input-border)'
+              ? 'var(--input-border)'
               : checked
-                ? 'var(--vscode-focusBorder)'
-                : 'var(--vscode-input-border)'
+                ? 'var(--focus-border)'
+                : 'var(--input-border)'
           }`,
           backgroundColor: checked
-            ? 'var(--vscode-inputOption-activeBackground)'
-            : 'var(--vscode-input-background)',
+            ? 'var(--input-option-active-background)'
+            : 'var(--input-background)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -92,7 +92,7 @@ export function Checkbox({ checked, onChange, disabled = false, label, ariaLabel
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             style={{
-              color: 'var(--vscode-inputOption-activeForeground)',
+              color: 'var(--input-option-active-foreground)',
             }}
             aria-hidden="true"
           >

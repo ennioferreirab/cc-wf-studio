@@ -55,11 +55,11 @@ export const AiGenerateButton: React.FC<AiGenerateButtonProps> = ({
   };
 
   const iconStyle: React.CSSProperties = {
-    color: 'var(--vscode-foreground)',
+    color: 'var(--foreground)',
   };
 
   const loaderStyle: React.CSSProperties = {
-    color: 'var(--vscode-foreground)',
+    color: 'var(--foreground)',
     animation: 'spin 1s linear infinite',
   };
 

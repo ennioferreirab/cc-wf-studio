@@ -244,8 +244,8 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: onClick is only used to stop event propagation, not for click actions */}
       <div
         style={{
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '6px',
           padding: '24px',
           maxWidth: '700px',
@@ -270,7 +270,7 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
             style={{
               fontSize: '16px',
               fontWeight: 'bold',
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('mcp.editDialog.title')}
@@ -284,8 +284,8 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
           style={{
             marginBottom: '16px',
             padding: '12px',
-            backgroundColor: 'var(--vscode-list-inactiveSelectionBackground)',
-            border: '1px solid var(--vscode-panel-border)',
+            backgroundColor: 'var(--list-inactive-selection-background)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '4px',
           }}
         >
@@ -298,14 +298,14 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
             }}
           >
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '13px', color: 'var(--vscode-disabledForeground)' }}>
+              <div style={{ fontSize: '13px', color: 'var(--disabled-foreground)' }}>
                 <strong>{t('property.mcp.serverId')}:</strong> {nodeData.serverId}
               </div>
               {(currentMode === 'manualParameterConfig' || currentMode === 'aiParameterConfig') && (
                 <div
                   style={{
                     fontSize: '13px',
-                    color: 'var(--vscode-disabledForeground)',
+                    color: 'var(--disabled-foreground)',
                     marginTop: '4px',
                   }}
                 >
@@ -322,9 +322,9 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
                 style={{
                   padding: '4px 8px',
                   fontSize: '12px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
-                  border: '1px solid var(--vscode-panel-border)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
+                  border: '1px solid var(--panel-border)',
                   borderRadius: '3px',
                   cursor: refreshing || loading ? 'wait' : 'pointer',
                   display: 'flex',
@@ -342,7 +342,7 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
             <div
               style={{
                 fontSize: '12px',
-                color: 'var(--vscode-disabledForeground)',
+                color: 'var(--disabled-foreground)',
               }}
             >
               {nodeData.toolDescription}
@@ -359,9 +359,9 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
             style={{
               padding: '16px',
               marginBottom: '16px',
-              color: 'var(--vscode-errorForeground)',
-              backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-              border: '1px solid var(--vscode-inputValidation-errorBorder)',
+              color: 'var(--error-foreground)',
+              backgroundColor: 'var(--input-validation-error-background)',
+              border: '1px solid var(--input-validation-error-border)',
               borderRadius: '4px',
             }}
           >
@@ -414,8 +414,8 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
             style={{
               padding: '8px 16px',
               fontSize: '13px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: 'pointer',
@@ -432,12 +432,12 @@ export function McpNodeEditDialog({ isOpen, nodeId, onClose }: McpNodeEditDialog
               fontSize: '13px',
               backgroundColor:
                 loading || error
-                  ? 'var(--vscode-button-secondaryBackground)'
-                  : 'var(--vscode-button-background)',
+                  ? 'var(--button-secondary-background)'
+                  : 'var(--button-background)',
               color:
                 loading || error
-                  ? 'var(--vscode-button-secondaryForeground)'
-                  : 'var(--vscode-button-foreground)',
+                  ? 'var(--button-secondary-foreground)'
+                  : 'var(--button-foreground)',
               border: 'none',
               borderRadius: '2px',
               cursor: loading || error ? 'not-allowed' : 'pointer',

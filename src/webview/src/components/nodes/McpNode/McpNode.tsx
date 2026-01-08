@@ -35,11 +35,11 @@ function getValidationIcon(status: 'valid' | 'missing' | 'invalid'): string {
 function getValidationColor(status: 'valid' | 'missing' | 'invalid'): string {
   switch (status) {
     case 'valid':
-      return 'var(--vscode-testing-iconPassed)';
+      return 'var(--success-foreground)';
     case 'missing':
-      return 'var(--vscode-editorWarning-foreground)';
+      return 'var(--warning-foreground)';
     case 'invalid':
-      return 'var(--vscode-errorForeground)';
+      return 'var(--error-foreground)';
   }
 }
 
@@ -95,8 +95,8 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           position: 'relative',
           padding: '12px',
           borderRadius: '8px',
-          border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : 'var(--vscode-panel-border)'}`,
-          backgroundColor: 'var(--vscode-editor-background)',
+          border: `2px solid ${selected ? 'var(--focus-border)' : 'var(--panel-border)'}`,
+          backgroundColor: 'var(--editor-background)',
           minWidth: '200px',
           maxWidth: '300px',
         }}
@@ -108,8 +108,8 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           style={{
             width: '10px',
             height: '10px',
-            background: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-editor-background)',
+            background: 'var(--button-background)',
+            border: '2px solid var(--editor-background)',
           }}
         />
 
@@ -121,7 +121,7 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           style={{
             fontSize: '11px',
             fontWeight: 600,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '8px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -148,7 +148,7 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '4px',
           }}
         >
@@ -171,7 +171,7 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginTop: '8px',
               lineHeight: '1.4',
               overflow: 'hidden',
@@ -189,7 +189,7 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginTop: '8px',
               lineHeight: '1.4',
               overflow: 'hidden',
@@ -209,7 +209,7 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
             <div
               style={{
                 fontSize: '11px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginTop: '8px',
                 lineHeight: '1.4',
                 overflow: 'hidden',
@@ -228,8 +228,8 @@ export const McpNodeComponent: React.FC<NodeProps<McpNodeData>> = React.memo(
           style={{
             width: '10px',
             height: '10px',
-            background: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-editor-background)',
+            background: 'var(--button-background)',
+            border: '2px solid var(--editor-background)',
           }}
         />
       </div>

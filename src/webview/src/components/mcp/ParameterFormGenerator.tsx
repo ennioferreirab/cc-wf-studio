@@ -91,7 +91,7 @@ export function ParameterFormGenerator({
         style={{
           padding: '16px',
           textAlign: 'center',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           fontSize: '13px',
         }}
       >
@@ -107,7 +107,7 @@ export function ParameterFormGenerator({
           fontSize: '14px',
           fontWeight: 'bold',
           marginBottom: '12px',
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
         }}
       >
         {t('mcp.parameter.formTitle')}
@@ -185,8 +185,8 @@ export function ParameterFormGenerator({
                 style={{
                   padding: '8px',
                   marginBottom: '8px',
-                  backgroundColor: 'var(--vscode-inputValidation-warningBackground)',
-                  border: '1px solid var(--vscode-inputValidation-warningBorder)',
+                  backgroundColor: 'var(--input-validation-warning-background)',
+                  border: '1px solid var(--input-validation-warning-border)',
                   borderRadius: '4px',
                   fontSize: '13px',
                 }}
@@ -202,8 +202,8 @@ export function ParameterFormGenerator({
           style={{
             marginTop: '16px',
             padding: '12px',
-            backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-            border: '1px solid var(--vscode-inputValidation-errorBorder)',
+            backgroundColor: 'var(--input-validation-error-background)',
+            border: '1px solid var(--input-validation-error-border)',
             borderRadius: '4px',
           }}
         >
@@ -211,7 +211,7 @@ export function ParameterFormGenerator({
             style={{
               fontSize: '13px',
               fontWeight: 'bold',
-              color: 'var(--vscode-errorForeground)',
+              color: 'var(--error-foreground)',
               marginBottom: '8px',
             }}
           >
@@ -219,7 +219,7 @@ export function ParameterFormGenerator({
           </div>
           <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '12px' }}>
             {Object.entries(validationErrors).map(([paramName, errorMsg]) => (
-              <li key={paramName} style={{ color: 'var(--vscode-errorForeground)' }}>
+              <li key={paramName} style={{ color: 'var(--error-foreground)' }}>
                 <strong>{paramName}:</strong> {errorMsg}
               </li>
             ))}

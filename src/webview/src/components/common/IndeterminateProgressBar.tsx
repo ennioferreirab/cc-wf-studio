@@ -31,7 +31,7 @@ export function IndeterminateProgressBar({ label }: IndeterminateProgressBarProp
         style={{
           marginBottom: '6px',
           fontSize: `${fontSizes.small}px`,
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           fontStyle: 'italic',
         }}
       >
@@ -43,10 +43,10 @@ export function IndeterminateProgressBar({ label }: IndeterminateProgressBarProp
         style={{
           width: '100%',
           height: '4px',
-          backgroundColor: 'var(--vscode-editor-background)',
+          backgroundColor: 'var(--editor-background)',
           borderRadius: '2px',
           overflow: 'hidden',
-          border: '1px solid var(--vscode-panel-border)',
+          border: '1px solid var(--panel-border)',
           position: 'relative',
         }}
       >
@@ -55,7 +55,7 @@ export function IndeterminateProgressBar({ label }: IndeterminateProgressBarProp
             position: 'absolute',
             height: '100%',
             width: '30%',
-            backgroundColor: 'var(--vscode-progressBar-background)',
+            backgroundColor: 'var(--progressbar-background)',
             animation: 'slide 1.5s ease-in-out infinite',
           }}
         />

@@ -77,7 +77,7 @@ export function MessageInput({ onSend, inputState }: MessageInputProps) {
   return (
     <div
       style={{
-        borderTop: '1px solid var(--vscode-panel-border)',
+        borderTop: '1px solid var(--panel-border)',
         padding: '16px',
       }}
     >
@@ -93,12 +93,12 @@ export function MessageInput({ onSend, inputState }: MessageInputProps) {
           width: '100%',
           minHeight: '80px',
           padding: '8px',
-          backgroundColor: 'var(--vscode-input-background)',
-          color: 'var(--vscode-input-foreground)',
-          border: `1px solid var(--vscode-input-border)`,
+          backgroundColor: 'var(--input-background)',
+          color: 'var(--input-foreground)',
+          border: `1px solid var(--input-border)`,
           borderRadius: '4px',
           fontSize: `${fontSizes.base}px`,
-          fontFamily: 'var(--vscode-font-family)',
+          fontFamily: 'var(--font-family)',
           resize: 'vertical',
           opacity: isEditingInEditor ? 0.5 : 1,
           cursor: isEditingInEditor ? 'not-allowed' : 'text',
@@ -126,8 +126,8 @@ export function MessageInput({ onSend, inputState }: MessageInputProps) {
             style={{
               fontSize: `${fontSizes.button}px`,
               color: isTooLong
-                ? 'var(--vscode-errorForeground)'
-                : 'var(--vscode-descriptionForeground)',
+                ? 'var(--error-foreground)'
+                : 'var(--description-foreground)',
             }}
           >
             {currentInput.length}/{MAX_MESSAGE_LENGTH}
@@ -149,8 +149,8 @@ export function MessageInput({ onSend, inputState }: MessageInputProps) {
             onClick={handleCancel}
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-secondaryBackground)',
-              color: 'var(--vscode-button-secondaryForeground)',
+              backgroundColor: 'var(--button-secondary-background)',
+              color: 'var(--button-secondary-foreground)',
               border: 'none',
               borderRadius: '4px',
               cursor: 'pointer',
@@ -165,8 +165,8 @@ export function MessageInput({ onSend, inputState }: MessageInputProps) {
             disabled={!canSend() || isTooLong || isTooShort}
             style={{
               padding: '6px 16px',
-              backgroundColor: 'var(--vscode-button-background)',
-              color: 'var(--vscode-button-foreground)',
+              backgroundColor: 'var(--button-background)',
+              color: 'var(--button-foreground)',
               border: 'none',
               borderRadius: '4px',
               cursor: canSend() && !isTooLong && !isTooShort ? 'pointer' : 'not-allowed',

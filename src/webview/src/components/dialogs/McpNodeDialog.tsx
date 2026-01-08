@@ -217,7 +217,7 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 margin: '0 0 12px 0',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
               }}
             >
               {t('mcp.dialog.selectServer')}
@@ -253,7 +253,7 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 margin: '0 0 12px 0',
                 fontSize: '14px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
               }}
             >
               {t('mcp.dialog.selectTool')}
@@ -371,8 +371,8 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
         >
           <Dialog.Content
             style={{
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '6px',
               padding: '24px',
               maxWidth: '600px',
@@ -387,7 +387,7 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 margin: '0 0 8px 0',
                 fontSize: '18px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
               }}
             >
               {t('mcp.dialog.title')}
@@ -398,7 +398,7 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
               style={{
                 marginBottom: '20px',
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
               }}
             >
               {t('mcp.dialog.wizardStep', {
@@ -413,10 +413,10 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 style={{
                   marginBottom: '16px',
                   padding: '12px',
-                  backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-                  border: '1px solid var(--vscode-inputValidation-errorBorder)',
+                  backgroundColor: 'var(--input-validation-error-background)',
+                  border: '1px solid var(--input-validation-error-border)',
                   borderRadius: '4px',
-                  color: 'var(--vscode-errorForeground)',
+                  color: 'var(--error-foreground)',
                 }}
               >
                 {error}
@@ -433,7 +433,7 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 gap: '12px',
                 justifyContent: 'flex-end',
                 paddingTop: '20px',
-                borderTop: '1px solid var(--vscode-panel-border)',
+                borderTop: '1px solid var(--panel-border)',
               }}
             >
               <button
@@ -441,8 +441,8 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 onClick={handleClose}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   border: 'none',
                   borderRadius: '4px',
                   cursor: 'pointer',
@@ -459,8 +459,8 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                   onClick={wizard.prevStep}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                    color: 'var(--vscode-button-secondaryForeground)',
+                    backgroundColor: 'var(--button-secondary-background)',
+                    color: 'var(--button-secondary-foreground)',
                     border: 'none',
                     borderRadius: '4px',
                     cursor: 'pointer',
@@ -479,11 +479,11 @@ export function McpNodeDialog({ isOpen, onClose }: McpNodeDialogProps) {
                 style={{
                   padding: '8px 16px',
                   backgroundColor: wizard.canProceed
-                    ? 'var(--vscode-button-background)'
-                    : 'var(--vscode-button-secondaryBackground)',
+                    ? 'var(--button-background)'
+                    : 'var(--button-secondary-background)',
                   color: wizard.canProceed
-                    ? 'var(--vscode-button-foreground)'
-                    : 'var(--vscode-descriptionForeground)',
+                    ? 'var(--button-foreground)'
+                    : 'var(--description-foreground)',
                   border: 'none',
                   borderRadius: '4px',
                   cursor: wizard.canProceed ? 'pointer' : 'not-allowed',

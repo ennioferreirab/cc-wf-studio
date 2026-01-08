@@ -46,8 +46,8 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
         >
           <Dialog.Content
             style={{
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '4px',
               padding: '24px',
               minWidth: '400px',
@@ -62,7 +62,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
               style={{
                 fontSize: '16px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 marginBottom: '16px',
               }}
             >
@@ -73,7 +73,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             <Dialog.Description
               style={{
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '24px',
                 lineHeight: '1.5',
               }}
@@ -94,8 +94,8 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
                 onClick={onCancel}
                 style={{
                   padding: '6px 16px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   border: 'none',
                   borderRadius: '2px',
                   cursor: 'pointer',
@@ -103,11 +103,11 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor =
-                    'var(--vscode-button-secondaryHoverBackground)';
+                    'var(--button-secondary-hover-background)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor =
-                    'var(--vscode-button-secondaryBackground)';
+                    'var(--button-secondary-background)';
                 }}
               >
                 {cancelLabel}
@@ -117,7 +117,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
                 onClick={onConfirm}
                 style={{
                   padding: '6px 16px',
-                  backgroundColor: 'var(--vscode-errorForeground)',
+                  backgroundColor: 'var(--error-foreground)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '2px',

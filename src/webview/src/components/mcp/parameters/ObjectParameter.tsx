@@ -56,12 +56,12 @@ export function ObjectParameter({ parameter, value, onChange, error }: ObjectPar
           display: 'block',
           marginBottom: '4px',
           fontSize: '13px',
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
         }}
       >
         {parameter.name}
         {parameter.required && (
-          <span style={{ color: 'var(--vscode-errorForeground)', marginLeft: '4px' }}>*</span>
+          <span style={{ color: 'var(--error-foreground)', marginLeft: '4px' }}>*</span>
         )}
       </label>
 
@@ -69,7 +69,7 @@ export function ObjectParameter({ parameter, value, onChange, error }: ObjectPar
         <div
           style={{
             fontSize: '12px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '4px',
           }}
         >
@@ -92,12 +92,12 @@ export function ObjectParameter({ parameter, value, onChange, error }: ObjectPar
           width: '100%',
           padding: '6px 8px',
           fontSize: '12px',
-          fontFamily: 'var(--vscode-editor-font-family)',
-          backgroundColor: 'var(--vscode-input-background)',
-          color: 'var(--vscode-input-foreground)',
+          fontFamily: 'var(--editor-font-family)',
+          backgroundColor: 'var(--input-background)',
+          color: 'var(--input-foreground)',
           border: showError
-            ? '1px solid var(--vscode-inputValidation-errorBorder)'
-            : '1px solid var(--vscode-input-border)',
+            ? '1px solid var(--input-validation-error-border)'
+            : '1px solid var(--input-border)',
           borderRadius: '2px',
           outline: 'none',
           resize: 'vertical',
@@ -109,7 +109,7 @@ export function ObjectParameter({ parameter, value, onChange, error }: ObjectPar
           style={{
             marginTop: '4px',
             fontSize: '12px',
-            color: 'var(--vscode-errorForeground)',
+            color: 'var(--error-foreground)',
           }}
         >
           {jsonError || error}
@@ -120,7 +120,7 @@ export function ObjectParameter({ parameter, value, onChange, error }: ObjectPar
         style={{
           marginTop: '4px',
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
         }}
       >
         {t('mcp.parameter.jsonFormat')}

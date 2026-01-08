@@ -21,7 +21,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ size = 32, thickness = 3 }) =>
         style={{
           width: `${size}px`,
           height: `${size}px`,
-          border: `${thickness}px solid var(--vscode-progressBar-background)`,
+          border: `${thickness}px solid var(--progressbar-background)`,
           borderTopColor: 'transparent',
           borderRadius: '50%',
         }}

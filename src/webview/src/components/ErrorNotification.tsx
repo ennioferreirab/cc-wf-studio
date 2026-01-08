@@ -52,10 +52,10 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({ error, onD
         right: '16px',
         maxWidth: '400px',
         padding: '12px 16px',
-        backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-        border: '1px solid var(--vscode-inputValidation-errorBorder)',
+        backgroundColor: 'var(--input-validation-error-background)',
+        border: '1px solid var(--input-validation-error-border)',
         borderRadius: '4px',
-        color: 'var(--vscode-inputValidation-errorForeground)',
+        color: 'var(--input-validation-error-foreground)',
         zIndex: 1000,
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
         animation: 'slideIn 0.3s ease-out',
@@ -93,14 +93,14 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({ error, onD
       {/* Details (if available) */}
       {details && (
         <details style={{ marginTop: '8px', fontSize: '11px' }}>
-          <summary style={{ cursor: 'pointer', color: 'var(--vscode-descriptionForeground)' }}>
+          <summary style={{ cursor: 'pointer', color: 'var(--description-foreground)' }}>
             Details
           </summary>
           <pre
             style={{
               marginTop: '4px',
               padding: '8px',
-              backgroundColor: 'var(--vscode-textCodeBlock-background)',
+              backgroundColor: 'var(--codeblock-background)',
               borderRadius: '2px',
               overflow: 'auto',
               maxHeight: '150px',

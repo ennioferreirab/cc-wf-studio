@@ -57,8 +57,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
           style={{
             padding: '4px 8px',
             backgroundColor: 'transparent',
-            color: 'var(--vscode-foreground)',
-            border: '1px solid var(--vscode-panel-border)',
+            color: 'var(--foreground)',
+            border: '1px solid var(--panel-border)',
             borderRadius: '4px',
             cursor: isProcessing ? 'not-allowed' : 'pointer',
             fontSize: `${FONT_SIZES.small}px`,
@@ -74,8 +74,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
           sideOffset={4}
           align="end"
           style={{
-            backgroundColor: 'var(--vscode-dropdown-background)',
-            border: '1px solid var(--vscode-dropdown-border)',
+            backgroundColor: 'var(--dropdown-background)',
+            border: '1px solid var(--dropdown-border)',
             borderRadius: '4px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
             zIndex: 9999,
@@ -102,8 +102,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                       gap: '6px',
                       padding: '4px 8px',
                       borderRadius: '4px',
-                      backgroundColor: 'var(--vscode-badge-background)',
-                      color: 'var(--vscode-badge-foreground)',
+                      backgroundColor: 'var(--badge-background)',
+                      color: 'var(--badge-foreground)',
                       fontSize: `${FONT_SIZES.button}px`,
                     }}
                     title={t('refinement.iterationCounter.tooltip')}
@@ -119,7 +119,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                 <DropdownMenu.Separator
                   style={{
                     height: '1px',
-                    backgroundColor: 'var(--vscode-panel-border)',
+                    backgroundColor: 'var(--panel-border)',
                     margin: '4px 0',
                   }}
                 />
@@ -135,7 +135,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
             style={{
               padding: '8px 12px',
               fontSize: `${FONT_SIZES.small}px`,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               cursor: isProcessing ? 'not-allowed' : 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -165,7 +165,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
           <DropdownMenu.Separator
             style={{
               height: '1px',
-              backgroundColor: 'var(--vscode-panel-border)',
+              backgroundColor: 'var(--panel-border)',
               margin: '4px 0',
             }}
           />
@@ -177,7 +177,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
               style={{
                 padding: '8px 12px',
                 fontSize: `${FONT_SIZES.small}px`,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 cursor: isProcessing ? 'not-allowed' : 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -190,7 +190,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <ChevronLeft size={14} />
-                <span style={{ color: 'var(--vscode-descriptionForeground)' }}>
+                <span style={{ color: 'var(--description-foreground)' }}>
                   {currentModelLabel}
                 </span>
               </div>
@@ -204,8 +204,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
               <DropdownMenu.SubContent
                 sideOffset={4}
                 style={{
-                  backgroundColor: 'var(--vscode-dropdown-background)',
-                  border: '1px solid var(--vscode-dropdown-border)',
+                  backgroundColor: 'var(--dropdown-background)',
+                  border: '1px solid var(--dropdown-border)',
                   borderRadius: '4px',
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                   zIndex: 10000,
@@ -225,7 +225,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                       style={{
                         padding: '6px 12px',
                         fontSize: `${FONT_SIZES.small}px`,
-                        color: 'var(--vscode-foreground)',
+                        color: 'var(--foreground)',
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
@@ -262,7 +262,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
               style={{
                 padding: '8px 12px',
                 fontSize: `${FONT_SIZES.small}px`,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 cursor: isProcessing ? 'not-allowed' : 'pointer',
                 display: 'flex',
                 alignItems: 'center',
@@ -275,7 +275,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <ChevronLeft size={14} />
-                <span style={{ color: 'var(--vscode-descriptionForeground)' }}>
+                <span style={{ color: 'var(--description-foreground)' }}>
                   {allowedTools.length} tools
                 </span>
               </div>
@@ -289,8 +289,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
               <DropdownMenu.SubContent
                 sideOffset={4}
                 style={{
-                  backgroundColor: 'var(--vscode-dropdown-background)',
-                  border: '1px solid var(--vscode-dropdown-border)',
+                  backgroundColor: 'var(--dropdown-background)',
+                  border: '1px solid var(--dropdown-border)',
                   borderRadius: '4px',
                   boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
                   zIndex: 10000,
@@ -311,7 +311,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                     style={{
                       padding: '6px 12px',
                       fontSize: `${FONT_SIZES.small}px`,
-                      color: 'var(--vscode-foreground)',
+                      color: 'var(--foreground)',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
@@ -350,7 +350,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                         <span
                           style={{
                             fontSize: '10px',
-                            color: 'var(--vscode-editorWarning-foreground)',
+                            color: 'var(--warning-foreground)',
                           }}
                         >
                           ⚠️ Not recommended
@@ -363,7 +363,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                 <DropdownMenu.Separator
                   style={{
                     height: '1px',
-                    backgroundColor: 'var(--vscode-panel-border)',
+                    backgroundColor: 'var(--panel-border)',
                     margin: '4px 0',
                   }}
                 />
@@ -376,7 +376,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
                   style={{
                     padding: '6px 12px',
                     fontSize: `${FONT_SIZES.small}px`,
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
@@ -395,7 +395,7 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
           <DropdownMenu.Separator
             style={{
               height: '1px',
-              backgroundColor: 'var(--vscode-panel-border)',
+              backgroundColor: 'var(--panel-border)',
               margin: '4px 0',
             }}
           />
@@ -409,8 +409,8 @@ export function SettingsDropdown({ onClearHistoryClick, hasMessages }: SettingsD
               fontSize: `${FONT_SIZES.small}px`,
               color:
                 !hasMessages || isProcessing
-                  ? 'var(--vscode-disabledForeground)'
-                  : 'var(--vscode-errorForeground)',
+                  ? 'var(--disabled-foreground)'
+                  : 'var(--error-foreground)',
               cursor: !hasMessages || isProcessing ? 'not-allowed' : 'pointer',
               display: 'flex',
               alignItems: 'center',

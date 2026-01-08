@@ -18,8 +18,8 @@ export function WarningBanner() {
         padding: '12px 16px',
         margin: '0 16px 12px 16px',
         borderRadius: '6px',
-        backgroundColor: 'var(--vscode-inputValidation-warningBackground)',
-        border: '1px solid var(--vscode-inputValidation-warningBorder)',
+        backgroundColor: 'var(--input-validation-warning-background)',
+        border: '1px solid var(--input-validation-warning-border)',
         display: 'flex',
         alignItems: 'flex-start',
         gap: '8px',
@@ -46,13 +46,13 @@ export function WarningBanner() {
           <title>Warning</title>
           <path
             d="M8 1L1 14H15L8 1Z"
-            stroke="var(--vscode-inputValidation-warningForeground)"
+            stroke="var(--input-validation-warning-foreground)"
             strokeWidth="1.5"
             fill="none"
           />
           <path
             d="M8 6V9"
-            stroke="var(--vscode-inputValidation-warningForeground)"
+            stroke="var(--input-validation-warning-foreground)"
             strokeWidth="1.5"
             strokeLinecap="round"
           />
@@ -60,7 +60,7 @@ export function WarningBanner() {
             cx="8"
             cy="11.5"
             r="0.75"
-            fill="var(--vscode-inputValidation-warningForeground)"
+            fill="var(--input-validation-warning-foreground)"
           />
         </svg>
       </div>
@@ -71,7 +71,7 @@ export function WarningBanner() {
           flex: 1,
           fontSize: `${fontSizes.base}px`,
           lineHeight: '1.5',
-          color: 'var(--vscode-inputValidation-warningForeground)',
+          color: 'var(--input-validation-warning-foreground)',
         }}
       >
         <div style={{ fontWeight: 500, marginBottom: '4px' }}>{t('refinement.warning.title')}</div>

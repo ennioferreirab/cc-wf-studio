@@ -16,9 +16,9 @@ interface StyledTooltipProps {
 }
 
 const tooltipContentStyle: React.CSSProperties = {
-  backgroundColor: 'var(--vscode-editorHoverWidget-background)',
-  color: 'var(--vscode-editorHoverWidget-foreground)',
-  border: '1px solid var(--vscode-editorHoverWidget-border)',
+  backgroundColor: 'var(--widget-background)',
+  color: 'var(--widget-foreground)',
+  border: '1px solid var(--widget-border)',
   borderRadius: '3px',
   padding: '6px 8px',
   fontSize: '12px',
@@ -27,7 +27,7 @@ const tooltipContentStyle: React.CSSProperties = {
 };
 
 const tooltipArrowStyle: React.CSSProperties = {
-  fill: 'var(--vscode-editorHoverWidget-border)',
+  fill: 'var(--widget-border)',
 };
 
 /**

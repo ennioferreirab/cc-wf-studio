@@ -1,8 +1,10 @@
 /**
  * Claude Code Workflow Studio - Main Styles
  *
- * Styling for Webview UI with VSCode theme integration
+ * Styling for Webview UI with standard theme variables
  */
+
+@import './theme.css';
 
 * {
   box-sizing: border-box;
@@ -11,24 +13,11 @@
 }
 
 body {
-  font-family: var(
-    --vscode-font-family,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif
-  );
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--vscode-editor-background);
-  color: var(--vscode-editor-foreground);
+  background-color: var(--editor-background);
+  color: var(--editor-foreground);
 }
 
 #root {
@@ -50,7 +39,7 @@ body {
 
 .sub-agent-node.selected,
 .ask-user-question-node.selected {
-  box-shadow: 0 0 0 2px var(--vscode-focusBorder);
+  box-shadow: 0 0 0 2px var(--focus-border);
 }
 
 /* Input and textarea styles */
@@ -63,7 +52,7 @@ select {
 input:focus,
 textarea:focus,
 select:focus {
-  outline: 1px solid var(--vscode-focusBorder);
+  outline: 1px solid var(--focus-border);
   outline-offset: -1px;
 }
 
@@ -77,29 +66,29 @@ button {
   user-select: auto;
 }
 
-/* Scrollbar styling for VSCode theme */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--vscode-scrollbarSlider-background);
+  background: var(--scrollbar-slider-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--vscode-scrollbarSlider-background);
+  background: var(--scrollbar-slider-background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--vscode-scrollbarSlider-hoverBackground);
+  background: var(--scrollbar-slider-hover-background);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: var(--vscode-scrollbarSlider-activeBackground);
+  background: var(--scrollbar-slider-active-background);
 }
 
-/* Driver.js Tour Styles - VSCode Theme Integration
+/* Driver.js Tour Styles - Theme Integration
  *
  * NOTE: These styles are placed in main.css (not inline styles) because:
  * - Driver.js dynamically creates DOM elements outside of React's control
@@ -107,36 +96,36 @@ button {
  * - CSS class-based customization is the recommended approach by Driver.js library
  */
 .driver-popover.cc-wf-tour-popover {
-  background-color: var(--vscode-editorWidget-background);
-  color: var(--vscode-editorWidget-foreground);
-  border: 1px solid var(--vscode-editorWidget-border);
+  background-color: var(--widget-background);
+  color: var(--widget-foreground);
+  border: 1px solid var(--widget-border);
   border-radius: 4px;
-  box-shadow: 0 2px 8px var(--vscode-widget-shadow);
+  box-shadow: 0 2px 8px var(--widget-shadow);
   max-width: 400px;
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-title {
   font-size: 16px;
   font-weight: 600;
-  color: var(--vscode-editorWidget-foreground);
+  color: var(--widget-foreground);
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-description {
   font-size: 14px;
   line-height: 1.6;
-  color: var(--vscode-editorWidget-foreground);
+  color: var(--widget-foreground);
   padding: 20px;
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-progress-text {
   font-size: 13px;
-  color: var(--vscode-descriptionForeground);
+  color: var(--description-foreground);
 }
 
 /* Button styles */
 .driver-popover.cc-wf-tour-popover .driver-popover-next-btn {
-  background-color: var(--vscode-button-background);
-  color: var(--vscode-button-foreground);
+  background-color: var(--button-background);
+  color: var(--button-foreground);
   border: none;
   border-radius: 2px;
   padding: 8px 16px;
@@ -147,12 +136,12 @@ button {
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-next-btn:hover {
-  background-color: var(--vscode-button-hoverBackground);
+  background-color: var(--button-hover-background);
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-prev-btn {
-  background-color: var(--vscode-button-secondaryBackground);
-  color: var(--vscode-button-secondaryForeground);
+  background-color: var(--button-secondary-background);
+  color: var(--button-secondary-foreground);
   border: none;
   padding: 8px 16px;
   font-size: 14px;
@@ -163,11 +152,11 @@ button {
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-prev-btn:hover {
-  background-color: var(--vscode-button-secondaryHoverBackground);
+  background-color: var(--button-secondary-hover-background);
 }
 
 .driver-popover.cc-wf-tour-popover .driver-popover-close-btn {
-  color: var(--vscode-icon-foreground);
+  color: var(--icon-foreground);
   font-size: 20px;
   cursor: pointer;
   background: transparent;
@@ -183,4 +172,56 @@ button {
 /* Overlay */
 .driver-overlay {
   z-index: 10000;
+}
+
+/* ============================================================================
+   React Flow Overrides
+   ============================================================================ */
+
+/* React Flow Controls */
+.react-flow__controls {
+  background: var(--widget-background);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px var(--widget-shadow);
+}
+
+.react-flow__controls-button {
+  background: var(--widget-background);
+  border-bottom: 1px solid var(--panel-border);
+  color: var(--foreground);
+}
+
+.react-flow__controls-button:hover {
+  background: var(--toolbar-hover-background);
+}
+
+.react-flow__controls-button svg {
+  fill: currentColor;
+}
+
+/* React Flow Mini Map */
+.react-flow__minimap {
+  background: var(--editor-background);
+  border: 1px solid var(--panel-border);
+  border-radius: 4px;
+}
+
+/* React Flow Attribution */
+.react-flow__attribution {
+  background: var(--editor-background);
+}
+
+.react-flow__attribution a {
+  color: var(--description-foreground);
+}
+
+/* React Flow Edges */
+.react-flow__edge-path {
+  stroke: var(--foreground);
+}
+
+/* React Flow Background */
+.react-flow__background pattern circle {
+  fill: var(--panel-border);
 }

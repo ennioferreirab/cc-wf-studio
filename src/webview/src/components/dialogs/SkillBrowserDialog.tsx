@@ -236,8 +236,8 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
         >
           <Dialog.Content
             style={{
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '6px',
               padding: '24px',
               maxWidth: '700px',
@@ -252,7 +252,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 margin: '0 0 8px 0',
                 fontSize: '18px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
               }}
             >
               {t('skill.browser.title')}
@@ -261,7 +261,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
               style={{
                 margin: '0 0 20px 0',
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 lineHeight: '1.5',
               }}
             >
@@ -279,9 +279,9 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   width: '100%',
                   padding: '8px 12px',
                   fontSize: '13px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '4px',
                   outline: 'none',
                 }}
@@ -294,7 +294,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 display: 'flex',
                 gap: '8px',
                 marginBottom: '16px',
-                borderBottom: '1px solid var(--vscode-panel-border)',
+                borderBottom: '1px solid var(--panel-border)',
               }}
             >
               <button
@@ -306,11 +306,11 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   background: 'none',
                   border: 'none',
                   borderBottom:
-                    activeTab === 'user' ? '2px solid var(--vscode-focusBorder)' : 'none',
+                    activeTab === 'user' ? '2px solid var(--focus-border)' : 'none',
                   color:
                     activeTab === 'user'
-                      ? 'var(--vscode-foreground)'
-                      : 'var(--vscode-descriptionForeground)',
+                      ? 'var(--foreground)'
+                      : 'var(--description-foreground)',
                   cursor: 'pointer',
                   fontWeight: activeTab === 'user' ? 600 : 400,
                 }}
@@ -326,11 +326,11 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   background: 'none',
                   border: 'none',
                   borderBottom:
-                    activeTab === 'project' ? '2px solid var(--vscode-focusBorder)' : 'none',
+                    activeTab === 'project' ? '2px solid var(--focus-border)' : 'none',
                   color:
                     activeTab === 'project'
-                      ? 'var(--vscode-foreground)'
-                      : 'var(--vscode-descriptionForeground)',
+                      ? 'var(--foreground)'
+                      : 'var(--description-foreground)',
                   cursor: 'pointer',
                   fontWeight: activeTab === 'project' ? 600 : 400,
                 }}
@@ -346,11 +346,11 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   background: 'none',
                   border: 'none',
                   borderBottom:
-                    activeTab === 'local' ? '2px solid var(--vscode-focusBorder)' : 'none',
+                    activeTab === 'local' ? '2px solid var(--focus-border)' : 'none',
                   color:
                     activeTab === 'local'
-                      ? 'var(--vscode-foreground)'
-                      : 'var(--vscode-descriptionForeground)',
+                      ? 'var(--foreground)'
+                      : 'var(--description-foreground)',
                   cursor: 'pointer',
                   fontWeight: activeTab === 'local' ? 600 : 400,
                 }}
@@ -364,11 +364,11 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
               style={{
                 padding: '12px',
                 marginBottom: '16px',
-                backgroundColor: 'var(--vscode-textBlockQuote-background)',
-                borderLeft: '3px solid var(--vscode-textBlockQuote-border)',
+                backgroundColor: 'var(--blockquote-background)',
+                borderLeft: '3px solid var(--blockquote-border)',
                 borderRadius: '0 4px 4px 0',
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 lineHeight: '1.5',
               }}
             >
@@ -387,9 +387,9 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 padding: '8px 12px',
                 marginBottom: '16px',
                 fontSize: '13px',
-                backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                color: 'var(--vscode-button-secondaryForeground)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--button-secondary-background)',
+                color: 'var(--button-secondary-foreground)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '4px',
                 cursor: refreshing || loading ? 'wait' : 'pointer',
                 display: 'flex',
@@ -407,7 +407,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 style={{
                   textAlign: 'center',
                   padding: '40px',
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                 }}
               >
                 {t('skill.browser.loading')}
@@ -419,12 +419,12 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
               <div
                 style={{
                   padding: '12px',
-                  backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-                  border: '1px solid var(--vscode-inputValidation-errorBorder)',
+                  backgroundColor: 'var(--input-validation-error-background)',
+                  border: '1px solid var(--input-validation-error-border)',
                   borderRadius: '4px',
                   marginBottom: '16px',
                   fontSize: '13px',
-                  color: 'var(--vscode-inputValidation-errorForeground)',
+                  color: 'var(--input-validation-error-foreground)',
                 }}
               >
                 {error}
@@ -437,7 +437,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 style={{
                   textAlign: 'center',
                   padding: '40px',
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                 }}
               >
                 {t('skill.browser.noSkills')}
@@ -447,7 +447,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
             {!loading && !error && currentSkills.length > 0 && (
               <div
                 style={{
-                  border: '1px solid var(--vscode-panel-border)',
+                  border: '1px solid var(--panel-border)',
                   borderRadius: '4px',
                   maxHeight: '400px',
                   overflow: 'auto',
@@ -467,17 +467,17 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                     tabIndex={0}
                     style={{
                       padding: '12px',
-                      borderBottom: '1px solid var(--vscode-panel-border)',
+                      borderBottom: '1px solid var(--panel-border)',
                       cursor: 'pointer',
                       backgroundColor:
                         selectedSkill?.skillPath === skill.skillPath
-                          ? 'var(--vscode-list-activeSelectionBackground)'
+                          ? 'var(--list-active-selection-background)'
                           : 'transparent',
                     }}
                     onMouseEnter={(e) => {
                       if (selectedSkill?.skillPath !== skill.skillPath) {
                         e.currentTarget.style.backgroundColor =
-                          'var(--vscode-list-hoverBackground)';
+                          'var(--list-hover-background)';
                       }
                     }}
                     onMouseLeave={(e) => {
@@ -499,7 +499,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                           style={{
                             fontSize: '14px',
                             fontWeight: 600,
-                            color: 'var(--vscode-foreground)',
+                            color: 'var(--foreground)',
                           }}
                         >
                           {skill.name}
@@ -511,16 +511,16 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                             borderRadius: '3px',
                             backgroundColor:
                               skill.scope === 'user'
-                                ? 'var(--vscode-badge-background)'
+                                ? 'var(--badge-background)'
                                 : skill.scope === 'local'
-                                  ? 'var(--vscode-terminal-ansiBlue)'
-                                  : 'var(--vscode-button-secondaryBackground)',
+                                  ? 'var(--terminal-ansi-blue)'
+                                  : 'var(--button-secondary-background)',
                             color:
                               skill.scope === 'user'
-                                ? 'var(--vscode-badge-foreground)'
+                                ? 'var(--badge-foreground)'
                                 : skill.scope === 'local'
-                                  ? 'var(--vscode-editor-background)'
-                                  : 'var(--vscode-button-secondaryForeground)',
+                                  ? 'var(--editor-background)'
+                                  : 'var(--button-secondary-foreground)',
                             fontWeight: 500,
                           }}
                         >
@@ -536,10 +536,10 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                           fontSize: '11px',
                           color:
                             skill.validationStatus === 'valid'
-                              ? 'var(--vscode-testing-iconPassed)'
+                              ? 'var(--success-foreground)'
                               : skill.validationStatus === 'missing'
-                                ? 'var(--vscode-editorWarning-foreground)'
-                                : 'var(--vscode-errorForeground)',
+                                ? 'var(--warning-foreground)'
+                                : 'var(--error-foreground)',
                         }}
                       >
                         {skill.validationStatus === 'valid'
@@ -552,7 +552,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                     <div
                       style={{
                         fontSize: '12px',
-                        color: 'var(--vscode-descriptionForeground)',
+                        color: 'var(--description-foreground)',
                         marginBottom: '4px',
                       }}
                     >
@@ -562,7 +562,7 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                       <div
                         style={{
                           fontSize: '11px',
-                          color: 'var(--vscode-descriptionForeground)',
+                          color: 'var(--description-foreground)',
                         }}
                       >
                         {skill.allowedTools}
@@ -583,21 +583,21 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   padding: '12px',
                   marginTop: '16px',
                   fontSize: '13px',
-                  border: '1px solid var(--vscode-button-border)',
+                  border: '1px solid var(--button-border)',
                   borderRadius: '4px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   cursor: 'pointer',
                   textAlign: 'center',
                   fontWeight: 500,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor =
-                    'var(--vscode-button-secondaryHoverBackground)';
+                    'var(--button-secondary-hover-background)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor =
-                    'var(--vscode-button-secondaryBackground)';
+                    'var(--button-secondary-background)';
                 }}
               >
                 + Create New Skill
@@ -619,10 +619,10 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                 style={{
                   padding: '8px 16px',
                   fontSize: '13px',
-                  border: '1px solid var(--vscode-button-border)',
+                  border: '1px solid var(--button-border)',
                   borderRadius: '4px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   cursor: 'pointer',
                 }}
               >
@@ -638,11 +638,11 @@ export function SkillBrowserDialog({ isOpen, onClose }: SkillBrowserDialogProps)
                   border: 'none',
                   borderRadius: '4px',
                   backgroundColor: selectedSkill
-                    ? 'var(--vscode-button-background)'
-                    : 'var(--vscode-button-secondaryBackground)',
+                    ? 'var(--button-background)'
+                    : 'var(--button-secondary-background)',
                   color: selectedSkill
-                    ? 'var(--vscode-button-foreground)'
-                    : 'var(--vscode-descriptionForeground)',
+                    ? 'var(--button-foreground)'
+                    : 'var(--description-foreground)',
                   cursor: selectedSkill ? 'pointer' : 'not-allowed',
                   opacity: selectedSkill ? 1 : 0.5,
                 }}

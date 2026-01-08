@@ -27,8 +27,8 @@ export const InteractionModeToggle: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           gap: '6px',
-          backgroundColor: 'var(--vscode-editor-background)',
-          border: '1px solid var(--vscode-panel-border)',
+          backgroundColor: 'var(--editor-background)',
+          border: '1px solid var(--panel-border)',
           borderRadius: '20px',
           padding: '4px 6px',
           opacity: 0.85,
@@ -59,7 +59,7 @@ export const InteractionModeToggle: React.FC = () => {
               height: '20px',
               borderRadius: '50%',
               backgroundColor:
-                interactionMode === 'pan' ? 'var(--vscode-badge-background)' : 'transparent',
+                interactionMode === 'pan' ? 'var(--badge-background)' : 'transparent',
               transition: 'background-color 150ms',
               cursor: interactionMode === 'pan' ? 'default' : 'pointer',
             }}
@@ -69,8 +69,8 @@ export const InteractionModeToggle: React.FC = () => {
               style={{
                 color:
                   interactionMode === 'pan'
-                    ? 'var(--vscode-badge-foreground)'
-                    : 'var(--vscode-disabledForeground)',
+                    ? 'var(--badge-foreground)'
+                    : 'var(--disabled-foreground)',
               }}
             />
           </div>
@@ -85,10 +85,10 @@ export const InteractionModeToggle: React.FC = () => {
             all: 'unset',
             width: '32px',
             height: '18px',
-            backgroundColor: 'var(--vscode-input-background)',
+            backgroundColor: 'var(--input-background)',
             borderRadius: '9px',
             position: 'relative',
-            border: '1px solid var(--vscode-input-border)',
+            border: '1px solid var(--input-border)',
             cursor: 'pointer',
           }}
         >
@@ -98,7 +98,7 @@ export const InteractionModeToggle: React.FC = () => {
               display: 'block',
               width: '14px',
               height: '14px',
-              backgroundColor: 'var(--vscode-button-background)',
+              backgroundColor: 'var(--button-background)',
               borderRadius: '7px',
               transition: 'transform 100ms',
               transform: interactionMode === 'selection' ? 'translateX(16px)' : 'translateX(2px)',
@@ -133,7 +133,7 @@ export const InteractionModeToggle: React.FC = () => {
               height: '20px',
               borderRadius: '50%',
               backgroundColor:
-                interactionMode === 'selection' ? 'var(--vscode-badge-background)' : 'transparent',
+                interactionMode === 'selection' ? 'var(--badge-background)' : 'transparent',
               transition: 'background-color 150ms',
               cursor: interactionMode === 'selection' ? 'default' : 'pointer',
             }}
@@ -143,8 +143,8 @@ export const InteractionModeToggle: React.FC = () => {
               style={{
                 color:
                   interactionMode === 'selection'
-                    ? 'var(--vscode-badge-foreground)'
-                    : 'var(--vscode-disabledForeground)',
+                    ? 'var(--badge-foreground)'
+                    : 'var(--disabled-foreground)',
               }}
             />
           </div>

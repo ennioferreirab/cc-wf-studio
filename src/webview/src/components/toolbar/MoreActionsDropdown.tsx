@@ -47,8 +47,8 @@ export function MoreActionsDropdown({
           data-tour="more-actions-button"
           style={{
             padding: '4px 8px',
-            backgroundColor: 'var(--vscode-button-secondaryBackground)',
-            color: 'var(--vscode-button-secondaryForeground)',
+            backgroundColor: 'var(--button-secondary-background)',
+            color: 'var(--button-secondary-foreground)',
             border: 'none',
             borderRadius: '2px',
             cursor: 'pointer',
@@ -68,8 +68,8 @@ export function MoreActionsDropdown({
           sideOffset={4}
           align="end"
           style={{
-            backgroundColor: 'var(--vscode-dropdown-background)',
-            border: '1px solid var(--vscode-dropdown-border)',
+            backgroundColor: 'var(--dropdown-background)',
+            border: '1px solid var(--dropdown-border)',
             borderRadius: '4px',
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
             zIndex: 9999,
@@ -84,7 +84,7 @@ export function MoreActionsDropdown({
             style={{
               padding: '8px 12px',
               fontSize: `${FONT_SIZES.small}px`,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -103,7 +103,7 @@ export function MoreActionsDropdown({
             style={{
               padding: '8px 12px',
               fontSize: `${FONT_SIZES.small}px`,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -122,7 +122,7 @@ export function MoreActionsDropdown({
             style={{
               padding: '8px 12px',
               fontSize: `${FONT_SIZES.small}px`,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
@@ -139,7 +139,7 @@ export function MoreActionsDropdown({
           <DropdownMenu.Separator
             style={{
               height: '1px',
-              backgroundColor: 'var(--vscode-panel-border)',
+              backgroundColor: 'var(--panel-border)',
               margin: '4px 0',
             }}
           />
@@ -151,7 +151,7 @@ export function MoreActionsDropdown({
             style={{
               padding: '8px 12px',
               fontSize: `${FONT_SIZES.small}px`,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',

@@ -76,8 +76,8 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
         position: 'relative',
         width: `${width}px`,
         height: '100%',
-        backgroundColor: 'var(--vscode-sideBar-background)',
-        border: '1px solid var(--vscode-panel-border)',
+        backgroundColor: 'var(--sidebar-background)',
+        border: '1px solid var(--panel-border)',
         borderRadius: '4px',
         padding: '16px',
         overflowY: 'auto',
@@ -98,7 +98,7 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
           style={{
             fontSize: '13px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
           }}
@@ -111,7 +111,7 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
           style={{
             padding: '4px 8px',
             backgroundColor: 'transparent',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
@@ -130,8 +130,8 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-badge-foreground)',
-              backgroundColor: 'var(--vscode-badge-background)',
+              color: 'var(--badge-foreground)',
+              backgroundColor: 'var(--badge-background)',
               padding: '4px 8px',
               borderRadius: '3px',
               display: 'inline-block',
@@ -157,7 +157,7 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -193,9 +193,9 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                 }}
@@ -203,7 +203,7 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
               <div
                 style={{
                   fontSize: '11px',
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                   marginTop: '4px',
                 }}
               >
@@ -221,7 +221,7 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -232,9 +232,9 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-descriptionForeground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--description-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                 }}
@@ -298,11 +298,11 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
             <div
               style={{
                 padding: '12px',
-                backgroundColor: 'var(--vscode-textBlockQuote-background)',
-                border: '1px solid var(--vscode-textBlockQuote-border)',
+                backgroundColor: 'var(--blockquote-background)',
+                border: '1px solid var(--blockquote-border)',
                 borderRadius: '4px',
                 fontSize: '12px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
               }}
             >
               {selectedNode.type === 'start'
@@ -313,11 +313,11 @@ export const PropertyOverlay: React.FC<PropertyOverlayProps> = ({
             <div
               style={{
                 padding: '12px',
-                backgroundColor: 'var(--vscode-errorBackground)',
-                border: '1px solid var(--vscode-errorBorder)',
+                backgroundColor: 'var(--error-background)',
+                border: '1px solid var(--error-border)',
                 borderRadius: '4px',
                 fontSize: '12px',
-                color: 'var(--vscode-errorForeground)',
+                color: 'var(--error-foreground)',
               }}
             >
               {t('property.unknownNodeType')} {selectedNode.type}
@@ -350,7 +350,7 @@ const SubAgentProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -365,9 +365,9 @@ const SubAgentProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -390,7 +390,7 @@ const SubAgentProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('property.prompt')}
@@ -413,12 +413,12 @@ const SubAgentProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
-            fontFamily: 'var(--vscode-editor-font-family)',
+            fontFamily: 'var(--editor-font-family)',
             resize: 'vertical',
             opacity: isEditingPrompt ? 0.5 : 1,
             cursor: isEditingPrompt ? 'not-allowed' : 'text',
@@ -434,7 +434,7 @@ const SubAgentProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -452,9 +452,9 @@ const SubAgentProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -474,7 +474,7 @@ const SubAgentProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -490,9 +490,9 @@ const SubAgentProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -500,7 +500,7 @@ const SubAgentProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >
@@ -592,7 +592,7 @@ const AskUserQuestionProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('property.questionText')}
@@ -615,9 +615,9 @@ const AskUserQuestionProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
             resize: 'vertical',
@@ -636,7 +636,7 @@ const AskUserQuestionProperties: React.FC<{
             alignItems: 'center',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             cursor: 'pointer',
             gap: '8px',
           }}
@@ -662,7 +662,7 @@ const AskUserQuestionProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
             marginLeft: '24px',
           }}
@@ -682,7 +682,7 @@ const AskUserQuestionProperties: React.FC<{
             alignItems: 'center',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             cursor: 'pointer',
             gap: '8px',
           }}
@@ -709,7 +709,7 @@ const AskUserQuestionProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
             marginLeft: '24px',
           }}
@@ -728,7 +728,7 @@ const AskUserQuestionProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '6px',
             }}
           >
@@ -741,8 +741,8 @@ const AskUserQuestionProperties: React.FC<{
               style={{
                 marginBottom: '12px',
                 padding: '12px',
-                backgroundColor: 'var(--vscode-editor-background)',
-                border: '1px solid var(--vscode-panel-border)',
+                backgroundColor: 'var(--editor-background)',
+                border: '1px solid var(--panel-border)',
                 borderRadius: '4px',
               }}
             >
@@ -760,8 +760,8 @@ const AskUserQuestionProperties: React.FC<{
                     style={{
                       padding: '2px 6px',
                       fontSize: '10px',
-                      backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                      color: 'var(--vscode-button-secondaryForeground)',
+                      backgroundColor: 'var(--button-secondary-background)',
+                      color: 'var(--button-secondary-foreground)',
                       border: 'none',
                       borderRadius: '2px',
                       cursor: 'pointer',
@@ -781,9 +781,9 @@ const AskUserQuestionProperties: React.FC<{
                   width: '100%',
                   padding: '4px 6px',
                   marginBottom: '6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                 }}
@@ -797,9 +797,9 @@ const AskUserQuestionProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                 }}
@@ -815,9 +815,9 @@ const AskUserQuestionProperties: React.FC<{
               style={{
                 width: '100%',
                 padding: '8px',
-                backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                color: 'var(--vscode-button-secondaryForeground)',
-                border: '1px solid var(--vscode-button-border)',
+                backgroundColor: 'var(--button-secondary-background)',
+                color: 'var(--button-secondary-foreground)',
+                border: '1px solid var(--button-border)',
                 borderRadius: '4px',
                 cursor: 'pointer',
                 fontSize: '12px',
@@ -856,7 +856,7 @@ const PromptProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -872,9 +872,9 @@ const PromptProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -897,7 +897,7 @@ const PromptProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('property.prompt.label')}
@@ -921,12 +921,12 @@ const PromptProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
-            fontFamily: 'var(--vscode-editor-font-family)',
+            fontFamily: 'var(--editor-font-family)',
             resize: 'vertical',
             opacity: isEditingPrompt ? 0.5 : 1,
             cursor: isEditingPrompt ? 'not-allowed' : 'text',
@@ -935,7 +935,7 @@ const PromptProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >
@@ -950,7 +950,7 @@ const PromptProperties: React.FC<{
             style={{
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '6px',
             }}
           >
@@ -959,8 +959,8 @@ const PromptProperties: React.FC<{
           <div
             style={{
               padding: '8px',
-              backgroundColor: 'var(--vscode-textBlockQuote-background)',
-              border: '1px solid var(--vscode-textBlockQuote-border)',
+              backgroundColor: 'var(--blockquote-background)',
+              border: '1px solid var(--blockquote-border)',
               borderRadius: '4px',
             }}
           >
@@ -970,7 +970,7 @@ const PromptProperties: React.FC<{
                 style={{
                   fontSize: '11px',
                   fontFamily: 'monospace',
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -981,7 +981,7 @@ const PromptProperties: React.FC<{
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginTop: '4px',
             }}
           >
@@ -1069,7 +1069,7 @@ const BranchProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1083,9 +1083,9 @@ const BranchProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -1096,7 +1096,7 @@ const BranchProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >
@@ -1120,7 +1120,7 @@ const BranchProperties: React.FC<{
             style={{
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('property.branchesCount').replace('{count}', normalizedBranches.length.toString())}
@@ -1132,9 +1132,9 @@ const BranchProperties: React.FC<{
               style={{
                 padding: '4px 8px',
                 fontSize: '11px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
-                border: '1px solid var(--vscode-button-border)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
+                border: '1px solid var(--button-border)',
                 borderRadius: '2px',
                 cursor: 'pointer',
               }}
@@ -1150,8 +1150,8 @@ const BranchProperties: React.FC<{
             style={{
               padding: '12px',
               marginBottom: '8px',
-              backgroundColor: 'var(--vscode-textBlockQuote-background)',
-              border: '1px solid var(--vscode-textBlockQuote-border)',
+              backgroundColor: 'var(--blockquote-background)',
+              border: '1px solid var(--blockquote-border)',
               borderRadius: '4px',
             }}
           >
@@ -1167,7 +1167,7 @@ const BranchProperties: React.FC<{
                 style={{
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                 }}
               >
                 {t('property.branchNumber').replace('{number}', (index + 1).toString())}
@@ -1179,8 +1179,8 @@ const BranchProperties: React.FC<{
                   style={{
                     padding: '2px 6px',
                     fontSize: '11px',
-                    backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                    color: 'var(--vscode-button-secondaryForeground)',
+                    backgroundColor: 'var(--button-secondary-background)',
+                    color: 'var(--button-secondary-foreground)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: 'pointer',
@@ -1199,7 +1199,7 @@ const BranchProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1215,9 +1215,9 @@ const BranchProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                 }}
@@ -1232,7 +1232,7 @@ const BranchProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1248,9 +1248,9 @@ const BranchProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   resize: 'vertical',
@@ -1263,7 +1263,7 @@ const BranchProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '8px',
           }}
         >
@@ -1326,11 +1326,11 @@ const IfElseProperties: React.FC<{
       <div
         style={{
           padding: '8px',
-          backgroundColor: 'var(--vscode-textBlockQuote-background)',
-          border: '1px solid var(--vscode-textBlockQuote-border)',
+          backgroundColor: 'var(--blockquote-background)',
+          border: '1px solid var(--blockquote-border)',
           borderRadius: '4px',
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
         }}
       >
         {t('property.branchType.conditional.help')}
@@ -1344,7 +1344,7 @@ const IfElseProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1360,9 +1360,9 @@ const IfElseProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -1370,7 +1370,7 @@ const IfElseProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >
@@ -1384,7 +1384,7 @@ const IfElseProperties: React.FC<{
           style={{
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '8px',
           }}
         >
@@ -1397,8 +1397,8 @@ const IfElseProperties: React.FC<{
             style={{
               padding: '12px',
               marginBottom: '8px',
-              backgroundColor: 'var(--vscode-textBlockQuote-background)',
-              border: '1px solid var(--vscode-textBlockQuote-border)',
+              backgroundColor: 'var(--blockquote-background)',
+              border: '1px solid var(--blockquote-border)',
               borderRadius: '4px',
             }}
           >
@@ -1406,7 +1406,7 @@ const IfElseProperties: React.FC<{
               style={{
                 fontSize: '11px',
                 fontWeight: 600,
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 marginBottom: '8px',
               }}
             >
@@ -1421,7 +1421,7 @@ const IfElseProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1437,9 +1437,9 @@ const IfElseProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                 }}
@@ -1454,7 +1454,7 @@ const IfElseProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1470,9 +1470,9 @@ const IfElseProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   resize: 'vertical',
@@ -1573,11 +1573,11 @@ const SwitchProperties: React.FC<{
       <div
         style={{
           padding: '8px',
-          backgroundColor: 'var(--vscode-textBlockQuote-background)',
-          border: '1px solid var(--vscode-textBlockQuote-border)',
+          backgroundColor: 'var(--blockquote-background)',
+          border: '1px solid var(--blockquote-border)',
           borderRadius: '4px',
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
         }}
       >
         {t('property.branchType.switch.help')}
@@ -1591,7 +1591,7 @@ const SwitchProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1607,9 +1607,9 @@ const SwitchProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -1617,7 +1617,7 @@ const SwitchProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >
@@ -1639,7 +1639,7 @@ const SwitchProperties: React.FC<{
             style={{
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('property.branchesCount').replace('{count}', normalizedBranches.length.toString())}
@@ -1652,9 +1652,9 @@ const SwitchProperties: React.FC<{
               style={{
                 padding: '4px 8px',
                 fontSize: '11px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
-                border: '1px solid var(--vscode-button-border)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
+                border: '1px solid var(--button-border)',
                 borderRadius: '2px',
                 cursor: 'pointer',
               }}
@@ -1670,8 +1670,8 @@ const SwitchProperties: React.FC<{
             style={{
               padding: '12px',
               marginBottom: '8px',
-              backgroundColor: 'var(--vscode-textBlockQuote-background)',
-              border: '1px solid var(--vscode-textBlockQuote-border)',
+              backgroundColor: 'var(--blockquote-background)',
+              border: '1px solid var(--blockquote-border)',
               borderRadius: '4px',
             }}
           >
@@ -1687,7 +1687,7 @@ const SwitchProperties: React.FC<{
                 style={{
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-descriptionForeground)',
+                  color: 'var(--description-foreground)',
                 }}
               >
                 {t('property.branchNumber').replace('{number}', (index + 1).toString())}
@@ -1700,8 +1700,8 @@ const SwitchProperties: React.FC<{
                   style={{
                     padding: '2px 6px',
                     fontSize: '11px',
-                    backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                    color: 'var(--vscode-button-secondaryForeground)',
+                    backgroundColor: 'var(--button-secondary-background)',
+                    color: 'var(--button-secondary-foreground)',
                     border: 'none',
                     borderRadius: '2px',
                     cursor: 'pointer',
@@ -1720,7 +1720,7 @@ const SwitchProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1737,9 +1737,9 @@ const SwitchProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   opacity: branch.isDefault ? 0.6 : 1,
@@ -1756,7 +1756,7 @@ const SwitchProperties: React.FC<{
                   display: 'block',
                   fontSize: '11px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '4px',
                 }}
               >
@@ -1773,9 +1773,9 @@ const SwitchProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '4px 6px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-input-foreground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--input-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '12px',
                   resize: branch.isDefault ? 'none' : 'vertical',
@@ -1790,7 +1790,7 @@ const SwitchProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '8px',
           }}
         >
@@ -1829,11 +1829,11 @@ const SkillProperties: React.FC<{
   const getValidationColor = (status: 'valid' | 'missing' | 'invalid'): string => {
     switch (status) {
       case 'valid':
-        return 'var(--vscode-testing-iconPassed)';
+        return 'var(--success-foreground)';
       case 'missing':
-        return 'var(--vscode-editorWarning-foreground)';
+        return 'var(--warning-foreground)';
       case 'invalid':
-        return 'var(--vscode-errorForeground)';
+        return 'var(--error-foreground)';
     }
   };
 
@@ -1847,7 +1847,7 @@ const SkillProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1858,9 +1858,9 @@ const SkillProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-descriptionForeground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--description-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
             lineHeight: '1.4',
@@ -1878,7 +1878,7 @@ const SkillProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1889,9 +1889,9 @@ const SkillProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-descriptionForeground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--description-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '11px',
             fontFamily: 'monospace',
@@ -1910,7 +1910,7 @@ const SkillProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1920,13 +1920,13 @@ const SkillProperties: React.FC<{
           id="skill-scope"
           style={{
             fontSize: '12px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             backgroundColor:
               data.scope === 'user'
-                ? 'var(--vscode-badge-background)'
+                ? 'var(--badge-background)'
                 : data.scope === 'local'
-                  ? 'var(--vscode-terminal-ansiBlue)'
-                  : 'var(--vscode-button-secondaryBackground)',
+                  ? 'var(--terminal-ansi-blue)'
+                  : 'var(--button-secondary-background)',
             padding: '4px 8px',
             borderRadius: '3px',
             display: 'inline-block',
@@ -1951,7 +1951,7 @@ const SkillProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -1975,7 +1975,7 @@ const SkillProperties: React.FC<{
           >
             {getValidationIcon(data.validationStatus)}
           </span>
-          <span style={{ color: 'var(--vscode-foreground)' }}>
+          <span style={{ color: 'var(--foreground)' }}>
             {data.validationStatus === 'valid'
               ? t('property.validationStatus.valid')
               : data.validationStatus === 'missing'
@@ -1994,7 +1994,7 @@ const SkillProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '6px',
             }}
           >
@@ -2005,9 +2005,9 @@ const SkillProperties: React.FC<{
             style={{
               width: '100%',
               padding: '6px 8px',
-              backgroundColor: 'var(--vscode-input-background)',
-              color: 'var(--vscode-descriptionForeground)',
-              border: '1px solid var(--vscode-input-border)',
+              backgroundColor: 'var(--input-background)',
+              color: 'var(--description-foreground)',
+              border: '1px solid var(--input-border)',
               borderRadius: '2px',
               fontSize: '12px',
               fontFamily: 'monospace',
@@ -2022,11 +2022,11 @@ const SkillProperties: React.FC<{
       <div
         style={{
           padding: '12px',
-          backgroundColor: 'var(--vscode-textBlockQuote-background)',
-          border: '1px solid var(--vscode-textBlockQuote-border)',
+          backgroundColor: 'var(--blockquote-background)',
+          border: '1px solid var(--blockquote-border)',
           borderRadius: '4px',
           fontSize: '11px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           lineHeight: '1.5',
         }}
       >
@@ -2069,11 +2069,11 @@ const McpProperties: React.FC<{
   const getValidationColor = (status: 'valid' | 'missing' | 'invalid'): string => {
     switch (status) {
       case 'valid':
-        return 'var(--vscode-testing-iconPassed)';
+        return 'var(--success-foreground)';
       case 'missing':
-        return 'var(--vscode-editorWarning-foreground)';
+        return 'var(--warning-foreground)';
       case 'invalid':
-        return 'var(--vscode-errorForeground)';
+        return 'var(--error-foreground)';
     }
   };
 
@@ -2088,7 +2088,7 @@ const McpProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '6px',
             }}
           >
@@ -2099,9 +2099,9 @@ const McpProperties: React.FC<{
             style={{
               width: '100%',
               padding: '6px 8px',
-              backgroundColor: 'var(--vscode-input-background)',
-              color: 'var(--vscode-descriptionForeground)',
-              border: '1px solid var(--vscode-input-border)',
+              backgroundColor: 'var(--input-background)',
+              color: 'var(--description-foreground)',
+              border: '1px solid var(--input-border)',
               borderRadius: '2px',
               fontSize: '13px',
               fontFamily: 'monospace',
@@ -2121,7 +2121,7 @@ const McpProperties: React.FC<{
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -2132,9 +2132,9 @@ const McpProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-descriptionForeground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--description-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                   fontFamily: 'monospace',
@@ -2155,7 +2155,7 @@ const McpProperties: React.FC<{
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -2166,9 +2166,9 @@ const McpProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-descriptionForeground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--description-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                   lineHeight: '1.4',
@@ -2187,7 +2187,7 @@ const McpProperties: React.FC<{
               display: 'block',
               fontSize: '12px',
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               marginBottom: '6px',
             }}
           >
@@ -2211,7 +2211,7 @@ const McpProperties: React.FC<{
             >
               {getValidationIcon(data.validationStatus)}
             </span>
-            <span style={{ color: 'var(--vscode-foreground)' }}>
+            <span style={{ color: 'var(--foreground)' }}>
               {data.validationStatus === 'valid'
                 ? t('property.validationStatus.valid')
                 : data.validationStatus === 'missing'
@@ -2231,7 +2231,7 @@ const McpProperties: React.FC<{
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -2241,8 +2241,8 @@ const McpProperties: React.FC<{
                 id="mcp-parameter-count"
                 style={{
                   fontSize: '13px',
-                  color: 'var(--vscode-descriptionForeground)',
-                  backgroundColor: 'var(--vscode-badge-background)',
+                  color: 'var(--description-foreground)',
+                  backgroundColor: 'var(--badge-background)',
                   padding: '4px 8px',
                   borderRadius: '3px',
                   display: 'inline-block',
@@ -2264,9 +2264,9 @@ const McpProperties: React.FC<{
               padding: '10px 16px',
               fontSize: '13px',
               fontWeight: 600,
-              backgroundColor: 'var(--vscode-button-background)',
-              color: 'var(--vscode-button-foreground)',
-              border: '1px solid var(--vscode-button-border)',
+              backgroundColor: 'var(--button-background)',
+              color: 'var(--button-foreground)',
+              border: '1px solid var(--button-border)',
               borderRadius: '4px',
               cursor: 'pointer',
               display: 'flex',
@@ -2294,7 +2294,7 @@ const McpProperties: React.FC<{
                 display: 'block',
                 fontSize: '12px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 marginBottom: '6px',
               }}
             >
@@ -2305,9 +2305,9 @@ const McpProperties: React.FC<{
               style={{
                 width: '100%',
                 padding: '8px',
-                backgroundColor: 'var(--vscode-input-background)',
-                color: 'var(--vscode-descriptionForeground)',
-                border: '1px solid var(--vscode-input-border)',
+                backgroundColor: 'var(--input-background)',
+                color: 'var(--description-foreground)',
+                border: '1px solid var(--input-border)',
                 borderRadius: '2px',
                 fontSize: '12px',
                 lineHeight: '1.5',
@@ -2328,7 +2328,7 @@ const McpProperties: React.FC<{
                 display: 'block',
                 fontSize: '12px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 marginBottom: '6px',
               }}
             >
@@ -2339,9 +2339,9 @@ const McpProperties: React.FC<{
               style={{
                 width: '100%',
                 padding: '8px',
-                backgroundColor: 'var(--vscode-input-background)',
-                color: 'var(--vscode-descriptionForeground)',
-                border: '1px solid var(--vscode-input-border)',
+                backgroundColor: 'var(--input-background)',
+                color: 'var(--description-foreground)',
+                border: '1px solid var(--input-border)',
                 borderRadius: '2px',
                 fontSize: '12px',
                 lineHeight: '1.5',
@@ -2364,7 +2364,7 @@ const McpProperties: React.FC<{
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -2375,9 +2375,9 @@ const McpProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-descriptionForeground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--description-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '11px',
                   fontFamily: 'monospace',
@@ -2388,7 +2388,7 @@ const McpProperties: React.FC<{
               >
                 {Object.entries(data.parameterValues).map(([key, value]) => (
                   <div key={key} style={{ marginBottom: '4px' }}>
-                    <span style={{ fontWeight: 600, color: 'var(--vscode-foreground)' }}>
+                    <span style={{ fontWeight: 600, color: 'var(--foreground)' }}>
                       {key}:
                     </span>{' '}
                     <span>{typeof value === 'object' ? JSON.stringify(value) : String(value)}</span>
@@ -2447,7 +2447,7 @@ const SubAgentFlowProperties: React.FC<{
                   display: 'block',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: 'var(--vscode-foreground)',
+                  color: 'var(--foreground)',
                   marginBottom: '6px',
                 }}
               >
@@ -2458,9 +2458,9 @@ const SubAgentFlowProperties: React.FC<{
                 style={{
                   width: '100%',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-input-background)',
-                  color: 'var(--vscode-descriptionForeground)',
-                  border: '1px solid var(--vscode-input-border)',
+                  backgroundColor: 'var(--input-background)',
+                  color: 'var(--description-foreground)',
+                  border: '1px solid var(--input-border)',
                   borderRadius: '2px',
                   fontSize: '13px',
                   lineHeight: '1.4',
@@ -2478,8 +2478,8 @@ const SubAgentFlowProperties: React.FC<{
             style={{
               width: '100%',
               padding: '8px 12px',
-              backgroundColor: 'var(--vscode-button-background)',
-              color: 'var(--vscode-button-foreground)',
+              backgroundColor: 'var(--button-background)',
+              color: 'var(--button-foreground)',
               border: 'none',
               borderRadius: '4px',
               cursor: 'pointer',
@@ -2487,10 +2487,10 @@ const SubAgentFlowProperties: React.FC<{
               fontWeight: 500,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+              e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+              e.currentTarget.style.backgroundColor = 'var(--button-background)';
             }}
           >
             {t('subAgentFlow.edit')}
@@ -2506,7 +2506,7 @@ const SubAgentFlowProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -2524,9 +2524,9 @@ const SubAgentFlowProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -2546,7 +2546,7 @@ const SubAgentFlowProperties: React.FC<{
             display: 'block',
             fontSize: '12px',
             fontWeight: 600,
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '6px',
           }}
         >
@@ -2562,9 +2562,9 @@ const SubAgentFlowProperties: React.FC<{
           style={{
             width: '100%',
             padding: '6px 8px',
-            backgroundColor: 'var(--vscode-input-background)',
-            color: 'var(--vscode-input-foreground)',
-            border: '1px solid var(--vscode-input-border)',
+            backgroundColor: 'var(--input-background)',
+            color: 'var(--input-foreground)',
+            border: '1px solid var(--input-border)',
             borderRadius: '2px',
             fontSize: '13px',
           }}
@@ -2572,7 +2572,7 @@ const SubAgentFlowProperties: React.FC<{
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginTop: '4px',
           }}
         >

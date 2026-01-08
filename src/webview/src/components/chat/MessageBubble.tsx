@@ -52,16 +52,16 @@ export function MessageBubble({ message, onRetry }: MessageBubbleProps) {
           padding: '8px 12px',
           borderRadius: '8px',
           backgroundColor: isError
-            ? 'var(--vscode-inputValidation-errorBackground)'
+            ? 'var(--input-validation-error-background)'
             : isUser
-              ? 'var(--vscode-button-background)'
-              : 'var(--vscode-editor-inactiveSelectionBackground)',
+              ? 'var(--button-background)'
+              : 'var(--editor-inactiveSelectionBackground)',
           color: isError
-            ? 'var(--vscode-inputValidation-errorForeground)'
+            ? 'var(--input-validation-error-foreground)'
             : isUser
-              ? 'var(--vscode-button-foreground)'
-              : 'var(--vscode-editor-foreground)',
-          border: isError ? '1px solid var(--vscode-inputValidation-errorBorder)' : 'none',
+              ? 'var(--button-foreground)'
+              : 'var(--editor-foreground)',
+          border: isError ? '1px solid var(--input-validation-error-border)' : 'none',
           wordWrap: 'break-word',
         }}
       >
@@ -99,17 +99,17 @@ export function MessageBubble({ message, onRetry }: MessageBubbleProps) {
                   padding: '4px 12px',
                   fontSize: `${fontSizes.button}px`,
                   fontWeight: 500,
-                  backgroundColor: 'var(--vscode-button-background)',
-                  color: 'var(--vscode-button-foreground)',
+                  backgroundColor: 'var(--button-background)',
+                  color: 'var(--button-foreground)',
                   border: 'none',
                   borderRadius: '4px',
                   cursor: 'pointer',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+                  e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+                  e.currentTarget.style.backgroundColor = 'var(--button-background)';
                 }}
               >
                 {t('refinement.error.retryButton')}

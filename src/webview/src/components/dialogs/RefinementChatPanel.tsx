@@ -621,8 +621,8 @@ export function RefinementChatPanel({
         position: 'relative',
         width: `${width}px`,
         height: '100%',
-        backgroundColor: 'var(--vscode-sideBar-background)',
-        borderLeft: '1px solid var(--vscode-panel-border)',
+        backgroundColor: 'var(--sidebar-background)',
+        borderLeft: '1px solid var(--panel-border)',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
@@ -636,7 +636,7 @@ export function RefinementChatPanel({
         <div
           style={{
             padding: '10px 16px',
-            borderBottom: '1px solid var(--vscode-panel-border)',
+            borderBottom: '1px solid var(--panel-border)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
@@ -649,7 +649,7 @@ export function RefinementChatPanel({
               margin: 0,
               fontSize: `${fontSizes.title}px`,
               fontWeight: 600,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
               textTransform: 'uppercase',
               letterSpacing: '0.5px',
             }}
@@ -672,7 +672,7 @@ export function RefinementChatPanel({
                 height: '20px',
                 padding: '2px',
                 backgroundColor: 'transparent',
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 border: 'none',
                 borderRadius: '4px',
                 cursor: isProcessing ? 'not-allowed' : 'pointer',
@@ -683,7 +683,7 @@ export function RefinementChatPanel({
               }}
               onMouseEnter={(e) => {
                 if (!isProcessing) {
-                  e.currentTarget.style.backgroundColor = 'var(--vscode-toolbar-hoverBackground)';
+                  e.currentTarget.style.backgroundColor = 'var(--toolbar-hover-background)';
                   e.currentTarget.style.opacity = '1';
                 }
               }}

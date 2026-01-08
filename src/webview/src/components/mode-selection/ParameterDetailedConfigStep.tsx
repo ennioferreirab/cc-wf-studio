@@ -89,7 +89,7 @@ export function ParameterDetailedConfigStep({
           margin: '0 0 12px 0',
           fontSize: '14px',
           fontWeight: 600,
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
         }}
       >
         {t('mcp.parameterDetailedConfig.title')}
@@ -99,10 +99,10 @@ export function ParameterDetailedConfigStep({
         style={{
           marginBottom: '16px',
           padding: '12px',
-          backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)',
+          backgroundColor: 'var(--editor-inactiveSelectionBackground)',
           borderRadius: '4px',
           fontSize: '13px',
-          color: 'var(--vscode-foreground)',
+          color: 'var(--foreground)',
         }}
       >
         <div>
@@ -122,9 +122,9 @@ export function ParameterDetailedConfigStep({
           style={{
             padding: '16px',
             marginBottom: '16px',
-            color: 'var(--vscode-errorForeground)',
-            backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-            border: '1px solid var(--vscode-inputValidation-errorBorder)',
+            color: 'var(--error-foreground)',
+            backgroundColor: 'var(--input-validation-error-background)',
+            border: '1px solid var(--input-validation-error-border)',
             borderRadius: '4px',
           }}
         >

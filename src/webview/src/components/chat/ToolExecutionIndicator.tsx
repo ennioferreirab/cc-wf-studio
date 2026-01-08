@@ -69,7 +69,7 @@ export function ToolExecutionIndicator({ toolInfo }: ToolExecutionIndicatorProps
         marginTop: '8px',
         marginBottom: '4px',
         fontSize: `${fontSizes.small}px`,
-        color: 'var(--vscode-descriptionForeground)',
+        color: 'var(--description-foreground)',
         fontStyle: 'italic',
         display: 'flex',
         alignItems: 'center',

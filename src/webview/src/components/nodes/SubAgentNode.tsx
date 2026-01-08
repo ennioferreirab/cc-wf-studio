@@ -23,8 +23,8 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
           position: 'relative',
           padding: '12px',
           borderRadius: '8px',
-          border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : 'var(--vscode-panel-border)'}`,
-          backgroundColor: 'var(--vscode-editor-background)',
+          border: `2px solid ${selected ? 'var(--focus-border)' : 'var(--panel-border)'}`,
+          backgroundColor: 'var(--editor-background)',
           minWidth: '200px',
           maxWidth: '300px',
         }}
@@ -36,7 +36,7 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
           style={{
             fontSize: '11px',
             fontWeight: 600,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '8px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -49,7 +49,7 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
         <div
           style={{
             fontSize: '13px',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             marginBottom: '8px',
             fontWeight: 500,
           }}
@@ -62,7 +62,7 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
           <div
             style={{
               fontSize: '11px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               marginBottom: '8px',
               lineHeight: '1.4',
               overflow: 'hidden',
@@ -83,8 +83,8 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
             <div
               style={{
                 fontSize: '10px',
-                color: 'var(--vscode-badge-foreground)',
-                backgroundColor: 'var(--vscode-badge-background)',
+                color: 'var(--badge-foreground)',
+                backgroundColor: 'var(--badge-background)',
                 padding: '2px 6px',
                 borderRadius: '3px',
                 display: 'inline-block',
@@ -120,8 +120,8 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
           style={{
             width: '12px',
             height: '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            border: '2px solid var(--button-foreground)',
           }}
         />
 
@@ -133,8 +133,8 @@ export const SubAgentNodeComponent: React.FC<NodeProps<SubAgentData>> = React.me
           style={{
             width: '12px',
             height: '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            border: '2px solid var(--button-foreground)',
           }}
         />
       </div>

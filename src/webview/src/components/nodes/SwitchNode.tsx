@@ -29,8 +29,8 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
           position: 'relative',
           padding: '12px',
           borderRadius: '8px',
-          border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : 'var(--vscode-panel-border)'}`,
-          backgroundColor: 'var(--vscode-editor-background)',
+          border: `2px solid ${selected ? 'var(--focus-border)' : 'var(--panel-border)'}`,
+          backgroundColor: 'var(--editor-background)',
           minWidth: '200px',
           maxWidth: '300px',
         }}
@@ -42,7 +42,7 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
           style={{
             fontSize: '11px',
             fontWeight: 600,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             marginBottom: '8px',
             textTransform: 'uppercase',
             letterSpacing: '0.5px',
@@ -55,8 +55,8 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
         <div
           style={{
             fontSize: '10px',
-            color: 'var(--vscode-badge-foreground)',
-            backgroundColor: 'var(--vscode-badge-background)',
+            color: 'var(--badge-foreground)',
+            backgroundColor: 'var(--badge-background)',
             padding: '2px 6px',
             borderRadius: '3px',
             marginBottom: '12px',
@@ -76,11 +76,11 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
                   fontSize: '11px',
                   marginBottom: '8px',
                   padding: '6px 8px',
-                  backgroundColor: 'var(--vscode-textBlockQuote-background)',
+                  backgroundColor: 'var(--blockquote-background)',
                   borderLeft: `3px solid ${
                     branch.isDefault
-                      ? 'var(--vscode-editorWarning-foreground)'
-                      : 'var(--vscode-textLink-foreground)'
+                      ? 'var(--warning-foreground)'
+                      : 'var(--text-link-foreground)'
                   }`,
                   borderRadius: '3px',
                 }}
@@ -88,7 +88,7 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
                 <div
                   style={{
                     fontWeight: 600,
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     marginBottom: '4px',
                   }}
                 >
@@ -97,7 +97,7 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
                 <div
                   style={{
                     fontSize: '10px',
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                     fontStyle: 'italic',
                   }}
                 >
@@ -116,8 +116,8 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
           style={{
             width: '12px',
             height: '12px',
-            backgroundColor: 'var(--vscode-button-background)',
-            border: '2px solid var(--vscode-button-foreground)',
+            backgroundColor: 'var(--button-background)',
+            border: '2px solid var(--button-foreground)',
           }}
         />
 
@@ -131,8 +131,8 @@ export const SwitchNodeComponent: React.FC<NodeProps<SwitchNodeData>> = React.me
             style={{
               width: '12px',
               height: '12px',
-              backgroundColor: 'var(--vscode-button-background)',
-              border: '2px solid var(--vscode-button-foreground)',
+              backgroundColor: 'var(--button-background)',
+              border: '2px solid var(--button-foreground)',
               top: `${((i + 1) / (data.branches.length + 1)) * 100}%`,
             }}
           />

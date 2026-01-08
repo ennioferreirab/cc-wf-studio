@@ -61,7 +61,7 @@ export function ProgressBar({ isProcessing, label, maxSeconds }: ProgressBarProp
           style={{
             marginBottom: '6px',
             fontSize: `${fontSizes.small}px`,
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             fontStyle: 'italic',
           }}
         >
@@ -74,18 +74,18 @@ export function ProgressBar({ isProcessing, label, maxSeconds }: ProgressBarProp
         style={{
           width: '100%',
           height: '4px',
-          backgroundColor: 'var(--vscode-editor-background)',
+          backgroundColor: 'var(--editor-background)',
           borderRadius: '2px',
           overflow: 'hidden',
           marginBottom: '4px',
-          border: '1px solid var(--vscode-panel-border)',
+          border: '1px solid var(--panel-border)',
         }}
       >
         <div
           style={{
             width: `${progressPercentage}%`,
             height: '100%',
-            backgroundColor: 'var(--vscode-progressBar-background)',
+            backgroundColor: 'var(--progressbar-background)',
             transition: 'width 0.5s ease-out',
           }}
         />
@@ -95,7 +95,7 @@ export function ProgressBar({ isProcessing, label, maxSeconds }: ProgressBarProp
       <div
         style={{
           fontSize: `${fontSizes.xsmall}px`,
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           opacity: 0.7,
           display: 'flex',
           justifyContent: 'space-between',

@@ -132,8 +132,8 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
               e.preventDefault();
             }}
             style={{
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '1px solid var(--vscode-panel-border)',
+              backgroundColor: 'var(--editor-background)',
+              border: '1px solid var(--panel-border)',
               borderRadius: '6px',
               padding: '24px',
               maxWidth: '700px',
@@ -148,7 +148,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                 margin: '0 0 8px 0',
                 fontSize: '18px',
                 fontWeight: 600,
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
               }}
             >
               {t('skill.creation.title')}
@@ -157,7 +157,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
               style={{
                 margin: '0 0 20px 0',
                 fontSize: '13px',
-                color: 'var(--vscode-descriptionForeground)',
+                color: 'var(--description-foreground)',
                 lineHeight: '1.5',
               }}
             >
@@ -169,12 +169,12 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
               <div
                 style={{
                   padding: '12px',
-                  backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-                  border: '1px solid var(--vscode-inputValidation-errorBorder)',
+                  backgroundColor: 'var(--input-validation-error-background)',
+                  border: '1px solid var(--input-validation-error-border)',
                   borderRadius: '4px',
                   marginBottom: '16px',
                   fontSize: '13px',
-                  color: 'var(--vscode-inputValidation-errorForeground)',
+                  color: 'var(--input-validation-error-foreground)',
                 }}
               >
                 {submitError}
@@ -192,7 +192,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     marginBottom: '6px',
                     fontSize: '13px',
                     fontWeight: 500,
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                   }}
                 >
                   {t('skill.creation.nameLabel')} *
@@ -208,9 +208,9 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     width: '100%',
                     padding: '8px',
                     fontSize: '13px',
-                    backgroundColor: 'var(--vscode-input-background)',
-                    color: 'var(--vscode-input-foreground)',
-                    border: `1px solid ${errors.name ? 'var(--vscode-inputValidation-errorBorder)' : 'var(--vscode-input-border)'}`,
+                    backgroundColor: 'var(--input-background)',
+                    color: 'var(--input-foreground)',
+                    border: `1px solid ${errors.name ? 'var(--input-validation-error-border)' : 'var(--input-border)'}`,
                     borderRadius: '4px',
                     outline: 'none',
                   }}
@@ -220,7 +220,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       margin: '4px 0 0 0',
                       fontSize: '12px',
-                      color: 'var(--vscode-inputValidation-errorForeground)',
+                      color: 'var(--input-validation-error-foreground)',
                     }}
                   >
                     {t(errors.name as unknown as keyof WebviewTranslationKeys)}
@@ -230,7 +230,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                   style={{
                     margin: '4px 0 0 0',
                     fontSize: '11px',
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                   }}
                 >
                   {t('skill.creation.nameHint')}
@@ -252,7 +252,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       fontSize: '13px',
                       fontWeight: 500,
-                      color: 'var(--vscode-foreground)',
+                      color: 'var(--foreground)',
                     }}
                   >
                     {t('skill.creation.descriptionLabel')} *
@@ -278,9 +278,9 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     width: '100%',
                     padding: '8px',
                     fontSize: '13px',
-                    backgroundColor: 'var(--vscode-input-background)',
-                    color: 'var(--vscode-input-foreground)',
-                    border: `1px solid ${errors.description ? 'var(--vscode-inputValidation-errorBorder)' : 'var(--vscode-input-border)'}`,
+                    backgroundColor: 'var(--input-background)',
+                    color: 'var(--input-foreground)',
+                    border: `1px solid ${errors.description ? 'var(--input-validation-error-border)' : 'var(--input-border)'}`,
                     borderRadius: '4px',
                     outline: 'none',
                     resize: 'vertical',
@@ -294,7 +294,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       margin: '4px 0 0 0',
                       fontSize: '12px',
-                      color: 'var(--vscode-inputValidation-errorForeground)',
+                      color: 'var(--input-validation-error-foreground)',
                     }}
                   >
                     {t(errors.description as unknown as keyof WebviewTranslationKeys)}
@@ -317,7 +317,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       fontSize: '13px',
                       fontWeight: 500,
-                      color: 'var(--vscode-foreground)',
+                      color: 'var(--foreground)',
                     }}
                   >
                     {t('skill.creation.instructionsLabel')} *
@@ -343,13 +343,13 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     width: '100%',
                     padding: '8px',
                     fontSize: '13px',
-                    backgroundColor: 'var(--vscode-input-background)',
-                    color: 'var(--vscode-input-foreground)',
-                    border: `1px solid ${errors.instructions ? 'var(--vscode-inputValidation-errorBorder)' : 'var(--vscode-input-border)'}`,
+                    backgroundColor: 'var(--input-background)',
+                    color: 'var(--input-foreground)',
+                    border: `1px solid ${errors.instructions ? 'var(--input-validation-error-border)' : 'var(--input-border)'}`,
                     borderRadius: '4px',
                     outline: 'none',
                     resize: 'vertical',
-                    fontFamily: 'var(--vscode-editor-font-family)',
+                    fontFamily: 'var(--editor-font-family)',
                     opacity: isEditingInstructions ? 0.5 : 1,
                     cursor: isEditingInstructions ? 'not-allowed' : 'text',
                   }}
@@ -359,7 +359,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       margin: '4px 0 0 0',
                       fontSize: '12px',
-                      color: 'var(--vscode-inputValidation-errorForeground)',
+                      color: 'var(--input-validation-error-foreground)',
                     }}
                   >
                     {t(errors.instructions as unknown as keyof WebviewTranslationKeys)}
@@ -369,7 +369,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                   style={{
                     margin: '4px 0 0 0',
                     fontSize: '11px',
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                   }}
                 >
                   {t('skill.creation.instructionsHint')}
@@ -385,7 +385,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     marginBottom: '6px',
                     fontSize: '13px',
                     fontWeight: 500,
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                   }}
                 >
                   {t('skill.creation.allowedToolsLabel')}
@@ -401,9 +401,9 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     width: '100%',
                     padding: '8px',
                     fontSize: '13px',
-                    backgroundColor: 'var(--vscode-input-background)',
-                    color: 'var(--vscode-input-foreground)',
-                    border: '1px solid var(--vscode-input-border)',
+                    backgroundColor: 'var(--input-background)',
+                    color: 'var(--input-foreground)',
+                    border: '1px solid var(--input-border)',
                     borderRadius: '4px',
                     outline: 'none',
                   }}
@@ -412,7 +412,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                   style={{
                     margin: '4px 0 0 0',
                     fontSize: '11px',
-                    color: 'var(--vscode-descriptionForeground)',
+                    color: 'var(--description-foreground)',
                   }}
                 >
                   {t('skill.creation.allowedToolsHint')}
@@ -427,7 +427,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     marginBottom: '8px',
                     fontSize: '13px',
                     fontWeight: 500,
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                   }}
                 >
                   {t('skill.creation.scopeLabel')} *
@@ -439,7 +439,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                       alignItems: 'center',
                       gap: '6px',
                       fontSize: '13px',
-                      color: 'var(--vscode-foreground)',
+                      color: 'var(--foreground)',
                       cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     }}
                   >
@@ -460,7 +460,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                       alignItems: 'center',
                       gap: '6px',
                       fontSize: '13px',
-                      color: 'var(--vscode-foreground)',
+                      color: 'var(--foreground)',
                       cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     }}
                   >
@@ -481,7 +481,7 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                     style={{
                       margin: '4px 0 0 0',
                       fontSize: '12px',
-                      color: 'var(--vscode-inputValidation-errorForeground)',
+                      color: 'var(--input-validation-error-foreground)',
                     }}
                   >
                     {t(errors.scope as unknown as keyof WebviewTranslationKeys)}
@@ -506,10 +506,10 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                 style={{
                   padding: '8px 16px',
                   fontSize: '13px',
-                  border: '1px solid var(--vscode-button-border)',
+                  border: '1px solid var(--button-border)',
                   borderRadius: '4px',
-                  backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                  color: 'var(--vscode-button-secondaryForeground)',
+                  backgroundColor: 'var(--button-secondary-background)',
+                  color: 'var(--button-secondary-foreground)',
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   opacity: isSubmitting ? 0.5 : 1,
                 }}
@@ -525,8 +525,8 @@ export function SkillCreationDialog({ isOpen, onClose, onSubmit }: SkillCreation
                   fontSize: '13px',
                   border: 'none',
                   borderRadius: '4px',
-                  backgroundColor: 'var(--vscode-button-background)',
-                  color: 'var(--vscode-button-foreground)',
+                  backgroundColor: 'var(--button-background)',
+                  color: 'var(--button-foreground)',
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   opacity: isSubmitting ? 0.5 : 1,
                 }}

@@ -65,7 +65,7 @@ export const DeletableEdge: React.FC<EdgeProps> = ({
               width: '18px',
               height: '18px',
               borderRadius: '3px',
-              backgroundColor: 'var(--vscode-errorForeground)',
+              backgroundColor: 'var(--error-foreground)',
               color: 'white',
               border: 'none',
               cursor: 'pointer',

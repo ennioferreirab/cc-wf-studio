@@ -55,7 +55,7 @@ export function MessageList({
       >
         <div
           style={{
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             fontSize: `${fontSizes.base}px`,
             lineHeight: '1.6',
             marginBottom: '16px',
@@ -66,7 +66,7 @@ export function MessageList({
         </div>
         <div
           style={{
-            color: 'var(--vscode-descriptionForeground)',
+            color: 'var(--description-foreground)',
             fontSize: `${fontSizes.button}px`,
             lineHeight: '1.6',
             textAlign: 'center',
@@ -78,12 +78,12 @@ export function MessageList({
           style={{
             marginTop: '16px',
             padding: '8px 12px',
-            backgroundColor: 'var(--vscode-textBlockQuote-background)',
-            border: '1px solid var(--vscode-textBlockQuote-border)',
+            backgroundColor: 'var(--blockquote-background)',
+            border: '1px solid var(--blockquote-border)',
             borderRadius: '4px',
             fontSize: `${fontSizes.small}px`,
             lineHeight: '1.6',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
             whiteSpace: 'pre-wrap',
             wordBreak: 'break-word',
             textAlign: 'left',

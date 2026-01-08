@@ -418,8 +418,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           alignItems: 'center',
           gap: '8px',
           padding: '8px 12px',
-          borderBottom: '1px solid var(--vscode-panel-border)',
-          backgroundColor: 'var(--vscode-editor-background)',
+          borderBottom: '1px solid var(--panel-border)',
+          backgroundColor: 'var(--editor-background)',
         }}
       >
         {/* Workflow Group */}
@@ -437,7 +437,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           <span
             style={{
               fontSize: '10px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               whiteSpace: 'nowrap',
             }}
           >
@@ -479,8 +479,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
               data-tour="save-button"
               style={{
                 padding: isCompact ? '4px 8px' : '4px 12px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: isSaving ? 'not-allowed' : 'pointer',
@@ -503,8 +503,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
               data-tour="load-button"
               style={{
                 padding: isCompact ? '4px 8px' : '4px 12px',
-                backgroundColor: 'var(--vscode-button-secondaryBackground)',
-                color: 'var(--vscode-button-secondaryForeground)',
+                backgroundColor: 'var(--button-secondary-background)',
+                color: 'var(--button-secondary-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: isLoadingFile ? 'not-allowed' : 'pointer',
@@ -532,7 +532,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           style={{
             width: '1px',
             height: '32px',
-            backgroundColor: 'var(--vscode-panel-border)',
+            backgroundColor: 'var(--panel-border)',
           }}
         />
 
@@ -549,7 +549,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           <span
             style={{
               fontSize: '10px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               whiteSpace: 'nowrap',
             }}
           >
@@ -571,8 +571,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
               data-tour="export-button"
               style={{
                 padding: isCompact ? '4px 8px' : '4px 12px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: isExporting ? 'not-allowed' : 'pointer',
@@ -601,8 +601,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
               data-tour="run-button"
               style={{
                 padding: isCompact ? '4px 8px' : '4px 12px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: isRunning ? 'not-allowed' : 'pointer',
@@ -624,7 +624,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           style={{
             width: '1px',
             height: '32px',
-            backgroundColor: 'var(--vscode-panel-border)',
+            backgroundColor: 'var(--panel-border)',
           }}
         />
 
@@ -641,7 +641,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({
           <span
             style={{
               fontSize: '10px',
-              color: 'var(--vscode-descriptionForeground)',
+              color: 'var(--description-foreground)',
               whiteSpace: 'nowrap',
             }}
           >
@@ -665,8 +665,8 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                 alignItems: 'center',
                 gap: isCompact ? '0' : '4px',
                 padding: isCompact ? '4px 8px' : '4px 12px',
-                backgroundColor: 'var(--vscode-button-background)',
-                color: 'var(--vscode-button-foreground)',
+                backgroundColor: 'var(--button-background)',
+                color: 'var(--button-foreground)',
                 border: 'none',
                 borderRadius: '2px',
                 cursor: 'pointer',

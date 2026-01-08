@@ -199,11 +199,11 @@ export const DescriptionPanel: React.FC = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'color-mix(in srgb, var(--vscode-editor-background) 30%, transparent)',
-    border: '1px solid color-mix(in srgb, var(--vscode-panel-border) 30%, transparent)',
+    backgroundColor: 'color-mix(in srgb, var(--editor-background) 30%, transparent)',
+    border: '1px solid color-mix(in srgb, var(--panel-border) 30%, transparent)',
     borderRadius: '4px',
     cursor: 'pointer',
-    color: 'var(--vscode-foreground)',
+    color: 'var(--foreground)',
   };
 
   // When collapsed: show expand button only
@@ -243,9 +243,9 @@ export const DescriptionPanel: React.FC = () => {
     <div
       style={{
         position: 'relative',
-        border: '1px solid color-mix(in srgb, var(--vscode-panel-border) 50%, transparent)',
+        border: '1px solid color-mix(in srgb, var(--panel-border) 50%, transparent)',
         borderRadius: '6px',
-        backgroundColor: 'color-mix(in srgb, var(--vscode-editor-background) 85%, transparent)',
+        backgroundColor: 'color-mix(in srgb, var(--editor-background) 85%, transparent)',
         backdropFilter: 'blur(8px)',
         padding: '8px',
         width: `${panelWidth}px`,
@@ -306,12 +306,12 @@ export const DescriptionPanel: React.FC = () => {
             gap: '6px',
           }}
         >
-          <NotepadText size={14} style={{ color: 'var(--vscode-foreground)', opacity: 0.8 }} />
+          <NotepadText size={14} style={{ color: 'var(--foreground)', opacity: 0.8 }} />
           <span
             style={{
               fontSize: '12px',
               fontWeight: 500,
-              color: 'var(--vscode-foreground)',
+              color: 'var(--foreground)',
             }}
           >
             {t('description.panel.title')}
@@ -359,7 +359,7 @@ export const DescriptionPanel: React.FC = () => {
                 border: 'none',
                 borderRadius: '2px',
                 cursor: 'pointer',
-                color: 'var(--vscode-foreground)',
+                color: 'var(--foreground)',
                 padding: '2px',
                 opacity: 0.7,
               }}
@@ -375,7 +375,7 @@ export const DescriptionPanel: React.FC = () => {
         <div
           style={{
             fontSize: '11px',
-            color: 'var(--vscode-errorForeground)',
+            color: 'var(--error-foreground)',
             marginBottom: '6px',
           }}
         >
@@ -393,9 +393,9 @@ export const DescriptionPanel: React.FC = () => {
           width: '100%',
           height: `${panelHeight - 60}px`,
           padding: '6px 8px',
-          backgroundColor: 'var(--vscode-input-background)',
-          color: 'var(--vscode-input-foreground)',
-          border: '1px solid var(--vscode-input-border)',
+          backgroundColor: 'var(--input-background)',
+          color: 'var(--input-foreground)',
+          border: '1px solid var(--input-border)',
           borderRadius: '3px',
           fontSize: '12px',
           fontFamily: 'inherit',
@@ -411,7 +411,7 @@ export const DescriptionPanel: React.FC = () => {
       <div
         style={{
           fontSize: '10px',
-          color: 'var(--vscode-descriptionForeground)',
+          color: 'var(--description-foreground)',
           marginTop: '4px',
           textAlign: 'right',
         }}

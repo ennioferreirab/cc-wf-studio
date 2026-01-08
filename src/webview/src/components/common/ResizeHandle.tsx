@@ -34,7 +34,7 @@ export function ResizeHandle({ onMouseDown }: ResizeHandleProps) {
         bottom: 0,
         width: '4px',
         cursor: 'ew-resize',
-        backgroundColor: isHovered ? 'var(--vscode-focusBorder)' : 'transparent',
+        backgroundColor: isHovered ? 'var(--focus-border)' : 'transparent',
         transition: 'background-color 0.2s ease',
         zIndex: 10,
       }}

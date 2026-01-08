@@ -30,8 +30,8 @@ export const StartNode: React.FC<NodeProps<StartNodeData>> = React.memo(({ data,
       style={{
         padding: '12px',
         borderRadius: '8px',
-        border: `2px solid ${selected ? 'var(--vscode-focusBorder)' : '#10b981'}`,
-        backgroundColor: 'var(--vscode-editor-background)',
+        border: `2px solid ${selected ? 'var(--focus-border)' : '#10b981'}`,
+        backgroundColor: 'var(--editor-background)',
         minWidth: '120px',
       }}
     >
@@ -58,8 +58,8 @@ export const StartNode: React.FC<NodeProps<StartNodeData>> = React.memo(({ data,
         style={{
           width: '12px',
           height: '12px',
-          backgroundColor: 'var(--vscode-button-background)',
-          border: '2px solid var(--vscode-button-foreground)',
+          backgroundColor: 'var(--button-background)',
+          border: '2px solid var(--button-foreground)',
         }}
       />
     </div>

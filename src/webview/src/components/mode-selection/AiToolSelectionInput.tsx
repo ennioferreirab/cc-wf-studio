@@ -67,7 +67,7 @@ export function AiToolSelectionInput({
           style={{
             fontSize: '13px',
             fontWeight: 'bold',
-            color: 'var(--vscode-foreground)',
+            color: 'var(--foreground)',
           }}
         >
           {t('mcp.naturalLanguage.taskDescription.label')}
@@ -93,11 +93,11 @@ export function AiToolSelectionInput({
           minHeight: '120px',
           padding: '12px',
           fontSize: '13px',
-          fontFamily: 'var(--vscode-font-family)',
-          color: 'var(--vscode-input-foreground)',
-          backgroundColor: 'var(--vscode-input-background)',
+          fontFamily: 'var(--font-family)',
+          color: 'var(--input-foreground)',
+          backgroundColor: 'var(--input-background)',
           border: `1px solid ${
-            showError ? 'var(--vscode-inputValidation-errorBorder)' : 'var(--vscode-input-border)'
+            showError ? 'var(--input-validation-error-border)' : 'var(--input-border)'
           }`,
           borderRadius: '4px',
           resize: 'vertical',
@@ -107,12 +107,12 @@ export function AiToolSelectionInput({
         }}
         onFocus={(e) => {
           if (!showError) {
-            e.currentTarget.style.borderColor = 'var(--vscode-focusBorder)';
+            e.currentTarget.style.borderColor = 'var(--focus-border)';
           }
         }}
         onBlur={(e) => {
           if (!showError) {
-            e.currentTarget.style.borderColor = 'var(--vscode-input-border)';
+            e.currentTarget.style.borderColor = 'var(--input-border)';
           }
         }}
       />
@@ -124,9 +124,9 @@ export function AiToolSelectionInput({
             marginTop: '8px',
             padding: '8px 12px',
             fontSize: '12px',
-            color: 'var(--vscode-errorForeground)',
-            backgroundColor: 'var(--vscode-inputValidation-errorBackground)',
-            border: '1px solid var(--vscode-inputValidation-errorBorder)',
+            color: 'var(--error-foreground)',
+            backgroundColor: 'var(--input-validation-error-background)',
+            border: '1px solid var(--input-validation-error-border)',
             borderRadius: '4px',
           }}
         >

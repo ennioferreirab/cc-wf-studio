@@ -1,0 +1,250 @@
+/**
+ * Claude Code Workflow Studio - Theme Variables
+ *
+ * Standard CSS variables to replace VSCode-specific theming.
+ * Uses a modern dark theme by default with support for light mode.
+ */
+
+:root {
+  /* ============================================================================
+     Color Palette - Dark Theme (Default)
+     ============================================================================ */
+
+  /* Editor/Background colors */
+  --editor-background: #1e1e1e;
+  --editor-foreground: #d4d4d4;
+  --sidebar-background: #252526;
+  --panel-border: #3c3c3c;
+
+  /* Widget colors */
+  --widget-background: #252526;
+  --widget-foreground: #cccccc;
+  --widget-border: #454545;
+  --widget-shadow: rgba(0, 0, 0, 0.36);
+
+  /* Input/Form colors */
+  --input-background: #3c3c3c;
+  --input-foreground: #cccccc;
+  --input-border: #3c3c3c;
+  --input-placeholder: #8a8a8a;
+  --input-option-active-background: #094771;
+  --input-option-active-foreground: #ffffff;
+
+  /* Input validation */
+  --input-validation-error-background: #5a1d1d;
+  --input-validation-error-border: #be1100;
+  --input-validation-error-foreground: #f48771;
+  --input-validation-warning-background: #352a05;
+  --input-validation-warning-border: #9d8300;
+  --input-validation-warning-foreground: #cca700;
+
+  /* Button colors */
+  --button-background: #0e639c;
+  --button-foreground: #ffffff;
+  --button-hover-background: #1177bb;
+  --button-border: transparent;
+  --button-secondary-background: #3a3d41;
+  --button-secondary-foreground: #ffffff;
+  --button-secondary-hover-background: #45494e;
+
+  /* Dropdown colors */
+  --dropdown-background: #3c3c3c;
+  --dropdown-border: #3c3c3c;
+
+  /* Text colors */
+  --foreground: #cccccc;
+  --description-foreground: #9d9d9d;
+  --disabled-foreground: #6b6b6b;
+  --focus-border: #007fd4;
+  --icon-foreground: #c5c5c5;
+  --text-link-foreground: #3794ff;
+
+  /* List colors */
+  --list-active-selection-background: #094771;
+  --list-active-selection-foreground: #ffffff;
+  --list-hover-background: #2a2d2e;
+  --list-inactive-selection-background: #37373d;
+
+  /* Badge colors */
+  --badge-background: #4d4d4d;
+  --badge-foreground: #ffffff;
+
+  /* Toolbar */
+  --toolbar-hover-background: #5a5a5a;
+
+  /* Progress bar */
+  --progressbar-background: #0e70c0;
+
+  /* Scrollbar */
+  --scrollbar-slider-background: rgba(121, 121, 121, 0.4);
+  --scrollbar-slider-hover-background: rgba(100, 100, 100, 0.7);
+  --scrollbar-slider-active-background: rgba(191, 191, 191, 0.4);
+
+  /* Block quote */
+  --blockquote-background: #2d2d2d;
+  --blockquote-border: #007acc;
+  --codeblock-background: #2d2d2d;
+
+  /* Error/Warning/Success colors */
+  --error-background: #5a1d1d;
+  --error-border: #be1100;
+  --error-foreground: #f48771;
+  --warning-foreground: #cca700;
+  --warning-icon-foreground: #fc0;
+  --success-foreground: #89d185;
+
+  /* Chart colors (for React Flow nodes) */
+  --charts-blue: #2196f3;
+  --charts-orange: #ff9800;
+  --charts-yellow: #ffeb3b;
+  --charts-green: #4caf50;
+  --charts-red: #f44336;
+  --charts-purple: #9c27b0;
+  --charts-cyan: #00bcd4;
+
+  /* Terminal */
+  --terminal-ansi-blue: #2472c8;
+
+  /* Titlebar */
+  --titlebar-inactive-background: #3c3c3c;
+
+  /* Font */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --editor-font-family: 'SF Mono', Monaco, Menlo, Consolas, 'Ubuntu Mono', 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
+}
+
+/* ============================================================================
+   Light Theme (via prefers-color-scheme or .light-theme class)
+   ============================================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --editor-background: #ffffff;
+    --editor-foreground: #333333;
+    --sidebar-background: #f3f3f3;
+    --panel-border: #e0e0e0;
+
+    --widget-background: #f3f3f3;
+    --widget-foreground: #616161;
+    --widget-border: #c8c8c8;
+    --widget-shadow: rgba(0, 0, 0, 0.16);
+
+    --input-background: #ffffff;
+    --input-foreground: #616161;
+    --input-border: #cecece;
+    --input-placeholder: #767676;
+    --input-option-active-background: #0066bf;
+    --input-option-active-foreground: #ffffff;
+
+    --input-validation-error-background: #f2dede;
+    --input-validation-error-border: #be1100;
+    --input-validation-error-foreground: #a1260d;
+    --input-validation-warning-background: #f6f5d2;
+    --input-validation-warning-border: #b89500;
+    --input-validation-warning-foreground: #735c0f;
+
+    --button-background: #007acc;
+    --button-foreground: #ffffff;
+    --button-hover-background: #0066bf;
+    --button-secondary-background: #5f6a79;
+    --button-secondary-foreground: #ffffff;
+    --button-secondary-hover-background: #4c5561;
+
+    --dropdown-background: #ffffff;
+    --dropdown-border: #cecece;
+
+    --foreground: #616161;
+    --description-foreground: #717171;
+    --disabled-foreground: #a0a0a0;
+    --focus-border: #0090f1;
+    --icon-foreground: #424242;
+    --text-link-foreground: #006ab1;
+
+    --list-active-selection-background: #0060c0;
+    --list-active-selection-foreground: #ffffff;
+    --list-hover-background: #e8e8e8;
+    --list-inactive-selection-background: #e4e6f1;
+
+    --badge-background: #c4c4c4;
+    --badge-foreground: #333333;
+
+    --toolbar-hover-background: #e8e8e8;
+
+    --progressbar-background: #0066bf;
+
+    --scrollbar-slider-background: rgba(100, 100, 100, 0.4);
+    --scrollbar-slider-hover-background: rgba(100, 100, 100, 0.7);
+    --scrollbar-slider-active-background: rgba(0, 0, 0, 0.6);
+
+    --blockquote-background: #f0f0f0;
+    --blockquote-border: #007acc;
+    --codeblock-background: #f0f0f0;
+
+    --error-background: #f2dede;
+    --error-border: #be1100;
+    --error-foreground: #a1260d;
+    --warning-foreground: #735c0f;
+    --warning-icon-foreground: #b89500;
+    --success-foreground: #388a34;
+
+    --titlebar-inactive-background: #dddddd;
+  }
+}
+
+.light-theme {
+  --editor-background: #ffffff;
+  --editor-foreground: #333333;
+  --sidebar-background: #f3f3f3;
+  --panel-border: #e0e0e0;
+
+  --widget-background: #f3f3f3;
+  --widget-foreground: #616161;
+  --widget-border: #c8c8c8;
+  --widget-shadow: rgba(0, 0, 0, 0.16);
+
+  --input-background: #ffffff;
+  --input-foreground: #616161;
+  --input-border: #cecece;
+  --input-placeholder: #767676;
+
+  --button-background: #007acc;
+  --button-foreground: #ffffff;
+  --button-hover-background: #0066bf;
+  --button-secondary-background: #5f6a79;
+  --button-secondary-foreground: #ffffff;
+  --button-secondary-hover-background: #4c5561;
+
+  --dropdown-background: #ffffff;
+  --dropdown-border: #cecece;
+
+  --foreground: #616161;
+  --description-foreground: #717171;
+  --disabled-foreground: #a0a0a0;
+  --focus-border: #0090f1;
+  --icon-foreground: #424242;
+  --text-link-foreground: #006ab1;
+
+  --list-active-selection-background: #0060c0;
+  --list-active-selection-foreground: #ffffff;
+  --list-hover-background: #e8e8e8;
+  --list-inactive-selection-background: #e4e6f1;
+
+  --badge-background: #c4c4c4;
+  --badge-foreground: #333333;
+
+  --toolbar-hover-background: #e8e8e8;
+
+  --scrollbar-slider-background: rgba(100, 100, 100, 0.4);
+  --scrollbar-slider-hover-background: rgba(100, 100, 100, 0.7);
+  --scrollbar-slider-active-background: rgba(0, 0, 0, 0.6);
+
+  --blockquote-background: #f0f0f0;
+  --blockquote-border: #007acc;
+  --codeblock-background: #f0f0f0;
+
+  --error-background: #f2dede;
+  --error-border: #be1100;
+  --error-foreground: #a1260d;
+  --warning-foreground: #735c0f;
+  --success-foreground: #388a34;
+}

@@ -75,7 +75,7 @@ const nodeTypes: NodeTypes = {
  */
 const defaultEdgeOptions: DefaultEdgeOptions = {
   animated: false,
-  style: { stroke: 'var(--vscode-foreground)', strokeWidth: 2 },
+  style: { stroke: 'var(--foreground)', strokeWidth: 2 },
 };
 
 /**
@@ -464,8 +464,8 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
               position: 'relative',
               width: '95vw',
               height: '95vh',
-              backgroundColor: 'var(--vscode-editor-background)',
-              border: '2px solid var(--vscode-charts-purple)',
+              backgroundColor: 'var(--editor-background)',
+              border: '2px solid var(--charts-purple)',
               borderRadius: '8px',
               display: 'flex',
               flexDirection: 'column',
@@ -480,8 +480,8 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '12px 16px',
-                backgroundColor: 'var(--vscode-editorWidget-background)',
-                borderBottom: '2px solid var(--vscode-charts-purple)',
+                backgroundColor: 'var(--widget-background)',
+                borderBottom: '2px solid var(--charts-purple)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
@@ -489,7 +489,7 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                   style={{
                     fontSize: '12px',
                     fontWeight: 600,
-                    color: 'var(--vscode-charts-purple)',
+                    color: 'var(--charts-purple)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.5px',
                     flexShrink: 0,
@@ -528,8 +528,8 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                       gap: isCompact ? '0' : '4px',
                       padding: isCompact ? '0 8px' : '0 12px',
                       height: '32px',
-                      backgroundColor: 'var(--vscode-button-background)',
-                      color: 'var(--vscode-button-foreground)',
+                      backgroundColor: 'var(--button-background)',
+                      color: 'var(--button-foreground)',
                       border: 'none',
                       borderRadius: '4px',
                       cursor: 'pointer',
@@ -538,10 +538,10 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor =
-                        'var(--vscode-button-hoverBackground)';
+                        'var(--button-hover-background)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+                      e.currentTarget.style.backgroundColor = 'var(--button-background)';
                     }}
                   >
                     <Sparkles size={14} />
@@ -560,18 +560,18 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                     justifyContent: 'center',
                     width: '32px',
                     height: '32px',
-                    backgroundColor: 'var(--vscode-button-background)',
-                    color: 'var(--vscode-button-foreground)',
+                    backgroundColor: 'var(--button-background)',
+                    color: 'var(--button-foreground)',
                     border: 'none',
                     borderRadius: '4px',
                     cursor: 'pointer',
                     transition: 'background-color 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--vscode-button-hoverBackground)';
+                    e.currentTarget.style.backgroundColor = 'var(--button-hover-background)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--vscode-button-background)';
+                    e.currentTarget.style.backgroundColor = 'var(--button-background)';
                   }}
                 >
                   <Check size={18} />
@@ -588,14 +588,14 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                     width: '32px',
                     height: '32px',
                     backgroundColor: 'transparent',
-                    color: 'var(--vscode-foreground)',
+                    color: 'var(--foreground)',
                     border: 'none',
                     borderRadius: '4px',
                     cursor: 'pointer',
                     transition: 'background-color 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--vscode-toolbar-hoverBackground)';
+                    e.currentTarget.style.backgroundColor = 'var(--toolbar-hover-background)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = 'transparent';
@@ -644,30 +644,30 @@ const SubAgentFlowDialogContent: React.FC<SubAgentFlowDialogProps> = ({ isOpen, 
                         nodeColor={(node) => {
                           switch (node.type) {
                             case 'subAgent':
-                              return 'var(--vscode-charts-blue)';
+                              return 'var(--charts-blue)';
                             case 'askUserQuestion':
-                              return 'var(--vscode-charts-orange)';
+                              return 'var(--charts-orange)';
                             case 'branch':
                             case 'ifElse':
                             case 'switch':
-                              return 'var(--vscode-charts-yellow)';
+                              return 'var(--charts-yellow)';
                             case 'start':
-                              return 'var(--vscode-charts-green)';
+                              return 'var(--charts-green)';
                             case 'end':
-                              return 'var(--vscode-charts-red)';
+                              return 'var(--charts-red)';
                             case 'prompt':
                             case 'subAgentFlowRef':
-                              return 'var(--vscode-charts-purple)';
+                              return 'var(--charts-purple)';
                             case 'skill':
-                              return 'var(--vscode-charts-cyan)';
+                              return 'var(--charts-cyan)';
                             default:
-                              return 'var(--vscode-foreground)';
+                              return 'var(--foreground)';
                           }
                         }}
                         maskColor="rgba(0, 0, 0, 0.5)"
                         style={{
                           position: 'relative',
-                          backgroundColor: 'var(--vscode-editor-background)',
+                          backgroundColor: 'var(--editor-background)',
                           width: isCompact ? 120 : 200,
                           height: isCompact ? 80 : 150,
                         }}

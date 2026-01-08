@@ -30,9 +30,9 @@ export function McpToolSearch({ value, onChange, disabled }: McpToolSearchProps)
         style={{
           width: '100%',
           padding: '8px 12px',
-          backgroundColor: 'var(--vscode-input-background)',
-          color: 'var(--vscode-input-foreground)',
-          border: '1px solid var(--vscode-input-border)',
+          backgroundColor: 'var(--input-background)',
+          color: 'var(--input-foreground)',
+          border: '1px solid var(--input-border)',
           borderRadius: '4px',
           fontSize: '13px',
           outline: 'none',
@@ -42,11 +42,11 @@ export function McpToolSearch({ value, onChange, disabled }: McpToolSearchProps)
         onFocus={(e) => {
           if (!disabled) {
             e.currentTarget.style.border =
-              '1px solid var(--vscode-focusBorder, var(--vscode-input-border))';
+              '1px solid var(--focus-border, var(--input-border))';
           }
         }}
         onBlur={(e) => {
-          e.currentTarget.style.border = '1px solid var(--vscode-input-border)';
+          e.currentTarget.style.border = '1px solid var(--input-border)';
         }}
       />
     </div>
